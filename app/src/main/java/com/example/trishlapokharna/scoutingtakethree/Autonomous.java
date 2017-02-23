@@ -194,7 +194,7 @@ public class Autonomous extends Fragment{
         //low goal buttons
         lowGoalOneButton.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v){
-                j = Integer.parseInt(highGoalView.getText().toString()) + 1;
+                j = Integer.parseInt(lowGoalView.getText().toString()) + 1;
                 lowGoalView.setText(String.valueOf(j));
                 instanceLow.add(j);
             }
@@ -202,7 +202,7 @@ public class Autonomous extends Fragment{
 
         lowGoalFiveButton.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v){
-                j = Integer.parseInt(highGoalView.getText().toString()) + 5;
+                j = Integer.parseInt(lowGoalView.getText().toString()) + 5;
                 lowGoalView.setText(String.valueOf(j));
                 instanceLow.add(j);
             }
@@ -210,7 +210,7 @@ public class Autonomous extends Fragment{
 
         lowGoalTenButton.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v){
-                j = Integer.parseInt(highGoalView.getText().toString()) + 10;
+                j = Integer.parseInt(lowGoalView.getText().toString()) + 10;
                 lowGoalView.setText(String.valueOf(j));
                 instanceLow.add(j);
             }
@@ -218,7 +218,7 @@ public class Autonomous extends Fragment{
 
         lowGoalTwentyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v){
-                j = Integer.parseInt(highGoalView.getText().toString()) + 20;
+                j = Integer.parseInt(lowGoalView.getText().toString()) + 20;
                 lowGoalView.setText(String.valueOf(j));
                 instanceLow.add(j);
             }
