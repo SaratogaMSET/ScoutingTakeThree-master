@@ -43,7 +43,7 @@
         android:id="@+id/button3"
         android:layout_weight="1"
         android:text="Tap to View Rankings!"
-        android:onClick="Go"
+        android:onClick="GoRanking"
 
 
         />

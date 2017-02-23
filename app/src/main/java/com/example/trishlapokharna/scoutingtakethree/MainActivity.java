@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
        // DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -35,6 +36,10 @@ public class MainActivity extends AppCompatActivity
         Intent toInput = new Intent (this, Input.class);
         startActivity(toInput);
     }
+            public void GoRanking(View v) {
+                Intent toInput = new Intent (this, RankingContainer.class);
+                startActivity(toInput);
+            }
 
     /*@Override
     public void onBackPressed() {

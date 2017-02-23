@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.trishlapokharna.scoutingtakethree.TeleopLowRanking">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Teleop Low Goal Rankings"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView7" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:id="@+id/tablerowlowgoal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/textView7"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".20"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Total Cycles"
+            android:id="@+id/tvtotalcycles" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".20"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Average Cycles Per Game"
+            android:id="@+id/tvavgcycles" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".20"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Average Shots Per Cycle"
+            android:id="@+id/tvhighgoal" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".20"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Total Shots"
+            android:id="@+id/tvtotalshots" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".20"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Average Cycle Time"
+            android:id="@+id/tvavgcycletime" />
+    </TableRow>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tablerowlowgoal"
+        android:id="@+id/scrollView4" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_weight=".20"
+                android:id="@+id/tl10"
+                android:layout_height="match_parent">
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_weight=".20"
+                android:id="@+id/tl11"
+                android:layout_height="match_parent">
+
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_weight=".20"
+                android:id="@+id/tl12"
+                android:layout_height="match_parent"></TableLayout>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_weight=".20"
+                android:id="@+id/tl13"
+                android:layout_height="match_parent"></TableLayout>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_weight=".20"
+                android:id="@+id/tl14"
+                android:layout_height="match_parent"></TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

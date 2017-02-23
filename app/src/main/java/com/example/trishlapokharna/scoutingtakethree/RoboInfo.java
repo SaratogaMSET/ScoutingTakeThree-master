@@ -9,6 +9,8 @@ public class RoboInfo {
     String teamT;
     String scouterT;
     String notesT;
+    String singleTeam;
+    String matchNumber;
     String endGameT = "N";
     String result = "Lose";
 
@@ -58,5 +60,21 @@ public class RoboInfo {
 
     public void setResult(String str) {result = str; }
     public String getResult() {return result; }
+
+    public void setSingleTeam(String str) {
+        singleTeam = str;
+    }
+
+    public String getSingleTeam() {
+        return singleTeam;
+    }
+
+    public void setMatchNumber(String str) {
+        matchNumber = str;
+    }
+
+    public String getMatchNumber() {
+        return matchNumber;
+    }
 
 }
