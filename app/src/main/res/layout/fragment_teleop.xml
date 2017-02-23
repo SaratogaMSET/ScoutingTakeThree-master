@@ -1,0 +1,436 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.trishlapokharna.scoutingtakethree.Teleop">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:id="@+id/gearRow">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".4"
+                android:layout_height="wrap_content"
+                android:text="Gears"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:labelFor="@+id/gearView"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".6"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/gearView"/>
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/gearRow"
+            android:id = "@+id/gearButtonRow">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.33"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/gearHitButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.33"
+                android:layout_height="wrap_content"
+                android:text="O"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/gearMissButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.33"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/gearBackButton"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/gearButtonRow"
+            android:id = "@+id/highGoalRow">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".4"
+                android:layout_height="wrap_content"
+                android:text="High Goals"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:labelFor="@+id/highGoalView"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".6"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text=""
+                android:id="@+id/highGoalView"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/highGoalRow"
+            android:id = "@+id/highGoalButtonRow">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="wrap_content"
+                android:text="Add 0"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highGoalZeroButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="+5"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highGoalFiveButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="+10"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highGoalTenButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="+20"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highGoalTwentyButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.26"
+                android:layout_height="wrap_content"
+                android:text="Undo"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highGoalUndoButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.26"
+                android:layout_height="wrap_content"
+                android:text="Clear"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highGoalClearButton"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/highGoalButtonRow"
+            android:id="@+id/highCycleRow">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".4"
+                android:layout_height="wrap_content"
+                android:text="Cycle Time for High Goals"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:labelFor="@+id/highCycleView"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".6"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/highCycleView"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/highCycleRow"
+            android:id = "@+id/highCycleButtonRow">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="00-05"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highFirstIntervalButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="06-10"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highSecondIntervalButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="11-15"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highThirdIntervalButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="16-20"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highFourthIntervalButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="21-25"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highFifthIntervalButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="Del"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highDelButton"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/highCycleButtonRow"
+            android:id = "@+id/lowGoalRow">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".4"
+                android:layout_height="wrap_content"
+                android:text="Low Goals"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:labelFor="@+id/lowGoalView"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".6"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowGoalView"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/lowGoalRow"
+            android:id = "@+id/lowGoalButtonRow">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="wrap_content"
+                android:text="Add 0"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowGoalZeroButton"/>
+
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="+5"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowGoalFiveButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="+10"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowGoalTenButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="+20"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowGoalTwentyButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.26"
+                android:layout_height="wrap_content"
+                android:text="Undo"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowGoalUndoButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.26"
+                android:layout_height="wrap_content"
+                android:text="Clear"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowGoalClearButton"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/lowGoalButtonRow"
+            android:id="@+id/lowCycleRow">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".4"
+                android:layout_height="wrap_content"
+                android:text="Cycle Time for Low Goals"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:labelFor="@+id/lowCycleView"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".6"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowCycleView"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/lowCycleRow"
+            android:id = "@+id/lowCycleButtonRow">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="00-05"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowFirstIntervalButton" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="06-10"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowSecondIntervalButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="11-15"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowThirdIntervalButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="16-20"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowFourthIntervalButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="21-25"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowFifthIntervalButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="Del"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowDelButton"/>
+
+        </TableRow>
+
+    </RelativeLayout>
+
+</ScrollView>
+
