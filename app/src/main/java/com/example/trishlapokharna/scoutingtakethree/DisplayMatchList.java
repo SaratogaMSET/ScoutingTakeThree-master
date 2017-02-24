@@ -1,7 +1,11 @@
 package com.example.trishlapokharna.scoutingtakethree;
 
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
@@ -24,6 +28,12 @@ public class DisplayMatchList extends Fragment {
     RoboInfo myRobo = RoboInfo.getInstance();
     ListView lv;
 
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,52 +42,49 @@ public class DisplayMatchList extends Fragment {
         lv = (ListView) in.findViewById(R.id.listallmatches);
         ArrayList<String> matches = new ArrayList<String>();
 
+        verifyStoragePermissions(this.getActivity());
 
-        File file = new File("/sdcard/TeamsMatches");
+        File file = new File("/sdcard/TeamsMatches/");
         File[] list = file.listFiles();
-
-        for (File f : list) {
-            Log.d("TAG1", f.getName());
-        }
         int maxMatchNum = 0;
         if (list != null) {
-                for (File f : list) {
-                    Log.d("TAG", f.getName());
-                    if (!file.getName().equals(".DS_Store")) {
+            for (File f : list) {
+                Log.d("TAG", f.getName());
+                if (!f.getName().equals(".DS_Store") && f.getName().indexOf('_') != -1) {
+                    int beg = f.getName().lastIndexOf('_') + 1;
+                    int end = f.getName().lastIndexOf('.');
+                    int n = Integer.parseInt(f.getName().substring(beg, end));
 
-                        int beg = f.getName().lastIndexOf('_') + 1;
-                        int end = f.getName().lastIndexOf('.');
-
-                        int n = Integer.parseInt(f.getName().substring(beg, end));
-
-                        if (n > maxMatchNum) {
-                            maxMatchNum = n;
-                            Log.d("TAG", Integer.toString(n));
-
-                        }
+                    if (n > maxMatchNum) {
+                        maxMatchNum = n;
+                        Log.d("TAG1", Integer.toString(n));
                     }
+                }
             }
         }
 
         int counter = 1;
 
-        while (counter < maxMatchNum) {
+        while (counter <= maxMatchNum) {
             for (File f : list) {
-                int beg = f.getName().lastIndexOf('_')+1;
-                int end = f.getName().lastIndexOf('.');
-                int n = Integer.parseInt(f.getName().substring(beg, end));
-                if(counter == n) {
-                    matches.add("Match " + n + ": " + f.getName().substring(0, beg - 1));
+                if (!f.getName().equals(".DS_Store") && f.getName().indexOf('_') != -1) {
+                    int beg = f.getName().lastIndexOf('_') + 1;
+                    int end = f.getName().lastIndexOf('.');
+                    int n = Integer.parseInt(f.getName().substring(beg, end));
+                    Log.d("TAG2", Integer.toString(n));
+                    Log.d("TAG3", Integer.toString(counter));
+                    if (counter == n) {
+                        Log.d("TAG4", f.getName());
+                        matches.add("Match " + n + ": " + f.getName().substring(0, beg - 1));
+                    }
                 }
             }
             counter++;
         }
-        for (String s : matches) {
-            Log.d("TAGg", s);
-        }
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                getActivity(), android.R.layout.simple_list_item_1, matches);
+                this.getActivity(), android.R.layout.simple_list_item_1,matches
+        );
 
         lv.setAdapter(arrayAdapter);
 
@@ -109,5 +116,17 @@ public class DisplayMatchList extends Fragment {
         return in;
     }
 
+    public static void verifyStoragePermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+        }
+    }
 }
