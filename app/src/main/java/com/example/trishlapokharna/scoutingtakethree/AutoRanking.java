@@ -3,6 +3,7 @@ package com.example.trishlapokharna.scoutingtakethree;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ import java.io.IOException;
  * A simple {@link Fragment} subclass.
  */
 public class AutoRanking extends Fragment {
+    RoboInfo myRobo = RoboInfo.getInstance();
 
 
     @Override
@@ -66,6 +68,26 @@ public class AutoRanking extends Fragment {
                     tv1.setTextAppearance(getActivity(), android.R.style.TextAppearance_Medium);
 
                     tv1.setText(line);
+                    String[] values = line.split(":");
+                    final String string = values[0];
+
+                    tv1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String s = string;
+                            myRobo.setSingleTeam(s);
+                            Class fragmentClass = DisplaySingleTeam.class;
+                            Fragment fragment = null;
+                            try {
+                                fragment = (Fragment) fragmentClass.newInstance();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                            fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
+                        }
+                    });
 
                     tr.addView(tv1);
                     tl1.addView(tr, layoutParams);
@@ -90,7 +112,26 @@ public class AutoRanking extends Fragment {
                     tv1.setTextAppearance(getActivity(), android.R.style.TextAppearance_Medium);
 
                     tv1.setText(line);
-                    Log.d("TAG", line);
+                    String[] values = line.split(":");
+                    final String string = values[0];
+
+                    tv1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String s = string;
+                            myRobo.setSingleTeam(s);
+                            Class fragmentClass = DisplaySingleTeam.class;
+                            Fragment fragment = null;
+                            try {
+                                fragment = (Fragment) fragmentClass.newInstance();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                            fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
+                        }
+                    });
 
                     tr.addView(tv1);
                     tl2.addView(tr, layoutParams);
@@ -115,6 +156,26 @@ public class AutoRanking extends Fragment {
                     tv1.setTextAppearance(getActivity(), android.R.style.TextAppearance_Medium);
 
                     tv1.setText(line);
+                    String[] values = line.split(":");
+                    final String string = values[0];
+
+                    tv1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String s = string;
+                            myRobo.setSingleTeam(s);
+                            Class fragmentClass = DisplaySingleTeam.class;
+                            Fragment fragment = null;
+                            try {
+                                fragment = (Fragment) fragmentClass.newInstance();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                            fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
+                        }
+                    });
 
                     tr.addView(tv1);
                     tl3.addView(tr, layoutParams);
@@ -139,6 +200,26 @@ public class AutoRanking extends Fragment {
                     tv1.setTextAppearance(getActivity(), android.R.style.TextAppearance_Medium);
 
                     tv1.setText(line);
+                    String[] values = line.split(":");
+                    final String string = values[0];
+
+                    tv1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String s = string;
+                            myRobo.setSingleTeam(s);
+                            Class fragmentClass = DisplaySingleTeam.class;
+                            Fragment fragment = null;
+                            try {
+                                fragment = (Fragment) fragmentClass.newInstance();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                            fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
+                        }
+                    });
 
                     tr.addView(tv1);
                     tl4.addView(tr, layoutParams);

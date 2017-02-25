@@ -38,8 +38,8 @@ public class Teleop extends Fragment {
     String display = " ";
     List<Integer> instance1 = new ArrayList<Integer>();
     static  List <String> addNum1 = new ArrayList <String> ();
-
     static List <String> time1 = new ArrayList <String> ();
+
     Button interval1H;
     Button interval2H;
     Button interval3H;

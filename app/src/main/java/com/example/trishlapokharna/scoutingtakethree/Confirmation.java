@@ -221,6 +221,8 @@ public class Confirmation extends AppCompatActivity {
                 writer.close();
                 Toast.makeText(getBaseContext(), "File updated!", Toast.LENGTH_SHORT).show();
                 Intent toHome = new Intent(this, MainActivity.class);
+               // Teleop.addNum1.clear();
+                // Teleop.addNum2.clear();
                 startActivity(toHome);
 
             } catch (IOException e) {
