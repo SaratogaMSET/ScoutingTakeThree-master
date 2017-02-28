@@ -2,14 +2,19 @@ package com.example.trishlapokharna.scoutingtakethree;
 
 
 import android.annotation.TargetApi;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Chronometer;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +31,10 @@ public class Teleop extends Fragment {
     Button zero;
     Button back;
 
+    ImageButton highGoalHelp;
+    ImageButton highCycleHelp;
+    ImageButton lowGoalHelp;
+    ImageButton lowCycleHelp;
 
     static TextView highGoalsView;
     Button none1;
@@ -70,6 +79,11 @@ public class Teleop extends Fragment {
     Button intervalDelL;
     static TextView intervalViewL;
 
+    Chronometer timer;
+    Button timerStart;
+    Button timerStop;
+    Button timerRestart;
+
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
 
@@ -81,7 +95,7 @@ public class Teleop extends Fragment {
         zero = (Button) in.findViewById(R.id.gearMissButton);
         back = (Button) in.findViewById(R.id.gearBackButton);
 
-
+        highGoalHelp = (ImageButton) in.findViewById(R.id.highImageButton);
         highGoalsView = (TextView) in.findViewById(R.id.highGoalView);
         none1 = (Button) in.findViewById(R.id.highGoalClearButton);
         five1 = (Button) in.findViewById(R.id.highGoalFiveButton);
@@ -91,6 +105,7 @@ public class Teleop extends Fragment {
         sub1 = (Button) in.findViewById(R.id.highGoalZeroButton);
         i = 0;
 
+        highCycleHelp = (ImageButton) in.findViewById(R.id.highCycleImageButton);
         interval1H = (Button) in.findViewById(R.id.highFirstIntervalButton);
         interval2H = (Button) in.findViewById(R.id.highSecondIntervalButton);
         interval3H = (Button) in.findViewById(R.id.highThirdIntervalButton);
@@ -99,7 +114,7 @@ public class Teleop extends Fragment {
         intervalDelH = (Button) in.findViewById(R.id.highDelButton);
         intervalViewH = (TextView) in.findViewById(R.id.highCycleView);
 
-
+        lowGoalHelp = (ImageButton) in.findViewById(R.id.lowImageButton);
         lowGoalView = (TextView) in.findViewById(R.id.lowGoalView);
         none2 = (Button) in.findViewById(R.id.lowGoalClearButton);
         five2 = (Button) in.findViewById(R.id.lowGoalFiveButton);
@@ -109,6 +124,7 @@ public class Teleop extends Fragment {
         sub2 = (Button) in.findViewById(R.id.lowGoalZeroButton);
         j = 0;
 
+        lowCycleHelp = (ImageButton) in.findViewById(R.id.lowCycleImageButton);
         interval1L = (Button) in.findViewById(R.id.lowFirstIntervalButton);
         interval2L = (Button) in.findViewById(R.id.lowSecondIntervalButton);
         interval3L = (Button) in.findViewById(R.id.lowThirdIntervalButton);
@@ -117,7 +133,42 @@ public class Teleop extends Fragment {
         intervalDelL = (Button) in.findViewById(R.id.lowDelButton);
         intervalViewL = (TextView) in.findViewById(R.id.lowCycleView);
 
+        timer = (Chronometer) in.findViewById(R.id.timer);
+        timerStart = (Button) in.findViewById(R.id.timerStartButton);
+        timerStop = (Button) in.findViewById(R.id.timerStopButton);
+        timerRestart = (Button) in.findViewById(R.id.timerRestartButton);
 
+        highGoalHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Click 'Add 0' for each new cycle, 'Undo' to remove the last added number" +
+                        ", and 'Clear' to remove a cycle.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        lowGoalHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Click 'Add 0' for each new cycle, 'Undo' to remove the last added number" +
+                        ", and 'Clear' to remove a cycle.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        highCycleHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Estimate the time taken for each shooting cycle. Feel free to" +
+                        " use timer below as reference.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        lowCycleHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Estimate the time taken for each shooting cycle. Feel free to" +
+                        " use timer below as reference.", Toast.LENGTH_LONG).show();
+            }
+        });
 
         one.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -624,17 +675,6 @@ public class Teleop extends Fragment {
         });
 
 
-
-
-
-
-
-
-
-
-
-
-
         interval1L.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -691,6 +731,26 @@ public class Teleop extends Fragment {
             }
         });
 
+        timerStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timer.start();
+            }
+        });
+
+        timerStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timer.stop();
+            }
+        });
+
+        timerRestart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timer.setBase(SystemClock.elapsedRealtime());
+            }
+        });
 
 
         return in;
