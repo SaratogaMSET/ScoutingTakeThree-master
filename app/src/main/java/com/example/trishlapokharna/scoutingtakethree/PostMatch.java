@@ -32,6 +32,9 @@ public class PostMatch extends Fragment {
     static ToggleButton lose;
     static ToggleButton tie;
 
+    boolean teamMatch = false;
+
+
     RoboInfo myRobo = RoboInfo.getInstance();
 
     Button submit;
@@ -74,6 +77,12 @@ public class PostMatch extends Fragment {
         lose.setOnCheckedChangeListener(changeChecker);
         tie.setOnCheckedChangeListener(changeChecker);
 
+        String[] teamArray = getResources().getStringArray(R.array.RobotNumbers);
+        for (int i = 0; i < teamArray.length; i++){
+            if (Autonomous.teamText.getText().toString().equals(teamArray[i])){
+                teamMatch = true;
+            }
+        }
 
 
         submit = (Button) in.findViewById(R.id.submitButton);
@@ -81,41 +90,52 @@ public class PostMatch extends Fragment {
             @Override
             public void onClick(View v) {
                 if (Autonomous.teamText.getText().toString().length() == 0) {
-                    Toast.makeText(getActivity(), "Add Team Number!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Add Team Number :(!", Toast.LENGTH_SHORT).show();
                 }
                 else if (Autonomous.matchText.getText().toString().length() == 0) {
-                    Toast.makeText(getActivity(), "Add Match Number!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Add Match Number :/!", Toast.LENGTH_SHORT).show();
                 }
+
+                else if (teamMatch == false) {
+                    Toast.makeText(getActivity(), "Team Is Not In This Tournament ¯\\_(ツ)_/¯!", Toast.LENGTH_SHORT).show();
+                }
+
+
                 else if ( Autonomous.scouterText.getText().toString().length() == 0) {
-                    Toast.makeText(getActivity(), "Add Scouter Name!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Add Scouter Name :o!", Toast.LENGTH_SHORT).show();
                 }
+
+                else if(Autonomous.far.isChecked() == false && Autonomous.mid.isChecked() == false && Autonomous.boil.isChecked() == false){
+                    Toast.makeText(getActivity(), "Select Far Side, Middle Side, or Boiler Side >.<!", Toast.LENGTH_SHORT).show();
+                }
+
                 else if (PostMatch.totalPoints.getText().toString().length() == 0) {
-                    Toast.makeText(getActivity(), "Add Total Points!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Add Total Points D:!", Toast.LENGTH_SHORT).show();
                 }
 
                 else if (numSpaces(Teleop.highGoalsView.getText().toString()) != numSpaces(Teleop.intervalViewH.getText().toString())  ){
-                    Toast.makeText(getActivity(), "Cycle Time and Number of High Goals Do Not Match", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Cycle Time and Number of High Goals Do Not Match :)!", Toast.LENGTH_SHORT).show();
 
                 }
                 else if (numSpaces(Teleop.lowGoalView.getText().toString()) != numSpaces(Teleop.intervalViewL.getText().toString())  ){
-                    Toast.makeText(getActivity(), "Cycle Time and Number of Low Goals Do Not Match", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Cycle Time and Number of Low Goals Do Not Match :P!", Toast.LENGTH_SHORT).show();
 
                 }
 
                 else if (PostMatch.numPressure.getText().toString().length() == 0){
-                    Toast.makeText(getActivity(), "Add kPa!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Add kPa ^^!", Toast.LENGTH_SHORT).show();
                 }
 
                 else if (PostMatch.rankingPoints.getText().toString().length() == 0){
-                    Toast.makeText(getActivity(), "Add Ranking Points!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Add Ranking Points B-)!", Toast.LENGTH_SHORT).show();
                 }
 
                 else if (PostMatch.rotors.getText().toString().length() == 0){
-                    Toast.makeText(getActivity(), "Add Rotor #!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Add Rotor # :|!", Toast.LENGTH_SHORT).show();
                 }
 
                 else if(PostMatch.win.isChecked() == false && PostMatch.lose.isChecked() == false && PostMatch.tie.isChecked() == false){
-                    Toast.makeText(getActivity(), "Select win, lose, or tie!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Select win, lose, or tie >:D!", Toast.LENGTH_SHORT).show();
                 }
 
 

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -24,6 +25,10 @@ public class Autonomous extends Fragment{
     static EditText matchText;
     static EditText teamText;
     static EditText scouterText;
+
+    static ToggleButton far;
+    static ToggleButton mid;
+    static ToggleButton boil;
 
     static ToggleButton baselineButton;
 
@@ -59,6 +64,15 @@ public class Autonomous extends Fragment{
         teamText = (EditText)in.findViewById(R.id.teamText);
         scouterText = (EditText)in.findViewById(R.id.scouterText);
 
+
+        far = (ToggleButton) in.findViewById(R.id.farToggle);
+        mid = (ToggleButton) in.findViewById(R.id.middleToggle);
+        boil = (ToggleButton) in.findViewById(R.id.broilerToggle);
+
+        far.setOnCheckedChangeListener(changeChecker);
+        mid.setOnCheckedChangeListener(changeChecker);
+        boil.setOnCheckedChangeListener(changeChecker);
+
         baselineButton = (ToggleButton) in.findViewById(R.id.baselineToggleButton);
 
         gearView = (TextView) in.findViewById(R.id.gearView);
@@ -91,6 +105,7 @@ public class Autonomous extends Fragment{
                 myRobo.setMatchT(str);
             }
         });
+
 
         teamText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -242,4 +257,34 @@ public class Autonomous extends Fragment{
         });
         return in;
     }
+
+    CompoundButton.OnCheckedChangeListener changeChecker = new CompoundButton.OnCheckedChangeListener() {
+
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            if (isChecked) {
+                if (buttonView != far) {
+                    far.setChecked(false);
+                }
+                if (buttonView != mid) {
+                    mid.setChecked(false);
+                }
+                if (buttonView != boil) {
+                    boil.setChecked(false);
+                }
+
+                if (buttonView == far) {
+                    String str = "Far";
+                    myRobo.setPosition(str);
+                }
+                else if (buttonView == mid) {
+                    String str = "Middle";
+                    myRobo.setPosition(str);
+                }
+                else if (buttonView == boil) {
+                    String str = "Boiler";
+                    myRobo.setPosition(str);
+                }
+            }
+        }
+    };
 }

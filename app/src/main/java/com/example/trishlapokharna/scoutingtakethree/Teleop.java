@@ -46,8 +46,8 @@ public class Teleop extends Fragment {
     int i = 0;
     String display = " ";
     List<Integer> instance1 = new ArrayList<Integer>();
-    static  List <String> addNum1 = new ArrayList <String> ();
-    static List <String> time1 = new ArrayList <String> ();
+    List <String> addNum1 = new ArrayList <String> ();
+    List <String> time1 = new ArrayList <String> ();
 
     Button interval1H;
     Button interval2H;
@@ -67,10 +67,10 @@ public class Teleop extends Fragment {
     int j;
     String display2 = " ";
     List<Integer> instance2 = new ArrayList<Integer>();
-    static List <String> addNum2 = new ArrayList <String> ();
+    List <String> addNum2 = new ArrayList <String> ();
 
 
-    static List <String> time2 = new ArrayList <String> ();
+    List <String> time2 = new ArrayList <String> ();
     Button interval1L;
     Button interval2L;
     Button interval3L;

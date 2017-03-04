@@ -26,12 +26,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 
-
 public class Confirmation extends AppCompatActivity {
 
     TextView matchD;
     TextView teamD;
     TextView scouterD;
+    TextView positionView;
     TextView baseline;
     TextView gears;
     TextView highGoals;
@@ -40,13 +40,9 @@ public class Confirmation extends AppCompatActivity {
 
     TextView gears2;
     TextView highGoals2;
-    String highGoalsss2;
     TextView highGoalsCT;
-    String highGoalsCT2;
     TextView lowGoals2;
-    String lowGoalss2;
     TextView lowGoalsCT;
-    String lowGoalsCT2;
 
 
 
@@ -59,6 +55,8 @@ public class Confirmation extends AppCompatActivity {
     TextView result;
     TextView totalPoints;
     TextView rankingPoints;
+
+
 
     RoboInfo myRobo = RoboInfo.getInstance();
     String matchT;
@@ -80,7 +78,7 @@ public class Confirmation extends AppCompatActivity {
         matchD = (TextView) findViewById(R.id.matchNumberDisplay);
         teamD = (TextView) findViewById(R.id.teamNumberDisplay);
         scouterD = (TextView) findViewById(R.id.scouterNameDisplay);
-
+        positionView = (TextView) findViewById(R.id.positionView);
         baseline = (TextView) findViewById(R.id.baselineDisplay);
         gears = (TextView) findViewById(R.id.gearsDisplay);
         highGoals = (TextView) findViewById(R.id.highGoalsDisplay);
@@ -109,10 +107,12 @@ public class Confirmation extends AppCompatActivity {
         final String name = bundle.getString("a");
         matchD.setText(name);
 
-        RoboInfo confirm = RoboInfo.getInstance();
+        // final List<String> num = bundle.
+
         matchD.setText(Autonomous.matchText.getText().toString());
         teamD.setText(Autonomous.teamText.getText().toString());
         scouterD.setText(Autonomous.scouterText.getText().toString());
+        positionView.setText(myRobo.getPosition().toString());
         baseline.setText(Autonomous.baselineButton.getText().toString());
         gears.setText(Autonomous.gearView.getText().toString());
         highGoals.setText(Autonomous.highGoalView.getText().toString());
@@ -183,18 +183,22 @@ public class Confirmation extends AppCompatActivity {
             if (!root.exists()) {
                 root.mkdirs(); // this will create folder.
             }
-            File filepath = new File(root, "b1.txt");  // file path to save
-           FileWriter writer = new FileWriter(filepath, true);
+            String text = "b3.txt";
+            File filepath = new File(root, text);  // file path to save
+            FileWriter writer = new FileWriter(filepath, true);
 
             if(filepath.length() != 0) {
                 writer.append("\n");
             }
+            writer.append("File Name" + text + "\n");
 
-                writer.append("Team Number, " + Autonomous.teamText.getText().toString() + "\n");
-                writer.append("Match Number, " + Autonomous.matchText.getText().toString() + "\n");
-                writer.append("Scouter Name, " + Autonomous.scouterText.getText().toString() + "\n");
-                writer.append("Cross Baseline, " + Autonomous.baselineButton.getText().toString() + "\n");
-                writer.append("Auto Gears, " + Autonomous.gearView.getText().toString() + "\n");
+            writer.append("Team Number, " + Autonomous.teamText.getText().toString() + "\n");
+            writer.append("Match Number, " + Autonomous.matchText.getText().toString() + "\n");
+            writer.append("Scouter Name, " + Autonomous.scouterText.getText().toString() + "\n");
+            writer.append("Cross Baseline, " + Autonomous.baselineButton.getText().toString() + "\n");
+            writer.append("Position, " + myRobo.getPosition().toString() + "\n");
+
+            writer.append("Auto Gears, " + Autonomous.gearView.getText().toString() + "\n");
 
             if (Autonomous.highGoalView.getText().toString().equals("0"))
                 writer.append("Auto High Goal, " + "\n");
@@ -203,35 +207,35 @@ public class Confirmation extends AppCompatActivity {
             if (Autonomous.lowGoalView.getText().toString().equals("0"))
                 writer.append("Auto Low Goal, " + "\n");
             else
-              writer.append("Auto Low Goal, " + Autonomous.lowGoalView.getText().toString() + "\n");
-                writer.append("Teleop High Goal Shots Per Cycle, " + delSpaces(Teleop.highGoalsView.getText().toString()) + "\n");
-                writer.append("Teleop High Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewH.getText().toString()) + "\n");
-                writer.append("Teleop Low Goal Shots Per Cycle, " + delSpaces(Teleop.lowGoalView.getText().toString()) + "\n");
-                writer.append("Teleop Low Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewL.getText().toString()) + "\n");
-                writer.append("Teleop Gears, " + Teleop.gearsView.getText().toString() + "\n");
-                writer.append("Reached 40 kPa, " + (PostMatch.reach.getText().toString()) + "\n");
-                writer.append("Total Pressure, " + (PostMatch.numPressure.getText().toString()) + "\n");
-                writer.append("Rotors Turning, " + PostMatch.rotors.getText().toString() + "\n");
-                writer.append("Takeoff, " + getTf(PostMatch.takeoff.getText().toString()) + "\n");
-                writer.append("Total Points, " + PostMatch.totalPoints.getText().toString() + "\n");
-                writer.append("Ranking Points, "+ PostMatch.rankingPoints.getText().toString() + "\n");
-                writer.append("Result, " + myRobo.getResult().toString() + "\n");
-                writer.append("Notes, " + PostMatch.notesText.getText().toString());
-                writer.flush();
-                writer.close();
-                Toast.makeText(getBaseContext(), "File updated!", Toast.LENGTH_SHORT).show();
-                Intent toHome = new Intent(this, MainActivity.class);
-               // Teleop.addNum1.clear();
-                // Teleop.addNum2.clear();
-                startActivity(toHome);
+                writer.append("Auto Low Goal, " + Autonomous.lowGoalView.getText().toString() + "\n");
+            writer.append("Teleop High Goal Shots Per Cycle, " + delSpaces(Teleop.highGoalsView.getText().toString()) + "\n");
+            writer.append("Teleop High Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewH.getText().toString()) + "\n");
+            writer.append("Teleop Low Goal Shots Per Cycle, " + delSpaces(Teleop.lowGoalView.getText().toString()) + "\n");
+            writer.append("Teleop Low Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewL.getText().toString()) + "\n");
+            writer.append("Teleop Gears, " + Teleop.gearsView.getText().toString() + "\n");
+            writer.append("Reached 40 kPa, " + (PostMatch.reach.getText().toString()) + "\n");
+            writer.append("Total Pressure, " + (PostMatch.numPressure.getText().toString()) + "\n");
+            writer.append("Rotors Turning, " + PostMatch.rotors.getText().toString() + "\n");
+            writer.append("Takeoff, " + getTf(PostMatch.takeoff.getText().toString()) + "\n");
+            writer.append("Total Points, " + PostMatch.totalPoints.getText().toString() + "\n");
+            writer.append("Ranking Points, "+ PostMatch.rankingPoints.getText().toString() + "\n");
+            writer.append("Result, " + myRobo.getResult().toString() + "\n");
+            writer.append("Notes, " + PostMatch.notesText.getText().toString());
+            writer.flush();
+            writer.close();
+            Toast.makeText(getBaseContext(), "File updated!", Toast.LENGTH_SHORT).show();
+            Intent toHome = new Intent(this, MainActivity.class);
+            // Teleop.addNum1.clear();
+            // Teleop.addNum2.clear();
+            startActivity(toHome);
 
-            } catch (IOException e) {
-                e.printStackTrace();
-                Log.d("file error", "" + e.getMessage());
-            }
-
-
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.d("file error", "" + e.getMessage());
         }
+
+
+    }
 
 
     public String getTf(String str) {
@@ -245,6 +249,7 @@ public class Confirmation extends AppCompatActivity {
         }
 
     }
+
     public static String delSpaces(String str){    //custom method to remove multiple space
         StringBuilder sb=new StringBuilder();
         for(String s: str.split(" ")){
@@ -259,10 +264,3 @@ public class Confirmation extends AppCompatActivity {
 
 
 }
-
-
-
-
-
-
-

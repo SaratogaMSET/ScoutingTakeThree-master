@@ -13,6 +13,7 @@ public class RoboInfo {
     String matchNumber;
     String endGameT = "N";
     String result = "Lose";
+    String position;
 
     static final RoboInfo me = new RoboInfo();
 
@@ -60,6 +61,9 @@ public class RoboInfo {
 
     public void setResult(String str) {result = str; }
     public String getResult() {return result; }
+
+    public void setPosition(String str) {position = str; }
+    public String getPosition() {return position;}
 
     public void setSingleTeam(String str) {
         singleTeam = str;
