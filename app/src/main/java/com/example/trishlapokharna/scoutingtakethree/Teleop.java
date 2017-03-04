@@ -734,6 +734,20 @@ public class Teleop extends Fragment {
         timerStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int stoppedMilliseconds = 0;
+
+                String chronoText = timer.getText().toString();
+                String array[] = chronoText.split(":");
+                if (array.length == 2) {
+                    stoppedMilliseconds = Integer.parseInt(array[0]) * 60 * 1000
+                            + Integer.parseInt(array[1]) * 1000;
+                } else if (array.length == 3) {
+                    stoppedMilliseconds = Integer.parseInt(array[0]) * 60 * 60 * 1000
+                            + Integer.parseInt(array[1]) * 60 * 1000
+                            + Integer.parseInt(array[2]) * 1000;
+                }
+
+                timer.setBase(SystemClock.elapsedRealtime() - stoppedMilliseconds);
                 timer.start();
             }
         });

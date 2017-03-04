@@ -89,13 +89,14 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/question"/>
+                android:src="@mipmap/question"
+                android:background="@null"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight=".4"
                 android:layout_height="wrap_content"
-                android:text="     High Goals"
+                android:text="   High Goals"
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:labelFor="@+id/highGoalView"/>
 
@@ -185,19 +186,20 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/question"/>
+                android:src="@mipmap/question"
+                android:background="@null"/>
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight=".4"
+                android:layout_weight=".55"
                 android:layout_height="wrap_content"
-                android:text="     Cycle Time for High Goals"
+                android:text="   Cycle Time for High Goals"
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:labelFor="@+id/highCycleView"/>
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight=".6"
+                android:layout_weight=".5"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -282,13 +284,14 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/question"/>
+                android:src="@mipmap/question"
+                android:background="@null"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight=".4"
                 android:layout_height="wrap_content"
-                android:text="      Low Goals"
+                android:text="    Low Goals"
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:labelFor="@+id/lowGoalView"/>
 
@@ -379,19 +382,20 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/question"/>
+                android:src="@mipmap/question"
+                android:background="@null"/>
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight=".4"
+                android:layout_weight=".55"
                 android:layout_height="wrap_content"
-                android:text="     Cycle Time for Low Goals"
+                android:text="   Cycle Time for Low Goals"
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:labelFor="@+id/lowCycleView"/>
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight=".6"
+                android:layout_weight=".5"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
