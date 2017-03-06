@@ -14,6 +14,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +30,13 @@ public class Autonomous extends Fragment{
     static ToggleButton far;
     static ToggleButton mid;
     static ToggleButton boil;
+
+    Button far2;
+    Button mid2;
+    Button boil2;
+    Button del2;
+    static TextView gearPos;
+    static List <String> time = new ArrayList <String> ();
 
     static ToggleButton baselineButton;
 
@@ -69,9 +77,16 @@ public class Autonomous extends Fragment{
         mid = (ToggleButton) in.findViewById(R.id.middleToggle);
         boil = (ToggleButton) in.findViewById(R.id.broilerToggle);
 
+
         far.setOnCheckedChangeListener(changeChecker);
         mid.setOnCheckedChangeListener(changeChecker);
         boil.setOnCheckedChangeListener(changeChecker);
+
+        far2 = (Button) in.findViewById(R.id.closeButton);
+        mid2 = (Button) in.findViewById(R.id.middleButton);
+        boil2 = (Button) in.findViewById(R.id.boilButton);
+        del2 = (Button) in.findViewById(R.id.DelButton);
+        gearPos = (TextView) in.findViewById(R.id.gearCycleView);
 
         baselineButton = (ToggleButton) in.findViewById(R.id.baselineToggleButton);
 
@@ -255,6 +270,49 @@ public class Autonomous extends Fragment{
                 }
             }
         });
+
+        far2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gearPos.append("Close      ");
+                time.add("Close ");
+            }
+        });
+
+        mid2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gearPos.append("Middle     ");
+                time.add("Middle ");
+
+            }
+        });
+
+        boil2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gearPos.append("Boiler     ");
+                time.add("Boiler ");
+            }
+        });
+
+
+
+
+
+        del2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (time.size() >= 1) {
+                    gearPos.setText(gearPos.getText().subSequence(0, gearPos.getText().length() - 11));
+                    time.remove(time.size()-1);
+                }
+                if (time.size()==0) {
+                    gearPos.setText("");
+                }
+            }
+        });
+
         return in;
     }
 
@@ -273,7 +331,7 @@ public class Autonomous extends Fragment{
                 }
 
                 if (buttonView == far) {
-                    String str = "Far";
+                    String str = "Close";
                     myRobo.setPosition(str);
                 }
                 else if (buttonView == mid) {
@@ -287,4 +345,8 @@ public class Autonomous extends Fragment{
             }
         }
     };
+
+
+
+
 }

@@ -60,9 +60,6 @@
 
         </TableRow>
 
-
-
-
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,13 +89,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/positionRow"
+            android:layout_marginTop="50dp"
             android:layout_below="@+id/scouterRow">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight=".4"
                 android:layout_height="wrap_content"
-                android:text="Position"
+                android:text="Starting Position"
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:id="@+id/positionView"/>
 
@@ -161,8 +159,8 @@
                 android:paddingBottom="20dp"
                 android:textAppearance="@android:style/TextAppearance.Medium"
 
-                android:textOff="Far Side"
-                android:textOn="Far Side"
+                android:textOff="Close Side"
+                android:textOn="Close Side"
                 android:text="New ToggleButton"
                 android:id="@+id/farToggle" />
 
@@ -266,8 +264,76 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/positionGearViewRow"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/gearButtonRow">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".55"
+                android:layout_height="wrap_content"
+                android:text="Gear Position"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:labelFor="@+id/gearCycleView"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/gearCycleView"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/positionGearViewRow"
+            android:id = "@+id/positionButtonRow">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="Close"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/closeButton" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="Middle"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/middleButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="Boiler"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/boilButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="Del"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/DelButton"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_below="@+id/gearButtonRow"
+            android:layout_below="@+id/positionButtonRow"
             android:id = "@+id/highGoalRow">
 
             <TextView

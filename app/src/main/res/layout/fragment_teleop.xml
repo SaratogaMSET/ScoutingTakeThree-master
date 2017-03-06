@@ -79,8 +79,76 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/positionGearViewRow"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/gearButtonRow">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".55"
+                android:layout_height="wrap_content"
+                android:text="Gear Position"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:labelFor="@+id/gearCycleView"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/gearCycleView"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/positionGearViewRow"
+            android:id = "@+id/positionButtonRow">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="Close"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/closeButton" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="Middle"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/middleButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="Boiler"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/boilButton"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="Del"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/DelButton"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_below="@+id/gearButtonRow"
+            android:layout_below="@+id/positionButtonRow"
             android:id = "@+id/highGoalRow">
 
             <ImageButton
@@ -125,6 +193,14 @@
                 android:padding="20dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/highGoalZeroButton"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="+1"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/highGoalOneButton"/>
 
             <Button
                 android:layout_width="0dp"
@@ -155,7 +231,7 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_weight="0.26"
+                android:layout_weight="0.2"
                 android:layout_height="wrap_content"
                 android:text="Undo"
                 android:padding="20dp"
@@ -164,7 +240,7 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_weight="0.26"
+                android:layout_weight="0.2"
                 android:layout_height="wrap_content"
                 android:text="Clear"
                 android:padding="20dp"
@@ -320,6 +396,15 @@
                 android:padding="20dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/lowGoalZeroButton"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.16"
+                android:layout_height="wrap_content"
+                android:text="+1"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/lowGoalOneButton"/>
+
 
 
             <Button
@@ -351,7 +436,7 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_weight="0.26"
+                android:layout_weight="0.2"
                 android:layout_height="wrap_content"
                 android:text="Undo"
                 android:padding="20dp"
@@ -360,7 +445,7 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_weight="0.26"
+                android:layout_weight="0.2"
                 android:layout_height="wrap_content"
                 android:text="Clear"
                 android:padding="20dp"

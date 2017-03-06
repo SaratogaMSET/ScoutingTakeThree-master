@@ -34,11 +34,13 @@ public class Confirmation extends AppCompatActivity {
     TextView positionView;
     TextView baseline;
     TextView gears;
+    TextView gearPosAuto;
     TextView highGoals;
     TextView lowGoals;
 
 
     TextView gears2;
+    TextView gear2PosTele;
     TextView highGoals2;
     TextView highGoalsCT;
     TextView lowGoals2;
@@ -79,14 +81,15 @@ public class Confirmation extends AppCompatActivity {
         teamD = (TextView) findViewById(R.id.teamNumberDisplay);
         scouterD = (TextView) findViewById(R.id.scouterNameDisplay);
         positionView = (TextView) findViewById(R.id.positionView);
+        gearPosAuto = (TextView) findViewById(R.id.positionViewGear);
         baseline = (TextView) findViewById(R.id.baselineDisplay);
         gears = (TextView) findViewById(R.id.gearsDisplay);
         highGoals = (TextView) findViewById(R.id.highGoalsDisplay);
-
         lowGoals = (TextView) findViewById(R.id.lowGoalDisplay);
 
 
         gears2 = (TextView) findViewById(R.id.gearsDisplay2);
+        gear2PosTele = (TextView) findViewById(R.id.positionViewGearTele);
         highGoals2 = (TextView) findViewById(R.id.highGoalDisplay1);
         highGoalsCT = (TextView) findViewById(R.id.highGoalConsistencyDisplay1);
         lowGoals2 = (TextView) findViewById(R.id.lowGoalDisplay1);
@@ -113,12 +116,14 @@ public class Confirmation extends AppCompatActivity {
         teamD.setText(Autonomous.teamText.getText().toString());
         scouterD.setText(Autonomous.scouterText.getText().toString());
         positionView.setText(myRobo.getPosition().toString());
+        gearPosAuto.setText(Autonomous.gearPos.getText().toString());
         baseline.setText(Autonomous.baselineButton.getText().toString());
         gears.setText(Autonomous.gearView.getText().toString());
         highGoals.setText(Autonomous.highGoalView.getText().toString());
         lowGoals.setText(Autonomous.lowGoalView.getText().toString());
 
         gears2.setText(Teleop.gearsView.getText().toString());
+        gear2PosTele.setText(Teleop.gearPos2.getText().toString());
         highGoals2.setText(Teleop.highGoalsView.getText().toString());
         highGoalsCT.setText(Teleop.intervalViewH.getText().toString());
         lowGoals2.setText(Teleop.lowGoalView.getText().toString());
@@ -183,22 +188,23 @@ public class Confirmation extends AppCompatActivity {
             if (!root.exists()) {
                 root.mkdirs(); // this will create folder.
             }
-            String text = "b3.txt";
+            String text = "r1.txt";
             File filepath = new File(root, text);  // file path to save
             FileWriter writer = new FileWriter(filepath, true);
 
             if(filepath.length() != 0) {
                 writer.append("\n");
             }
-            writer.append("File Name" + text + "\n");
 
             writer.append("Team Number, " + Autonomous.teamText.getText().toString() + "\n");
             writer.append("Match Number, " + Autonomous.matchText.getText().toString() + "\n");
             writer.append("Scouter Name, " + Autonomous.scouterText.getText().toString() + "\n");
             writer.append("Cross Baseline, " + Autonomous.baselineButton.getText().toString() + "\n");
-            writer.append("Position, " + myRobo.getPosition().toString() + "\n");
+            writer.append("Starting Position, " + myRobo.getPosition().toString() + "\n");
+
 
             writer.append("Auto Gears, " + Autonomous.gearView.getText().toString() + "\n");
+            writer.append("Auto Gear Pos, " + delSpaces(Autonomous.gearPos.getText().toString()) +  "\n");
 
             if (Autonomous.highGoalView.getText().toString().equals("0"))
                 writer.append("Auto High Goal, " + "\n");
@@ -212,7 +218,9 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Teleop High Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewH.getText().toString()) + "\n");
             writer.append("Teleop Low Goal Shots Per Cycle, " + delSpaces(Teleop.lowGoalView.getText().toString()) + "\n");
             writer.append("Teleop Low Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewL.getText().toString()) + "\n");
-            writer.append("Teleop Gears, " + Teleop.gearsView.getText().toString() + "\n");
+            writer.append("Teleop Gears, " + delSpaces(Teleop.gearPos2.getText().toString()) );
+            writer.append("\n");
+            writer.append("Teleop Gears Position, " + Teleop.gearPos2.getText().toString() + "\n");
             writer.append("Reached 40 kPa, " + (PostMatch.reach.getText().toString()) + "\n");
             writer.append("Total Pressure, " + (PostMatch.numPressure.getText().toString()) + "\n");
             writer.append("Rotors Turning, " + PostMatch.rotors.getText().toString() + "\n");
@@ -220,7 +228,13 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Total Points, " + PostMatch.totalPoints.getText().toString() + "\n");
             writer.append("Ranking Points, "+ PostMatch.rankingPoints.getText().toString() + "\n");
             writer.append("Result, " + myRobo.getResult().toString() + "\n");
-            writer.append("Notes, " + PostMatch.notesText.getText().toString());
+            writer.append("Notes, " + PostMatch.notesText.getText().toString()+ "\n" );
+            if (text.equals("r3.txt")||text.equals("r1.txt")|| text.equals("r2.txt"))
+                writer.append("Alliance, Red");
+            if (text.equals("b1.txt")||text.equals("b2.txt")|| text.equals("b3.txt"))
+                writer.append("Alliance, Blue");
+
+
             writer.flush();
             writer.close();
             Toast.makeText(getBaseContext(), "File updated!", Toast.LENGTH_SHORT).show();

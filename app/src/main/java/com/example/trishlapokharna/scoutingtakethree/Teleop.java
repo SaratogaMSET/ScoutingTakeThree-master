@@ -38,6 +38,7 @@ public class Teleop extends Fragment {
 
     static TextView highGoalsView;
     Button none1;
+    Button one1;
     Button five1;
     Button ten1;
     Button twenty1;
@@ -57,8 +58,16 @@ public class Teleop extends Fragment {
     Button intervalDelH;
     static TextView intervalViewH;
 
+    Button far2;
+    Button mid2;
+    Button boil2;
+    Button del2;
+    static TextView gearPos2;
+    static List <String> time3 = new ArrayList <String> ();
+
     static TextView lowGoalView;
     Button none2;
+    Button one2;
     Button five2;
     Button ten2;
     Button twenty2;
@@ -98,6 +107,7 @@ public class Teleop extends Fragment {
         highGoalHelp = (ImageButton) in.findViewById(R.id.highImageButton);
         highGoalsView = (TextView) in.findViewById(R.id.highGoalView);
         none1 = (Button) in.findViewById(R.id.highGoalClearButton);
+        one1 = (Button) in.findViewById(R.id.highGoalOneButton);
         five1 = (Button) in.findViewById(R.id.highGoalFiveButton);
         ten1 = (Button) in.findViewById(R.id.highGoalTenButton);
         twenty1 = (Button) in.findViewById(R.id.highGoalTwentyButton);
@@ -117,6 +127,7 @@ public class Teleop extends Fragment {
         lowGoalHelp = (ImageButton) in.findViewById(R.id.lowImageButton);
         lowGoalView = (TextView) in.findViewById(R.id.lowGoalView);
         none2 = (Button) in.findViewById(R.id.lowGoalClearButton);
+        one2 = (Button) in.findViewById(R.id.lowGoalOneButton);
         five2 = (Button) in.findViewById(R.id.lowGoalFiveButton);
         ten2 = (Button) in.findViewById(R.id.lowGoalTenButton);
         twenty2 = (Button) in.findViewById(R.id.lowGoalTwentyButton);
@@ -137,6 +148,12 @@ public class Teleop extends Fragment {
         timerStart = (Button) in.findViewById(R.id.timerStartButton);
         timerStop = (Button) in.findViewById(R.id.timerStopButton);
         timerRestart = (Button) in.findViewById(R.id.timerRestartButton);
+
+        far2 = (Button) in.findViewById(R.id.closeButton);
+        mid2 = (Button) in.findViewById(R.id.middleButton);
+        boil2 = (Button) in.findViewById(R.id.boilButton);
+        del2 = (Button) in.findViewById(R.id.DelButton);
+        gearPos2 = (TextView) in.findViewById(R.id.gearCycleView);
 
         highGoalHelp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -241,7 +258,34 @@ public class Teleop extends Fragment {
         });
 
 
+        one1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (addNum1.size() == 0 )
+                    addNum1.add(String.valueOf(i));
 
+                i += 1;
+
+
+                instance1.add(i);
+                addNum1.set(addNum1.size()-1, String.valueOf(i));
+
+                for (String s : addNum1) {
+                    if (s.length() == 1)
+                        display += s + "           ";
+                    if (s.length() == 2)
+                        display += s + "         ";
+                    if (s.length() == 3)
+                        display += s + "        ";
+                    if (s.length()> 4)
+                        display += s + "       ";
+                }
+                highGoalsView.setText(display);
+                display = " ";
+
+
+            }
+
+        });
 
         five1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -511,7 +555,34 @@ public class Teleop extends Fragment {
             }
         });
 
+        one2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (addNum2.size() == 0 )
+                    addNum2.add(String.valueOf(j));
 
+                j += 1;
+
+
+                instance2.add(j);
+                addNum2.set(addNum2.size()-1, String.valueOf(j));
+
+                for (String s : addNum2) {
+                    if (s.length() == 1)
+                        display2 += s + "           ";
+                    if (s.length() == 2)
+                        display2 += s + "         ";
+                    if (s.length() == 3)
+                        display2 += s + "        ";
+                    if (s.length()> 4)
+                        display2 += s + "       ";
+                }
+                lowGoalView.setText(display2);
+                display2 = " ";
+
+
+            }
+
+        });
 
 
         five2.setOnClickListener(new View.OnClickListener() {
@@ -766,6 +837,43 @@ public class Teleop extends Fragment {
             }
         });
 
+        far2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gearPos2.append("Close      ");
+                time3.add("Close ");
+            }
+        });
+
+        mid2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gearPos2.append("Middle     ");
+                time3.add("Middle ");
+
+            }
+        });
+
+        boil2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gearPos2.append("Boiler     ");
+                time3.add("Boiler ");
+            }
+        });
+
+        del2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (time3.size() >= 1) {
+                    gearPos2.setText(gearPos2.getText().subSequence(0, gearPos2.getText().length() - 11));
+                    time3.remove(time3.size()-1);
+                }
+                if (time3.size()==0) {
+                    gearPos2.setText("");
+                }
+            }
+        });
 
         return in;
 

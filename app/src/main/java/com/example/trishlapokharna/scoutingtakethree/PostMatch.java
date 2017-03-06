@@ -108,9 +108,15 @@ public class PostMatch extends Fragment {
                 else if(Autonomous.far.isChecked() == false && Autonomous.mid.isChecked() == false && Autonomous.boil.isChecked() == false){
                     Toast.makeText(getActivity(), "Select Far Side, Middle Side, or Boiler Side >.<!", Toast.LENGTH_SHORT).show();
                 }
+                else if (numSpaces(Autonomous.gearPos.getText().toString()) != numSpaces(Autonomous.gearView.getText().toString())  ){
+                    Toast.makeText(getActivity(), "Auto Gear Position and Number of Gears Do Not Match :)!", Toast.LENGTH_SHORT).show();
 
-                else if (PostMatch.totalPoints.getText().toString().length() == 0) {
-                    Toast.makeText(getActivity(), "Add Total Points D:!", Toast.LENGTH_SHORT).show();
+                }
+
+
+                else if (numSpaces(Teleop.gearsView.getText().toString()) != numSpaces(Teleop.gearPos2.getText().toString())  ){
+                    Toast.makeText(getActivity(), "Teleop Gear Position and Number of Gears Do Not Match :)!", Toast.LENGTH_SHORT).show();
+
                 }
 
                 else if (numSpaces(Teleop.highGoalsView.getText().toString()) != numSpaces(Teleop.intervalViewH.getText().toString())  ){
@@ -124,6 +130,9 @@ public class PostMatch extends Fragment {
 
                 else if (PostMatch.numPressure.getText().toString().length() == 0){
                     Toast.makeText(getActivity(), "Add kPa ^^!", Toast.LENGTH_SHORT).show();
+                }
+                else if (PostMatch.totalPoints.getText().toString().length() == 0) {
+                    Toast.makeText(getActivity(), "Add Total Points D:!", Toast.LENGTH_SHORT).show();
                 }
 
                 else if (PostMatch.rankingPoints.getText().toString().length() == 0){
