@@ -4,34 +4,34 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_allteams"
-
+            android:icon="@drawable/robot"
             android:title="All Teams" />
         <item
             android:id="@+id/nav_matches"
-
+            android:icon="@drawable/matches"
             android:title="Matches" />
         <item
             android:id="@+id/nav_rankingauto"
-
+            android:icon="@drawable/auto"
             android:title="Ranking: Auto" />
         <item
             android:id="@+id/nav_rankingthigh"
-
+            android:icon="@drawable/high"
             android:title="Ranking: Teleop High" />
 
         <item
             android:id="@+id/nav_rankingtlow"
-
+            android:icon="@drawable/low"
             android:title="Ranking: Teleop Low" />
 
         <item
             android:id="@+id/nav_rankingend"
-
+            android:icon="@drawable/tomb"
             android:title="Ranking: End" />
 
         <item
             android:id="@+id/nav_rankingoverall"
-            
+            android:icon="@drawable/sum"
             android:title="Ranking: Overall" />
 
     </group>
