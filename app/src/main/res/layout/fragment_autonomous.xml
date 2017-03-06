@@ -279,9 +279,10 @@
                 android:layout_width="0dp"
                 android:layout_weight=".5"
                 android:layout_height="wrap_content"
-                android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/gearCycleView"/>
+                android:id="@+id/gearCycleView"
+                android:text="None"
+                android:freezesText="true"/>
 
         </TableRow>
 

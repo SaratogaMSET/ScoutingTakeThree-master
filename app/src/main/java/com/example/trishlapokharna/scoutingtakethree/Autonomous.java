@@ -274,6 +274,9 @@ public class Autonomous extends Fragment{
         far2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (gearPos.getText().toString().equals("None")){
+                    gearPos.setText("");
+                }
                 gearPos.append("Close      ");
                 time.add("Close ");
             }
@@ -282,6 +285,9 @@ public class Autonomous extends Fragment{
         mid2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (gearPos.getText().toString().equals("None")){
+                    gearPos.setText("");
+                }
                 gearPos.append("Middle     ");
                 time.add("Middle ");
 
@@ -291,6 +297,10 @@ public class Autonomous extends Fragment{
         boil2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (gearPos.getText().toString().equals("None")){
+                    gearPos.setText("");
+                }
                 gearPos.append("Boiler     ");
                 time.add("Boiler ");
             }
@@ -308,7 +318,7 @@ public class Autonomous extends Fragment{
                     time.remove(time.size()-1);
                 }
                 if (time.size()==0) {
-                    gearPos.setText("");
+                    gearPos.setText("None");
                 }
             }
         });

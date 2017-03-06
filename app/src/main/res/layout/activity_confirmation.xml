@@ -122,27 +122,7 @@
                     android:text=""
                     android:id="@+id/positionView" />
             </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight=".5"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Auto Position Gear"
-                    android:id="@+id/positionGear" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight=".5"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:id="@+id/positionViewGear" />
-            </TableRow>
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -185,6 +165,27 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
                     android:id="@+id/gearsDisplay" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Auto Position Gear"
+                    android:id="@+id/positionGear" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:id="@+id/positionViewGear" />
             </TableRow>
 
             <TableRow
