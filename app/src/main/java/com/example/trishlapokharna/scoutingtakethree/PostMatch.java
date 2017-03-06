@@ -55,6 +55,8 @@ public class PostMatch extends Fragment {
     static EditText totalPoints;
     static EditText rotors;
     static EditText rankingPoints;
+    String pos = "";
+
 
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 
@@ -84,6 +86,9 @@ public class PostMatch extends Fragment {
             }
         }
 
+        if (!Autonomous.gearPos.getText().toString().equals("None"))
+            pos = Autonomous.gearPos.getText().toString();
+
 
         submit = (Button) in.findViewById(R.id.submitButton);
         submit.setOnClickListener(new View.OnClickListener() {
@@ -108,14 +113,19 @@ public class PostMatch extends Fragment {
                 else if(Autonomous.far.isChecked() == false && Autonomous.mid.isChecked() == false && Autonomous.boil.isChecked() == false){
                     Toast.makeText(getActivity(), "Select Far Side, Middle Side, or Boiler Side >.<!", Toast.LENGTH_SHORT).show();
                 }
-                else if (numSpaces(Autonomous.gearPos.getText().toString()) != numSpaces(Autonomous.gearView.getText().toString())  ){
-                    Toast.makeText(getActivity(), "Auto Gear Position and Number of Gears Do Not Match :)!", Toast.LENGTH_SHORT).show();
 
-                }
+                else if (numSpaces(pos) != numSpaces(Autonomous.gearView.getText().toString())) {
+                        Toast.makeText(getActivity(), "Auto Gear Position and Number of Gears Do Not Match :)!", Toast.LENGTH_SHORT).show();
+
+                    }
 
 
-                else if (numSpaces(Teleop.gearsView.getText().toString()) != numSpaces(Teleop.gearPos2.getText().toString())  ){
+
+
+
+                else if ( (numSpaces(Teleop.gearsView.getText().toString()) != numSpaces(Teleop.gearPos2.getText().toString()) ) ){
                     Toast.makeText(getActivity(), "Teleop Gear Position and Number of Gears Do Not Match :)!", Toast.LENGTH_SHORT).show();
+
 
                 }
 

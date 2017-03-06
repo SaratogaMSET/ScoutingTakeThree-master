@@ -201,8 +201,6 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Scouter Name, " + Autonomous.scouterText.getText().toString() + "\n");
             writer.append("Cross Baseline, " + Autonomous.baselineButton.getText().toString() + "\n");
             writer.append("Starting Position, " + myRobo.getPosition().toString() + "\n");
-
-
             writer.append("Auto Gears, " + Autonomous.gearView.getText().toString() + "\n");
             writer.append("Auto Gear Pos, " + delSpaces(Autonomous.gearPos.getText().toString()) +  "\n");
 
