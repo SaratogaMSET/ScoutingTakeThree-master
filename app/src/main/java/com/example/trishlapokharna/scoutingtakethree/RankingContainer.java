@@ -1,5 +1,6 @@
 package com.example.trishlapokharna.scoutingtakethree;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -19,6 +20,63 @@ public class RankingContainer extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking_container);
+
+        switch (getIntent().getIntExtra("fragmentNumber",0)) {
+            case 1:
+                try {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, AllTeams.class.newInstance()).commit();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+                break;
+
+            case 2:
+                try {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, DisplayMatchList.class.newInstance()).commit();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+                break;
+
+            case 3:
+                try {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, AutoRanking.class.newInstance()).commit();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+                break;
+
+            case 4:
+                try {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, OverallRanking.class.newInstance()).commit();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+                break;
+
+            case 5:
+                try {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, DisplaySingleTeam.class.newInstance()).commit();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+                break;
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -70,36 +128,49 @@ public class RankingContainer extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Fragment fragment = null;
-        Class fragmentClass = null;
-
-        if (id == R.id.nav_allteams) {
-            fragmentClass = AllTeams.class;
-        } else if (id == R.id.nav_matches) {
-            fragmentClass = DisplayMatchList.class;
-        } else if (id == R.id.nav_rankingauto) {
-            fragmentClass = AutoRanking.class;
-        } else if (id == R.id.nav_rankingthigh) {
-            fragmentClass = TeleopHighRanking.class;
-        } else if (id == R.id.nav_rankingtlow) {
-            fragmentClass = TeleopLowRanking.class;
-        } else if (id == R.id.nav_rankingend) {
-            fragmentClass = EndRanking.class;
-        } else if (id == R.id.nav_rankingoverall) {
-            fragmentClass = OverallRanking.class;
-        }
-
-        try {
-            fragment = (Fragment) fragmentClass.newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
 
+        if (id == R.id.nav_allteams) {
+            try {
+                fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, AllTeams.class.newInstance()).commit();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        } else if (id == R.id.nav_matches) {
+            try {
+                fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, DisplayMatchList.class.newInstance()).commit();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        } else if (id == R.id.nav_rankingauto) {
+            try {
+                fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, AutoRanking.class.newInstance()).commit();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        } else if (id == R.id.nav_rankingthigh) {
+            Intent intent = new Intent(this, TeleopHighContainer.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_rankingtlow) {
 
+        } else if (id == R.id.nav_rankingend) {
+
+        } else if (id == R.id.nav_rankingoverall) {
+            try {
+                fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, OverallRanking.class.newInstance()).commit();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

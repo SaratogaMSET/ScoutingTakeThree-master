@@ -71,4 +71,5 @@
         <item>6711</item>
     </string-array>
     <string name="title_activity_ranking_container">RankingContainer</string>
+    <string name="title_activity_teleop_high_container">TeleopHighContainer</string>
 </resources>
