@@ -57,6 +57,7 @@ public class OverallRanking extends Fragment {
                 BufferedReader reader1 = new BufferedReader(new FileReader(f1));
                 String line;
 
+                int num = 1;
                 while ((line = reader1.readLine()) != null) {
 
                     TableRow tr = new TableRow(this.getActivity());
@@ -68,7 +69,7 @@ public class OverallRanking extends Fragment {
                     tv1.setPadding(0, 5, 0, 5);
                     tv1.setTextAppearance(getActivity(), android.R.style.TextAppearance_Medium);
 
-                    tv1.setText(line);
+                    tv1.setText(num + ". " + line);
                     String[] values = line.split(":");
                     final String string = values[0];
 
@@ -92,6 +93,7 @@ public class OverallRanking extends Fragment {
 
                     tr.addView(tv1);
                     tl1.addView(tr, layoutParams);
+                    num++;
                 }
             }
 
@@ -101,6 +103,7 @@ public class OverallRanking extends Fragment {
                 BufferedReader reader1 = new BufferedReader(new FileReader(f2));
                 String line;
 
+                int num = 1;
                 while ((line = reader1.readLine()) != null) {
 
                     TableRow tr = new TableRow(this.getActivity());
@@ -112,7 +115,7 @@ public class OverallRanking extends Fragment {
                     tv1.setPadding(0, 5, 0, 5);
                     tv1.setTextAppearance(getActivity(), android.R.style.TextAppearance_Medium);
 
-                    tv1.setText(line);
+                    tv1.setText(num + ". " + line);
                     String[] values = line.split(":");
                     final String string = values[0];
 
@@ -136,6 +139,7 @@ public class OverallRanking extends Fragment {
 
                     tr.addView(tv1);
                     tl2.addView(tr, layoutParams);
+                    num++;
                 }
             }
 
@@ -145,6 +149,7 @@ public class OverallRanking extends Fragment {
                 BufferedReader reader1 = new BufferedReader(new FileReader(f3));
                 String line;
 
+                int num = 1;
                 while ((line = reader1.readLine()) != null) {
 
                     TableRow tr = new TableRow(this.getActivity());
@@ -156,7 +161,7 @@ public class OverallRanking extends Fragment {
                     tv1.setPadding(0, 5, 0, 5);
                     tv1.setTextAppearance(getActivity(), android.R.style.TextAppearance_Medium);
 
-                    tv1.setText(line);
+                    tv1.setText(num + ". " + line);
                     String[] values = line.split(":");
                     final String string = values[0];
 
@@ -180,6 +185,7 @@ public class OverallRanking extends Fragment {
 
                     tr.addView(tv1);
                     tl3.addView(tr, layoutParams);
+                    num++;
                 }
             }
 
@@ -189,6 +195,7 @@ public class OverallRanking extends Fragment {
                 BufferedReader reader1 = new BufferedReader(new FileReader(f4));
                 String line;
 
+                int num = 1;
                 while ((line = reader1.readLine()) != null) {
 
                     TableRow tr = new TableRow(this.getActivity());
@@ -200,7 +207,7 @@ public class OverallRanking extends Fragment {
                     tv1.setPadding(0, 5, 0, 5);
                     tv1.setTextAppearance(getActivity(), android.R.style.TextAppearance_Medium);
 
-                    tv1.setText(line);
+                    tv1.setText(num + ". " + line);
                     String[] values = line.split(":");
                     final String string = values[0];
 
@@ -224,6 +231,7 @@ public class OverallRanking extends Fragment {
 
                     tr.addView(tv1);
                     tl4.addView(tr, layoutParams);
+                    num++;
                 }
             }
         } catch(IOException e){
