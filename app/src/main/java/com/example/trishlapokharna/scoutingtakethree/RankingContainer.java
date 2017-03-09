@@ -162,7 +162,8 @@ public class RankingContainer extends AppCompatActivity
             Intent intent = new Intent(this, TeleopLowContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingend) {
-
+            Intent intent = new Intent(this, EndContainer.class);
+            startActivity(intent);
         } else if (id == R.id.nav_rankingoverall) {
             try {
                 fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, OverallRanking.class.newInstance()).commit();

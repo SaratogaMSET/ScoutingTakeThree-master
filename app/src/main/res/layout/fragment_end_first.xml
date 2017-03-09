@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:context="com.example.trishlapokharna.scoutingtakethree.EndFirst">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="End Game Rankings"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:id="@+id/tablerowauto"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/textView2"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".33"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Teleop Gears Ratio"
+            android:id="@+id/tvtotalcycles" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".33"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Takeoff Ratio"
+            android:id="@+id/tvhighcycles" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".33"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Reached 40 kPa Ratio"
+            android:id="@+id/tvhightime" />
+
+    </TableRow>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tablerowauto"
+        android:id="@+id/scrollView2" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_weight=".33"
+                android:id="@+id/tl1"
+                android:layout_height="match_parent">
+
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_weight=".33"
+                android:id="@+id/tl2"
+                android:layout_height="match_parent"></TableLayout>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_weight=".33"
+                android:id="@+id/tl3"
+                android:layout_height="match_parent"></TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

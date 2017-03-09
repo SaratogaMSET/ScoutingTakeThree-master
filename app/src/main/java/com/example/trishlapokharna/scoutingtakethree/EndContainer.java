@@ -22,18 +22,18 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.astuetz.PagerSlidingTabStrip;
 
-public class TeleopLowContainer extends AppCompatActivity
+public class EndContainer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int NUM_PAGES = 2;
     public ViewPager mPager;
     public ScreenSlidePagerAdapter mPagerAdapter;
-    public String tabTitles[] = new String[]{"Teleop Low Cycles", "Teleop Low Shots"};
+    public String tabTitles[] = new String[]{"End Ratios", "End Averages"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teleop_low_container);
+        setContentView(R.layout.activity_end_container);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,7 +47,7 @@ public class TeleopLowContainer extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Instantiate a ViewPager and a PagerAdapter.
-        mPager = (ViewPager) findViewById(R.id.pagerteleoplow);
+        mPager = (ViewPager) findViewById(R.id.pagerend);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
 
@@ -139,7 +139,7 @@ public class TeleopLowContainer extends AppCompatActivity
             intent = new Intent(this, TeleopLowContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingend) {
-            intent = new Intent(this, EndContainer.class);
+            intent = new Intent(this,EndContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingoverall) {
             intent = new Intent(this,RankingContainer.class);
@@ -173,9 +173,9 @@ public class TeleopLowContainer extends AppCompatActivity
         @Override
         public Fragment getItem(int position) {
             if (position == 0) {
-                return new TeleopLowFirst();
+                return new EndFirst();
             } else {
-                return new TeleopLowSecond();
+                return new EndSecond();
             }
         }
 

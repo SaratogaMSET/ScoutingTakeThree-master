@@ -30,6 +30,10 @@
         <activity
             android:name=".TeleopLowContainer"
             android:label="@string/title_activity_teleop_low_container"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EndContainer"
+            android:label="@string/title_activity_end_container"
             android:theme="@style/AppTheme"></activity>
     </application>
 
