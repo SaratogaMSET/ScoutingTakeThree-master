@@ -22,18 +22,18 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.astuetz.PagerSlidingTabStrip;
 
-public class TeleopHighContainer extends AppCompatActivity
+public class TeleopLowContainer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int NUM_PAGES = 2;
     public ViewPager mPager;
     public ScreenSlidePagerAdapter mPagerAdapter;
-    public String tabTitles[] = new String[]{"Teleop High Cycles", "Teleop High Shots"};
+    public String tabTitles[] = new String[]{"Teleop Low Cycles", "Teleop Low Shots"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teleop_high_container);
+        setContentView(R.layout.activity_teleop_low_container);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,7 +47,7 @@ public class TeleopHighContainer extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Instantiate a ViewPager and a PagerAdapter.
-        mPager = (ViewPager) findViewById(R.id.pagerteleophigh);
+        mPager = (ViewPager) findViewById(R.id.pagerteleoplow);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
 
@@ -112,6 +112,7 @@ public class TeleopHighContainer extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -172,9 +173,9 @@ public class TeleopHighContainer extends AppCompatActivity
         @Override
         public Fragment getItem(int position) {
             if (position == 0) {
-                return new TeleopHighFirst();
+                return new TeleopLowFirst();
             } else {
-                return new TeleopHighSecond();
+                return new TeleopLowSecond();
             }
         }
 

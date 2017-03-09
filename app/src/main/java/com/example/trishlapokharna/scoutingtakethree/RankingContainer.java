@@ -159,7 +159,8 @@ public class RankingContainer extends AppCompatActivity
             Intent intent = new Intent(this, TeleopHighContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingtlow) {
-
+            Intent intent = new Intent(this, TeleopLowContainer.class);
+            startActivity(intent);
         } else if (id == R.id.nav_rankingend) {
 
         } else if (id == R.id.nav_rankingoverall) {

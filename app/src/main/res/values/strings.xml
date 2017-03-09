@@ -72,4 +72,5 @@
     </string-array>
     <string name="title_activity_ranking_container">RankingContainer</string>
     <string name="title_activity_teleop_high_container">TeleopHighContainer</string>
+    <string name="title_activity_teleop_low_container">TeleopLowContainer</string>
 </resources>
