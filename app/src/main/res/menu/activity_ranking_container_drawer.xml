@@ -34,6 +34,12 @@
             android:icon="@drawable/sum"
             android:title="Ranking: Overall" />
 
+        <item
+            android:id="@+id/nav_gohome"
+            android:icon="@drawable/sum"
+            android:title="Home Page" />
+
+
     </group>
 
 </menu>

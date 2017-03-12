@@ -172,6 +172,9 @@ public class RankingContainer extends AppCompatActivity
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
+        } else if (id == R.id.nav_gohome) {
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

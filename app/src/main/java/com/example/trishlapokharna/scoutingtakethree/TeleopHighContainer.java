@@ -143,6 +143,9 @@ public class TeleopHighContainer extends AppCompatActivity
         } else if (id == R.id.nav_rankingoverall) {
             intent = new Intent(this,RankingContainer.class);
             intent.putExtra("fragmentNumber", 4);
+        } else if (id == R.id.nav_gohome) {
+            intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
         }
 
         startActivity(intent);
