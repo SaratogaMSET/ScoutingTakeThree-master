@@ -11,6 +11,7 @@ public class RoboInfo {
     String notesT;
     String singleTeam;
     String matchNumber;
+    String defense;
     String endGameT = "N";
     String result = "Lose";
     String position;
@@ -80,5 +81,9 @@ public class RoboInfo {
     public String getMatchNumber() {
         return matchNumber;
     }
+
+
+    public String getDefense(){ return defense; };
+    public void setDefense(String str) { defense = str;}
 
 }

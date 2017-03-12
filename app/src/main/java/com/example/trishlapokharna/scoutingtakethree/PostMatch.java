@@ -151,7 +151,9 @@ public class PostMatch extends Fragment {
 
 
 
-
+                else if (Teleop.none.isChecked() == false && Teleop.weak.isChecked() == false && Teleop.pro.isChecked() == false && Teleop.excel.isChecked() == false){
+                    Toast.makeText(getActivity(), "Enter a defense -__-!", Toast.LENGTH_SHORT).show();
+                }
 
                 else if ( (numSpaces(Teleop.gearsView.getText().toString()) != numSpaces(Teleop.gearPos2.getText().toString()) ) ){
                     Toast.makeText(getActivity(), "Teleop Gear Position and Number of Gears Do Not Match :)!", Toast.LENGTH_SHORT).show();

@@ -39,6 +39,8 @@ public class Confirmation extends AppCompatActivity {
     TextView lowGoals;
 
 
+    TextView defense;
+    TextView defenseDisplay;
     TextView gears2;
     TextView gear2PosTele;
     TextView highGoals2;
@@ -87,7 +89,8 @@ public class Confirmation extends AppCompatActivity {
         highGoals = (TextView) findViewById(R.id.highGoalsDisplay);
         lowGoals = (TextView) findViewById(R.id.lowGoalDisplay);
 
-
+        defense = (TextView) findViewById(R.id.defense);
+        defenseDisplay = (TextView) findViewById (R.id.defenseDisplay);
         gears2 = (TextView) findViewById(R.id.gearsDisplay2);
         gear2PosTele = (TextView) findViewById(R.id.positionViewGearTele);
         highGoals2 = (TextView) findViewById(R.id.highGoalDisplay1);
@@ -122,6 +125,7 @@ public class Confirmation extends AppCompatActivity {
         highGoals.setText(Autonomous.highGoalView.getText().toString());
         lowGoals.setText(Autonomous.lowGoalView.getText().toString());
 
+        defenseDisplay.setText(myRobo.getDefense().toString());
         gears2.setText(Teleop.gearsView.getText().toString());
         gear2PosTele.setText(Teleop.gearPos2.getText().toString());
         highGoals2.setText(Teleop.highGoalsView.getText().toString());
@@ -212,6 +216,7 @@ public class Confirmation extends AppCompatActivity {
                 writer.append("Auto Low Goal, " + "\n");
             else
                 writer.append("Auto Low Goal, " + Autonomous.lowGoalView.getText().toString() + "\n");
+            writer.append("Defense, " + getTf(myRobo.getDefense().toString()) + "\n");
             writer.append("Teleop High Goal Shots Per Cycle, " + delSpaces(Teleop.highGoalsView.getText().toString()) + "\n");
             writer.append("Teleop High Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewH.getText().toString()) + "\n");
             writer.append("Teleop Low Goal Shots Per Cycle, " + delSpaces(Teleop.lowGoalView.getText().toString()) + "\n");
@@ -251,10 +256,14 @@ public class Confirmation extends AppCompatActivity {
 
     public String getTf(String str) {
         switch (str) {
-            case "Yes":
-                return "True";
-            case "No":
-                return "False";
+            case "None":
+                return "0";
+            case "Weak":
+                return "1";
+            case "Proficient":
+                return "2";
+            case "Excellent":
+                return "3";
             default:
                 return " ";
         }

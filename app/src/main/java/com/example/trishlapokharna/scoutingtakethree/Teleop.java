@@ -12,9 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,11 @@ import java.util.List;
  */
 public class Teleop extends Fragment {
     RoboInfo myRobo = RoboInfo.getInstance();
+
+    static ToggleButton none;
+    static ToggleButton weak;
+    static ToggleButton pro;
+    static ToggleButton excel;
 
     static TextView gearsView;
     ImageButton gearHelp;
@@ -53,6 +60,8 @@ public class Teleop extends Fragment {
     List<Integer> instance1 = new ArrayList<Integer>();
     List <String> addNum1 = new ArrayList <String> ();
     List <String> time1 = new ArrayList <String> ();
+
+
 
     Button interval1H;
     Button interval2H;
@@ -101,6 +110,15 @@ public class Teleop extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
 
         View in = inflater.inflate(R.layout.fragment_teleop, container, false); // FIX THIS -- adds Autonomous tab to input activity
+        none = (ToggleButton) in.findViewById(R.id.noneToggle);
+        weak = (ToggleButton) in.findViewById(R.id.weakToggle);
+        pro = (ToggleButton) in.findViewById(R.id.proToggle);
+        excel = (ToggleButton) in.findViewById(R.id.excelToggle);
+        none.setOnCheckedChangeListener(changeChecker);
+        weak.setOnCheckedChangeListener(changeChecker);
+        pro.setOnCheckedChangeListener(changeChecker);
+        excel.setOnCheckedChangeListener(changeChecker);
+
 
         gearsView = (TextView) in.findViewById(R.id.gearView);
         gearHelp = (ImageButton)in.findViewById(R.id.gearButtonImageButton);
@@ -905,12 +923,49 @@ public class Teleop extends Fragment {
                 }
             }
         });
-
         return in;
 
-
-
     }
+
+    CompoundButton.OnCheckedChangeListener changeChecker = new CompoundButton.OnCheckedChangeListener() {
+
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            if (isChecked) {
+                if (buttonView != none) {
+                    none.setChecked(false);
+                }
+                if (buttonView != weak) {
+                    weak.setChecked(false);
+                }
+                if (buttonView != pro) {
+                    pro.setChecked(false);
+                }
+
+                if (buttonView != excel) {
+                    excel.setChecked(false);
+                }
+
+
+                if (buttonView == none) {
+                    String str = "None";
+                    myRobo.setDefense(str);
+                }
+                else if (buttonView == weak) {
+                    String str = "Weak";
+                    myRobo.setDefense(str);
+                }
+                else if (buttonView == pro) {
+                    String str = "Proficient";
+                    myRobo.setDefense(str);
+                }
+
+                else if (buttonView == excel) {
+                    String str = "Excellent";
+                    myRobo.setDefense(str);
+                }
+            }
+        }
+    };
 
 }
 
