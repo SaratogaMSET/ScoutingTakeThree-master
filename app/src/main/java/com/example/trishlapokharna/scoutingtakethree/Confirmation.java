@@ -218,7 +218,7 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Teleop Low Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewL.getText().toString()) + "\n");
             writer.append("Teleop Gears, " + delSpaces(Teleop.gearPos2.getText().toString()) );
             writer.append("\n");
-            writer.append("Teleop Gears Position, " + Teleop.gearPos2.getText().toString() + "\n");
+            writer.append("Teleop Gears Position, " + delSpaces(Teleop.gearPos2.getText().toString() + "\n"));
             writer.append("Reached 40 kPa, " + (PostMatch.reach.getText().toString()) + "\n");
             writer.append("Total Pressure, " + (PostMatch.numPressure.getText().toString()) + "\n");
             writer.append("Rotors Turning, " + PostMatch.rotors.getText().toString() + "\n");
