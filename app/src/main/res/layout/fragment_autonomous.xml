@@ -207,11 +207,20 @@
             android:layout_below="@+id/baselineRow"
             android:id = "@+id/gearRow">
 
+            <ImageButton
+                android:id="@+id/gearButtonImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/question"
+                android:background="@null"/>
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight=".4"
                 android:layout_height="wrap_content"
-                android:text="Gears"
+                android:text="   Gears"
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:labelFor="@+id/gearView"/>
 
@@ -265,13 +274,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/positionGearViewRow"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:layout_below="@+id/gearButtonRow">
+
+            <ImageButton
+                android:id="@+id/gearPositionImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/question"
+                android:background="@null"/>
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight=".55"
                 android:layout_height="wrap_content"
-                android:text="Gear Position"
+                android:text="   Gear Position"
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:labelFor="@+id/gearCycleView"/>
 
@@ -337,11 +356,20 @@
             android:layout_below="@+id/positionButtonRow"
             android:id = "@+id/highGoalRow">
 
+            <ImageButton
+                android:id="@+id/highImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/question"
+                android:background="@null"/>
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight=".4"
                 android:layout_height="wrap_content"
-                android:text="High Goals"
+                android:text="   High Goals"
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:labelFor="@+id/highGoalView"/>
 
@@ -417,11 +445,20 @@
             android:layout_below="@+id/highGoalButtonRow"
             android:id = "@+id/lowGoalRow">
 
+            <ImageButton
+                android:id="@+id/lowImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/question"
+                android:background="@null"/>
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight=".4"
                 android:layout_height="wrap_content"
-                android:text="Low Goals"
+                android:text="   Low Goals"
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:labelFor="@+id/lowGoalView"/>
 

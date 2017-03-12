@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -34,6 +35,9 @@ public class PostMatch extends Fragment {
 
     boolean teamMatch = false;
 
+    ImageButton notesHelp;
+    ImageButton takeoffHelp;
+    ImageButton resultsHelp;
 
     RoboInfo myRobo = RoboInfo.getInstance();
 
@@ -63,6 +67,10 @@ public class PostMatch extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         View in = inflater.inflate(R.layout.fragment_post_match, container, false); // adds PostMatch tab to input activity
 
+        notesHelp = (ImageButton) in.findViewById(R.id.notesImageButton);
+        takeoffHelp = (ImageButton) in.findViewById(R.id.takeoffImageButton);
+        resultsHelp = (ImageButton) in.findViewById(R.id.resultsImageButton);
+
         notesText = (EditText) in.findViewById(R.id.notesEdit);
         reach = (ToggleButton) in.findViewById(R.id.reachToggle);
         numPressure = (EditText) in.findViewById(R.id.pressurerEdit);
@@ -78,6 +86,28 @@ public class PostMatch extends Fragment {
         win.setOnCheckedChangeListener(changeChecker);
         lose.setOnCheckedChangeListener(changeChecker);
         tie.setOnCheckedChangeListener(changeChecker);
+
+        notesHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Enter any additional information (For example: if the robot " +
+                        "died, if the robot is especially good at something, if the robot fell apart, etc).", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        takeoffHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Enter whether or not the robot climbed the rope successfully.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        resultsHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Enter official results for the team.", Toast.LENGTH_LONG).show();
+            }
+        });
 
         String[] teamArray = getResources().getStringArray(R.array.RobotNumbers);
         for (int i = 0; i < teamArray.length; i++){

@@ -12,7 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
@@ -22,6 +24,11 @@ import java.util.List;
 public class Autonomous extends Fragment{
 
     RoboInfo myRobo = RoboInfo.getInstance();
+
+    ImageButton gearHelp;
+    ImageButton gearPosHelp;
+    ImageButton highHelp;
+    ImageButton lowHelp;
 
     static EditText matchText;
     static EditText teamText;
@@ -68,6 +75,11 @@ public class Autonomous extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         View in = inflater.inflate(R.layout.fragment_autonomous, container, false); // adds Autonomous tab to input activity
 
+        gearHelp = (ImageButton)in.findViewById(R.id.gearButtonImageButton);
+        gearPosHelp = (ImageButton)in.findViewById(R.id.gearPositionImageButton);
+        highHelp = (ImageButton)in.findViewById(R.id.highImageButton);
+        lowHelp = (ImageButton)in.findViewById(R.id.lowImageButton);
+
         matchText = (EditText)in.findViewById(R.id.matchText);
         teamText = (EditText)in.findViewById(R.id.teamText);
         scouterText = (EditText)in.findViewById(R.id.scouterText);
@@ -108,6 +120,36 @@ public class Autonomous extends Fragment{
         lowGoalTenButton = (Button) in.findViewById(R.id.lowGoalTenButton);
         lowGoalTwentyButton = (Button) in.findViewById(R.id.lowGoalTwentyButton);
         lowGoalDelButton = (Button) in.findViewById(R.id.lowGoalDelButton);
+
+        gearHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Click '1' when the robot successfully installs a gear. " +
+                        "Click '0' when the robot unsuccessfully tries to install a gear. " +
+                        "Click 'Back' to delete the last input.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        gearPosHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Enter a position for each '1' or '0' entered above.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        highHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Enter the approximate number of balls (fuel) the robot scores.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        lowHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Enter the approximate number of balls (fuel) the robot scores.", Toast.LENGTH_LONG).show();
+            }
+        });
 
         matchText.addTextChangedListener(new TextWatcher() {
             @Override

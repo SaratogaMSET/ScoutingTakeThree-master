@@ -26,6 +26,10 @@ public class Teleop extends Fragment {
     RoboInfo myRobo = RoboInfo.getInstance();
 
     static TextView gearsView;
+    ImageButton gearHelp;
+    ImageButton gearPosHelp;
+
+    ImageButton timerHelp;
 
     Button one;
     Button zero;
@@ -99,6 +103,10 @@ public class Teleop extends Fragment {
         View in = inflater.inflate(R.layout.fragment_teleop, container, false); // FIX THIS -- adds Autonomous tab to input activity
 
         gearsView = (TextView) in.findViewById(R.id.gearView);
+        gearHelp = (ImageButton)in.findViewById(R.id.gearButtonImageButton);
+        gearPosHelp = (ImageButton)in.findViewById(R.id.gearPositionImageButton);
+
+        timerHelp = (ImageButton) in.findViewById(R.id.timerImageButton);
 
         one = (Button) in.findViewById(R.id.gearHitButton);
         zero = (Button) in.findViewById(R.id.gearMissButton);
@@ -155,6 +163,29 @@ public class Teleop extends Fragment {
         del2 = (Button) in.findViewById(R.id.DelButton);
         gearPos2 = (TextView) in.findViewById(R.id.gearCycleView);
 
+        gearHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Click '1' when the robot successfully installs a gear. " +
+                        "Click '0' when the robot unsuccessfully tries to install a gear. " +
+                        "Click 'Back' to delete the last input.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        gearPosHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Enter a position for each '1' or '0' entered above.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        timerHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Use timer for reference when entering cycle times.", Toast.LENGTH_LONG).show();
+            }
+        });
+
         highGoalHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -174,7 +205,7 @@ public class Teleop extends Fragment {
         highCycleHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Estimate the time taken for each shooting cycle. Feel free to" +
+                Toast.makeText(getActivity(), "Estimate the time taken for each shooting cycle. Enter a value each time 'Add 0' is used. Feel free to" +
                         " use timer below as reference.", Toast.LENGTH_LONG).show();
             }
         });
@@ -182,7 +213,7 @@ public class Teleop extends Fragment {
         lowCycleHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Estimate the time taken for each shooting cycle. Feel free to" +
+                Toast.makeText(getActivity(), "Estimate the time taken for each shooting cycle. Enter a value each time 'Add 0' is used. Feel free to" +
                         " use timer below as reference.", Toast.LENGTH_LONG).show();
             }
         });
