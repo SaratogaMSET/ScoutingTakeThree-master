@@ -206,7 +206,7 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Cross Baseline, " + Autonomous.baselineButton.getText().toString() + "\n");
             writer.append("Starting Position, " + myRobo.getPosition().toString() + "\n");
             writer.append("Auto Gears, " + Autonomous.gearView.getText().toString() + "\n");
-            writer.append("Auto Gears Pos, " + delSpaces(Autonomous.gearPos.getText().toString()) +  "\n");
+            writer.append("Auto Gears Positions, " + delSpaces(Autonomous.gearPos.getText().toString()) +  "\n");
 
             if (Autonomous.highGoalView.getText().toString().equals("0"))
                 writer.append("Auto High Goal, " + "\n");

@@ -37,6 +37,7 @@ public class Teleop extends Fragment {
     ImageButton gearPosHelp;
 
     ImageButton timerHelp;
+    ImageButton defenseHelp;
 
     Button one;
     Button zero;
@@ -125,6 +126,7 @@ public class Teleop extends Fragment {
         gearPosHelp = (ImageButton)in.findViewById(R.id.gearPositionImageButton);
 
         timerHelp = (ImageButton) in.findViewById(R.id.timerImageButton);
+        defenseHelp = (ImageButton) in.findViewById(R.id.defenseImageButton);
 
         one = (Button) in.findViewById(R.id.gearHitButton);
         zero = (Button) in.findViewById(R.id.gearMissButton);
@@ -180,6 +182,15 @@ public class Teleop extends Fragment {
         boil2 = (Button) in.findViewById(R.id.boilButton);
         del2 = (Button) in.findViewById(R.id.DelButton);
         gearPos2 = (TextView) in.findViewById(R.id.gearCycleView);
+
+        defenseHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Select the skill level of defense. Choose 'None' if the robot does not do defense," +
+                        " choose 'Weak' if the robot does not defend well, choose 'Proficient' if the robot defends decently, and " +
+                        "choose 'Excellent' if the robot defends extremely well.", Toast.LENGTH_LONG).show();
+            }
+        });
 
         gearHelp.setOnClickListener(new View.OnClickListener() {
             @Override

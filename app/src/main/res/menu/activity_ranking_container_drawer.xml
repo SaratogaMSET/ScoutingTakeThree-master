@@ -36,7 +36,7 @@
 
         <item
             android:id="@+id/nav_gohome"
-            android:icon="@drawable/sum"
+            android:icon="@drawable/house"
             android:title="Home Page" />
 
 

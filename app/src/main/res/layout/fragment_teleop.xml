@@ -45,15 +45,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/defenseLayout"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:layout_below="@+id/defense2Row"
             >
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_weight=".1"
-                android:layout_height="wrap_content"
-                tools:targetApi="ice_cream_sandwich" />
+
 
             <ToggleButton
                 android:layout_width="0dp"
@@ -65,11 +61,7 @@
                 android:textOn="None"
                 android:text="New ToggleButton"
                 android:id="@+id/noneToggle" />
-            <Space
-                android:layout_width="0dp"
-                android:layout_weight=".1"
-                android:layout_height="wrap_content"
-                tools:targetApi="ice_cream_sandwich" />
+
 
             <ToggleButton
                 android:layout_width="0dp"
@@ -81,11 +73,6 @@
                 android:textOn="Weak"
                 android:text="New ToggleButton"
                 android:id="@+id/weakToggle" />
-            <Space
-                android:layout_width="0dp"
-                android:layout_weight=".1"
-                android:layout_height="wrap_content"
-                tools:targetApi="ice_cream_sandwich" />
 
             <ToggleButton
             android:layout_width="0dp"
@@ -98,11 +85,7 @@
             android:text="New ToggleButton"
             android:id="@+id/proToggle" />
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_weight=".1"
-                android:layout_height="wrap_content"
-                tools:targetApi="ice_cream_sandwich" />
+
 
             <ToggleButton
                 android:layout_width="0dp"
@@ -115,11 +98,7 @@
                 android:text="New ToggleButton"
                 android:id="@+id/excelToggle" />
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_weight=".1"
-                android:layout_height="wrap_content"
-                tools:targetApi="ice_cream_sandwich" />
+
         </TableRow>
 
         <TableRow
