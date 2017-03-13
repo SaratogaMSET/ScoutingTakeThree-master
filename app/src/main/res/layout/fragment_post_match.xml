@@ -169,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:textOff="No Atempt"
+                android:textOff="No Attempt"
                 android:textOn="No Attempt"
                 android:text="New ToggleButton"
                 android:id="@+id/noTakeToggle" />
