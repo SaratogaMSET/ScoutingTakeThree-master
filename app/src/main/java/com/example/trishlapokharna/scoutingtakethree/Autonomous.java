@@ -68,8 +68,8 @@ public class Autonomous extends Fragment{
 
     int i;
     int j;
-    List<Integer> instanceHigh = new ArrayList<Integer>();
-    List<Integer> instanceLow = new ArrayList<Integer>();
+    static List<Integer> instanceHigh = new ArrayList<Integer>();
+    static List<Integer> instanceLow = new ArrayList<Integer>();
 
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
@@ -254,6 +254,8 @@ public class Autonomous extends Fragment{
                     i = instanceHigh.get(instanceHigh.size() - 1);
                     highGoalView.setText(String.valueOf(i));
                 }
+
+
 
                 if (instanceHigh.size() == 1){
                     instanceHigh.clear();
