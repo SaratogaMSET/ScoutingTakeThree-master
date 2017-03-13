@@ -257,7 +257,7 @@ public class Autonomous extends Fragment{
 
 
 
-                if (instanceHigh.size() == 1){
+                if (instanceHigh.size() <= 1){
                     instanceHigh.clear();
                     i = 0;
                     highGoalView.setText(String.valueOf(i));
@@ -307,7 +307,7 @@ public class Autonomous extends Fragment{
                     j = instanceLow.get(instanceLow.size() - 1);
                     lowGoalView.setText(String.valueOf(j));
                 }
-                if (instanceLow.size() == 1){
+                if (instanceLow.size() <= 1){
                     instanceLow.clear();
                     j = 0;
                     lowGoalView.setText(String.valueOf(j));
