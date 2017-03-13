@@ -33,6 +33,10 @@ public class PostMatch extends Fragment {
     static ToggleButton lose;
     static ToggleButton tie;
 
+    static ToggleButton tried;
+    static ToggleButton no;
+    static ToggleButton succeed;
+
     boolean teamMatch = false;
 
     ImageButton notesHelp;
@@ -53,7 +57,6 @@ public class PostMatch extends Fragment {
     static EditText notesText;
     static ToggleButton reach;
     static EditText numPressure;
-    static ToggleButton takeoff;
     static EditText totalPoints;
     static EditText rotors;
     static EditText rankingPoints;
@@ -72,7 +75,6 @@ public class PostMatch extends Fragment {
         notesText = (EditText) in.findViewById(R.id.notesEdit);
         reach = (ToggleButton) in.findViewById(R.id.reachToggle);
         numPressure = (EditText) in.findViewById(R.id.pressurerEdit);
-        takeoff = (ToggleButton) in.findViewById(R.id.takeoffToggle);
         rotors = (EditText) in.findViewById(R.id.editRotors);
         totalPoints = (EditText) in.findViewById(R.id.totalPointsEdit);
         rankingPoints = (EditText) in.findViewById(R.id.rankingPointsEdit);
@@ -84,6 +86,14 @@ public class PostMatch extends Fragment {
         win.setOnCheckedChangeListener(changeChecker);
         lose.setOnCheckedChangeListener(changeChecker);
         tie.setOnCheckedChangeListener(changeChecker);
+
+        tried = (ToggleButton) in.findViewById(R.id.tryTakeToggle);
+        no = (ToggleButton) in.findViewById(R.id.noTakeToggle);
+        succeed = (ToggleButton) in.findViewById(R.id.successTakeToggle);
+
+        tried.setOnCheckedChangeListener(changeChecker2);
+        no.setOnCheckedChangeListener(changeChecker2);
+        succeed.setOnCheckedChangeListener(changeChecker2);
 
         notesHelp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,8 +162,10 @@ public class PostMatch extends Fragment {
                     Toast.makeText(getActivity(), "Add Total Points! D:", Toast.LENGTH_SHORT).show();
                 } else if (PostMatch.rankingPoints.getText().toString().length() == 0){
                     Toast.makeText(getActivity(), "Add Ranking Points! B-)", Toast.LENGTH_SHORT).show();
-                } else if (PostMatch.rotors.getText().toString().length() == 0){
+                } else if (PostMatch.rotors.getText().toString().length() == 0) {
                     Toast.makeText(getActivity(), "Add Rotor #! :|", Toast.LENGTH_SHORT).show();
+                }else if(PostMatch.no.isChecked() == false && PostMatch.tried.isChecked() == false && PostMatch.succeed.isChecked() == false){
+                    Toast.makeText(getActivity(), "Select a button for takeoff! ~__~", Toast.LENGTH_SHORT).show();
                 } else if(PostMatch.win.isChecked() == false && PostMatch.lose.isChecked() == false && PostMatch.tie.isChecked() == false){
                     Toast.makeText(getActivity(), "Select win, lose, or tie! >:D", Toast.LENGTH_SHORT).show();
                 } else {
@@ -201,6 +213,30 @@ public class PostMatch extends Fragment {
                 } else if (buttonView == tie) {
                     String str = "Tie";
                     myRobo.setResult(str);
+                }
+            }
+        }
+    };
+
+    CompoundButton.OnCheckedChangeListener changeChecker2 = new CompoundButton.OnCheckedChangeListener() {
+
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            if (isChecked) {
+                if (buttonView != no) {
+                    no.setChecked(false);
+                } if (buttonView != tried) {
+                    tried.setChecked(false);
+                } if (buttonView != succeed) {
+                    succeed.setChecked(false);
+                } if (buttonView == no) {
+                    String str = "No Attempt";
+                    myRobo.setTakeoff(str);
+                } else if (buttonView == tried) {
+                    String str = "Failed Try";
+                    myRobo.setTakeoff(str);
+                } else if (buttonView == succeed) {
+                    String str = "Success";
+                    myRobo.setTakeoff(str);
                 }
             }
         }

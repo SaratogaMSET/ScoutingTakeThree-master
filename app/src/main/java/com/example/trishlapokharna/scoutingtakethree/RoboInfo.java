@@ -15,6 +15,7 @@ public class RoboInfo {
     String endGameT = "N";
     String result = "Lose";
     String position;
+    String takeoff;
 
     static final RoboInfo me = new RoboInfo();
 
@@ -82,8 +83,9 @@ public class RoboInfo {
         return matchNumber;
     }
 
-
     public String getDefense(){ return defense; };
     public void setDefense(String str) { defense = str;}
 
+    public void setTakeoff(String str) {takeoff = str; }
+    public String getTakeoff() {return takeoff;}
 }

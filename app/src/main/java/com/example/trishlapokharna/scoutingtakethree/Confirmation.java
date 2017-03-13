@@ -138,7 +138,7 @@ public class Confirmation extends AppCompatActivity {
         reachedPressure.setText(PostMatch.reach.getText().toString());
         numPressure.setText(PostMatch.numPressure.getText().toString());
         rotor.setText(PostMatch.rotors.getText().toString());
-        takeOff.setText(PostMatch.takeoff.getText().toString());
+        takeOff.setText(myRobo.getTakeoff().toString());
         totalPoints.setText(PostMatch.totalPoints.getText().toString());
         rankingPoints.setText(PostMatch.rankingPoints.getText().toString());
         result.setText(myRobo.getResult().toString());
@@ -226,7 +226,7 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Reached 40 kPa, " + (PostMatch.reach.getText().toString()) + "\n");
             writer.append("Total Pressure, " + (PostMatch.numPressure.getText().toString()) + "\n");
             writer.append("Rotors Turning, " + PostMatch.rotors.getText().toString() + "\n");
-            writer.append("Takeoff, " + getTf(PostMatch.takeoff.getText().toString()) + "\n");
+            writer.append("Takeoff, " + myRobo.getTakeoff().toString() + "\n");
             writer.append("Total Points, " + PostMatch.totalPoints.getText().toString() + "\n");
             writer.append("Ranking Points, "+ PostMatch.rankingPoints.getText().toString() + "\n");
             writer.append("Result, " + myRobo.getResult().toString() + "\n");
