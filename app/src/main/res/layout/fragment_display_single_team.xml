@@ -4,7 +4,6 @@
     android:layout_height="fill_parent"
     tools:context="com.example.trishlapokharna.scoutingtakethree.DisplaySingleTeam">
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,11 +13,23 @@
         android:layout_marginBottom="20dp"
         android:id="@+id/teamname" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/robopicture"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/teamname"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/scrollView"
-        android:layout_below="@id/teamname">
+        android:layout_below="@id/robopicture">
 
         <TableLayout
             android:layout_width="match_parent"

@@ -27,7 +27,7 @@
             android:layout_weight=".25"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Baseline Ratio"
+            android:text="Cross Baseline Ratio"
             android:id="@+id/tvbaseline" />
 
         <TextView

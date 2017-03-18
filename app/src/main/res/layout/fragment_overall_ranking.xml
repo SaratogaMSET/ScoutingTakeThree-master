@@ -26,7 +26,7 @@
             android:layout_weight=".25"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Baseline Ratio"
+            android:text="Avg. Alliance Total Points Per Game"
             android:id="@+id/tvbaseline" />
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_weight=".25"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Gears Ratio"
+            android:text="Avg. Robot Total Points Per Game"
             android:id="@+id/tvgears" />
 
         <TextView
@@ -42,7 +42,8 @@
             android:layout_weight=".25"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="High Goal Total"
+            android:text="Avg. RP Per Game"
+            android:paddingRight="7dp"
             android:id="@+id/tvhighgoal" />
 
         <TextView
@@ -50,7 +51,7 @@
             android:layout_weight=".25"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Low Goal Total"
+            android:text="Winning Ratio"
             android:id="@+id/tvlowgoal" />
     </TableRow>
 

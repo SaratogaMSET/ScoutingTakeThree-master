@@ -4,6 +4,7 @@ package com.example.trishlapokharna.scoutingtakethree;
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -43,6 +45,17 @@ public class DisplaySingleTeam extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         View in = inflater.inflate(R.layout.fragment_display_single_team, container, false);
+
+        ImageView robopic = (ImageView) in.findViewById(R.id.robopicture);
+
+        String pictureFile = "/sdcard/RobotPictures/" + myRobo.getSingleTeam() + ".jpg";
+        File file = new File(pictureFile);
+        if (!file.exists()) {
+            Toast.makeText(getActivity(), "Someone forgot to take a picture!", Toast.LENGTH_SHORT).show();
+            robopic.setImageBitmap(BitmapFactory.decodeFile("sdcard/RobotPictures/default.jpg"));
+        } else {
+            robopic.setImageBitmap(BitmapFactory.decodeFile(pictureFile));
+        }
 
         TableLayout tl = (TableLayout) in.findViewById(R.id.tablelayoutsingleteam);
         TextView name = (TextView) in.findViewById(R.id.teamname);
