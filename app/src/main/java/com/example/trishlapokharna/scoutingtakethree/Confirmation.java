@@ -232,7 +232,7 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Reached 40 kPa, " + (PostMatch.reach.getText().toString()) + "\n");
             writer.append("Total Pressure, " + (PostMatch.numPressure.getText().toString()) + "\n");
             writer.append("Rotors Turning, " + PostMatch.rotors.getText().toString() + "\n");
-            writer.append("Takeoff, " + myRobo.getTakeoff().toString() + "\n");
+            writer.append("Takeoff, " + getTakeoff(myRobo.getTakeoff().toString()) + "\n");
             writer.append("Total Points, " + PostMatch.totalPoints.getText().toString() + "\n");
             writer.append("Ranking Points, "+ PostMatch.rankingPoints.getText().toString() + "\n");
             writer.append("Result, " + myRobo.getResult().toString() + "\n");
@@ -270,6 +270,21 @@ public class Confirmation extends AppCompatActivity {
                 return "2";
             case "Excellent":
                 return "3";
+            default:
+                return " ";
+        }
+
+    }
+
+
+    public String getTakeoff(String str) {
+        switch (str) {
+            case "No Attempt":
+                return "0";
+            case "Failed Try":
+                return "1";
+            case "Success":
+                return "2";
             default:
                 return " ";
         }
