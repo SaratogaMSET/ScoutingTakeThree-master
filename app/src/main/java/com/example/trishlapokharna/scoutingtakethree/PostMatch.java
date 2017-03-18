@@ -33,7 +33,6 @@ public class PostMatch extends Fragment {
     static ToggleButton lose;
     static ToggleButton tie;
 
-    static ToggleButton tried;
     static ToggleButton no;
     static ToggleButton succeed;
 
@@ -87,11 +86,9 @@ public class PostMatch extends Fragment {
         lose.setOnCheckedChangeListener(changeChecker);
         tie.setOnCheckedChangeListener(changeChecker);
 
-        tried = (ToggleButton) in.findViewById(R.id.tryTakeToggle);
         no = (ToggleButton) in.findViewById(R.id.noTakeToggle);
         succeed = (ToggleButton) in.findViewById(R.id.successTakeToggle);
 
-        tried.setOnCheckedChangeListener(changeChecker2);
         no.setOnCheckedChangeListener(changeChecker2);
         succeed.setOnCheckedChangeListener(changeChecker2);
 
@@ -164,8 +161,8 @@ public class PostMatch extends Fragment {
                     Toast.makeText(getActivity(), "Add Ranking Points! B-)", Toast.LENGTH_SHORT).show();
                 } else if (PostMatch.rotors.getText().toString().length() == 0) {
                     Toast.makeText(getActivity(), "Add Rotor #! :|", Toast.LENGTH_SHORT).show();
-                }else if(PostMatch.no.isChecked() == false && PostMatch.tried.isChecked() == false && PostMatch.succeed.isChecked() == false){
-                    Toast.makeText(getActivity(), "Select a button for takeoff! ~__~", Toast.LENGTH_SHORT).show();
+                } else if(PostMatch.no.isChecked() == false && PostMatch.succeed.isChecked() == false && PostMatch.tie.isChecked() == false){
+                    Toast.makeText(getActivity(), "Select a takeoff option! $_$", Toast.LENGTH_SHORT).show();
                 } else if(PostMatch.win.isChecked() == false && PostMatch.lose.isChecked() == false && PostMatch.tie.isChecked() == false){
                     Toast.makeText(getActivity(), "Select win, lose, or tie! >:D", Toast.LENGTH_SHORT).show();
                 } else {
@@ -224,15 +221,10 @@ public class PostMatch extends Fragment {
             if (isChecked) {
                 if (buttonView != no) {
                     no.setChecked(false);
-                } if (buttonView != tried) {
-                    tried.setChecked(false);
                 } if (buttonView != succeed) {
                     succeed.setChecked(false);
                 } if (buttonView == no) {
                     String str = "No Attempt";
-                    myRobo.setTakeoff(str);
-                } else if (buttonView == tried) {
-                    String str = "Failed Try";
                     myRobo.setTakeoff(str);
                 } else if (buttonView == succeed) {
                     String str = "Success";

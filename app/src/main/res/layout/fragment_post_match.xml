@@ -185,22 +185,6 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:textOff="Failed Try"
-                android:textOn="Failed Try"
-                android:text="New ToggleButton"
-                android:id="@+id/tryTakeToggle" />
-            <Space
-                android:layout_width="0dp"
-                android:layout_weight=".1"
-                android:layout_height="wrap_content"
-                tools:targetApi="ice_cream_sandwich" />
-
-            <ToggleButton
-                android:layout_width="0dp"
-                android:layout_weight=".2"
-                android:layout_height="wrap_content"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
                 android:textOff="Success"
                 android:textOn="Success"
                 android:text="New ToggleButton"

@@ -227,7 +227,10 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Teleop High Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewH.getText().toString()) + "\n");
             writer.append("Teleop Low Goal Shots Per Cycle, " + delSpaces(Teleop.lowGoalView.getText().toString()) + "\n");
             writer.append("Teleop Low Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewL.getText().toString()) + "\n");
-            writer.append("Teleop Gears, " + delSpaces(Teleop.gearsView.getText().toString()) + "\n" );
+            if (Teleop.gearsView.getText().toString().equals(0))
+                writer.append("Teleop Gears, " +  "\n" );
+            else
+                writer.append("Teleop Gears, " + delSpaces(Teleop.gearsView.getText().toString()) + "\n" );
             writer.append("Teleop Gears Positions, " + delSpaces(Teleop.gearPos2.getText().toString()) + "\n");
             writer.append("Reached 40 kPa, " + (PostMatch.reach.getText().toString()) + "\n");
             writer.append("Total Pressure, " + (PostMatch.numPressure.getText().toString()) + "\n");
@@ -255,8 +258,6 @@ public class Confirmation extends AppCompatActivity {
             e.printStackTrace();
             Log.d("file error", "" + e.getMessage());
         }
-
-
     }
 
 
@@ -276,20 +277,18 @@ public class Confirmation extends AppCompatActivity {
 
     }
 
-
     public String getTakeoff(String str) {
         switch (str) {
             case "No Attempt":
-                return "0";
-            case "Failed Try":
-                return "1";
+                return "No";
             case "Success":
-                return "2";
+                return "Yes";
             default:
                 return " ";
         }
 
     }
+
 
     public static String delSpaces(String str){    //custom method to remove multiple space
         StringBuilder sb=new StringBuilder();
