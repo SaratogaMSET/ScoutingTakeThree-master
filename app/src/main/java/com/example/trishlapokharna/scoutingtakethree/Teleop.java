@@ -2,7 +2,6 @@ package com.example.trishlapokharna.scoutingtakethree;
 
 
 import android.annotation.TargetApi;
-import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -250,38 +249,30 @@ public class Teleop extends Fragment {
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gearsView.append("1 ");
+                gearsView.append("1             ");
             }
         });
-
         zero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gearsView.append("0 ");
+                gearsView.append("0             ");
             }
         });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (gearsView.getText().length() > 0) {
-                    gearsView.setText(gearsView.getText().subSequence(0, gearsView.getText().length() - 2));
-                }
+                if (gearsView.getText().length() >= 14) {
+                    gearsView.setText(gearsView.getText().subSequence(0, gearsView.getText().length() - 14));
+                } else
+                    gearsView.setText("");
             }
         });
 
 
-        //my button clic
-
-//instnace1
-    //instance1.add(0);
-       instance1.add(0);
-
-
+        instance1.add(0);
         none1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-
                 instance1.clear();
                 instance1.add(0);
                 if (addNum1.size()>=1)
@@ -336,7 +327,7 @@ public class Teleop extends Fragment {
                         display += s + "         ";
                     if (s.length() == 3)
                         display += s + "        ";
-                    if (s.length()> 4)
+                    if (s.length()>= 4)
                         display += s + "       ";
                 }
                 highGoalsView.setText(display);
@@ -365,7 +356,7 @@ public class Teleop extends Fragment {
                         display += s + "         ";
                     if (s.length() == 3)
                         display += s + "        ";
-                    if (s.length()> 4)
+                    if (s.length()>= 4)
                         display += s + "       ";
                 }
                 highGoalsView.setText(display);
@@ -391,7 +382,7 @@ public class Teleop extends Fragment {
                         display += s + "         ";
                     if (s.length() == 3)
                         display += s + "        ";
-                    if (s.length()> 4)
+                    if (s.length()>=4)
                         display += s + "       ";
                 }
                 highGoalsView.setText(display);
@@ -422,7 +413,7 @@ public class Teleop extends Fragment {
                         display += s + "         ";
                     if (s.length() == 3)
                         display += s + "        ";
-                    if (s.length()> 4)
+                    if (s.length()>=4)
                         display += s + "       ";
                 }
 
@@ -450,7 +441,7 @@ public class Teleop extends Fragment {
                             display += s + "         ";
                         if (s.length() == 3)
                             display += s + "        ";
-                        if (s.length()> 4)
+                        if (s.length()>= 4)
                             display += s + "       ";
                     }
                     highGoalsView.setText(display);
@@ -476,7 +467,7 @@ public class Teleop extends Fragment {
                             display += s + "         ";
                         if (s.length() == 3)
                             display += s + "        ";
-                        if (s.length() > 4)
+                        if (s.length() >=4)
                             display += s + "       ";
                     }
 
@@ -580,8 +571,8 @@ public class Teleop extends Fragment {
             public void onClick(View v) {
 
 
-                    instance2.clear();
-                    instance2.add(0);
+                instance2.clear();
+                instance2.add(0);
                 if (addNum2.size()>=1)
                     addNum2.remove((addNum2.size() - 1));
 
@@ -589,24 +580,24 @@ public class Teleop extends Fragment {
                     if (addNum2.get(addNum2.size()-1) == "0")
                         j = 0;
                     else
-                    j = Integer.parseInt(addNum2.get(addNum2.size()-1));
+                        j = Integer.parseInt(addNum2.get(addNum2.size()-1));
 
 
                 }
 
-                    for (String s : addNum2) {
-                        if (s.length() == 1)
-                            display2 += s + "           ";
-                        if (s.length() == 2)
-                            display2 += s + "         ";
-                        if (s.length() == 3)
-                            display2 += s + "        ";
-                        if (s.length() > 4)
-                            display2 += s + "       ";
-                    }
+                for (String s : addNum2) {
+                    if (s.length() == 1)
+                        display2 += s + "           ";
+                    if (s.length() == 2)
+                        display2 += s + "         ";
+                    if (s.length() == 3)
+                        display2 += s + "        ";
+                    if (s.length() >= 4)
+                        display2 += s + "       ";
+                }
 
-                    lowGoalView.setText(display2);
-                    display2 = " ";
+                lowGoalView.setText(display2);
+                display2 = " ";
 
 
 
@@ -633,7 +624,7 @@ public class Teleop extends Fragment {
                         display2 += s + "         ";
                     if (s.length() == 3)
                         display2 += s + "        ";
-                    if (s.length()> 4)
+                    if (s.length()>= 4)
                         display2 += s + "       ";
                 }
                 lowGoalView.setText(display2);
@@ -663,7 +654,7 @@ public class Teleop extends Fragment {
                         display2 += s + "         ";
                     if (s.length() == 3)
                         display2 += s + "        ";
-                    if (s.length()> 4)
+                    if (s.length()>= 4)
                         display2 += s + "       ";
                 }
                 lowGoalView.setText(display2);
@@ -689,7 +680,7 @@ public class Teleop extends Fragment {
                         display2 += s + "         ";
                     if (s.length() == 3)
                         display2 += s + "        ";
-                    if (s.length()> 4)
+                    if (s.length()>= 4)
                         display2 += s + "       ";
                 }
                 lowGoalView.setText(display2);
@@ -720,7 +711,7 @@ public class Teleop extends Fragment {
                         display2 += s + "         ";
                     if (s.length() == 3)
                         display2 += s + "        ";
-                    if (s.length()> 4)
+                    if (s.length()>= 4)
                         display2 += s + "       ";
                 }
 
@@ -748,7 +739,7 @@ public class Teleop extends Fragment {
                             display2 += s + "         ";
                         if (s.length() == 3)
                             display2 += s + "        ";
-                        if (s.length()> 4)
+                        if (s.length()>= 4)
                             display2 += s + "       ";
                     }
                     lowGoalView.setText(display2);
@@ -773,7 +764,7 @@ public class Teleop extends Fragment {
                             display2 += s + "         ";
                         if (s.length() == 3)
                             display2 += s + "        ";
-                        if (s.length() > 4)
+                        if (s.length() >= 4)
                             display2 += s + "       ";
                     }
 
@@ -858,7 +849,7 @@ public class Teleop extends Fragment {
                 }
                 if (time2.size()==0) {
                     intervalViewL.setText("");
-            }
+                }
             }
         });
 
@@ -979,5 +970,3 @@ public class Teleop extends Fragment {
     };
 
 }
-
-

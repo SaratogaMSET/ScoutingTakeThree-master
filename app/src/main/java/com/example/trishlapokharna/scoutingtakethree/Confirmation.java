@@ -192,7 +192,7 @@ public class Confirmation extends AppCompatActivity {
             if (!root.exists()) {
                 root.mkdirs(); // this will create folder.
             }
-            String text = "b1.txt";
+            String text = "r2.txt";
             File filepath = new File(root, text);  // file path to save
             FileWriter writer = new FileWriter(filepath, true);
 
@@ -206,16 +206,22 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Cross Baseline, " + Autonomous.baselineButton.getText().toString() + "\n");
             writer.append("Starting Position, " + myRobo.getPosition().toString() + "\n");
             writer.append("Auto Gears, " + Autonomous.gearView.getText().toString() + "\n");
-            writer.append("Auto Gears Positions, " + delSpaces(Autonomous.gearPos.getText().toString()) +  "\n");
+
+            if (Autonomous.gearPos.getText().toString().equals("None"))
+                writer.append("Auto Gears Positions, "  +  "\n");
+            else
+                writer.append("Auto Gears Positions, " + delSpaces(Autonomous.gearPos.getText().toString()) +  "\n");
 
             if (Autonomous.highGoalView.getText().toString().equals("0"))
                 writer.append("Auto High Goal, " + "\n");
             else
                 writer.append("Auto High Goal, " + Autonomous.highGoalView.getText().toString() + "\n");
+
             if (Autonomous.lowGoalView.getText().toString().equals("0"))
                 writer.append("Auto Low Goal, " + "\n");
             else
                 writer.append("Auto Low Goal, " + Autonomous.lowGoalView.getText().toString() + "\n");
+
             writer.append("Defense, " + getTf(myRobo.getDefense().toString()) + "\n");
             writer.append("Teleop High Goal Shots Per Cycle, " + delSpaces(Teleop.highGoalsView.getText().toString()) + "\n");
             writer.append("Teleop High Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewH.getText().toString()) + "\n");

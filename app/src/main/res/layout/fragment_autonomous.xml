@@ -220,17 +220,23 @@
                 android:layout_width="0dp"
                 android:layout_weight=".4"
                 android:layout_height="wrap_content"
-                android:text="   Gears"
+                android:text="   Gears        "
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:labelFor="@+id/gearView"/>
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight=".6"
+                android:layout_weight=".55"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/gearView"
                 android:freezesText="true"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight=".1"
+                android:layout_height="wrap_content"
+                tools:targetApi="ice_cream_sandwich" />
 
         </TableRow>
 
@@ -302,6 +308,11 @@
                 android:id="@+id/gearCycleView"
                 android:text="None"
                 android:freezesText="true"/>
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight=".1"
+                android:layout_height="wrap_content"
+                tools:targetApi="ice_cream_sandwich" />
 
         </TableRow>
 

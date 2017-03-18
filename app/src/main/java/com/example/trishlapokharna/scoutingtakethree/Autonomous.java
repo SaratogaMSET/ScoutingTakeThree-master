@@ -192,23 +192,27 @@ public class Autonomous extends Fragment{
         gearHitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gearView.append("1 ");
+                gearView.append("1             ");
             }
         });
 
         gearMissButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gearView.append("0 ");
+                gearView.append("0             ");
             }
         });
 
         gearBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (gearView.getText().length() > 0) {
-                    gearView.setText(gearView.getText().subSequence(0, gearView.getText().length() - 2));
+                if (gearView.getText().length() >= 14) {
+                    gearView.setText(gearView.getText().subSequence(0, gearView.getText().length() - 14));
                 }
+                else
+                    gearView.setText("");
+
+
             }
         });
 
@@ -249,19 +253,24 @@ public class Autonomous extends Fragment{
             @Override
             public void onClick(View v)
             {
-                if (instanceHigh.size() > 1 ) {
+                if (instanceHigh.size() >=1 ) {
                     instanceHigh.remove(instanceHigh.size() - 1);
-                    i = instanceHigh.get(instanceHigh.size() - 1);
+                    if (instanceHigh.size() == 0)
+                        i = 0;
+                    else
+                        i = instanceHigh.get(instanceHigh.size() - 1);
                     highGoalView.setText(String.valueOf(i));
                 }
 
 
 
-                if (instanceHigh.size() <= 1){
+                if (instanceHigh.size() == 0 ){
                     instanceHigh.clear();
                     i = 0;
                     highGoalView.setText(String.valueOf(i));
                 }
+
+
             }
         });
 
@@ -302,12 +311,17 @@ public class Autonomous extends Fragment{
             @Override
             public void onClick(View v)
             {
-                if (instanceLow.size()> 1) {
+                if (instanceLow.size()>= 1) {
                     instanceLow.remove(instanceLow.size() - 1);
-                    j = instanceLow.get(instanceLow.size() - 1);
+                    if (instanceLow.size() == 0)
+                        j = 0;
+                    else
+                        j = instanceLow.get(instanceLow.size() - 1);
+
                     lowGoalView.setText(String.valueOf(j));
+
                 }
-                if (instanceLow.size() <= 1){
+                if (instanceLow.size() == 0){
                     instanceLow.clear();
                     j = 0;
                     lowGoalView.setText(String.valueOf(j));
