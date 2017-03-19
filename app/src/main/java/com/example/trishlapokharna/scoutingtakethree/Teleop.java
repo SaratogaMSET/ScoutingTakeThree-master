@@ -300,11 +300,6 @@ public class Teleop extends Fragment {
 
                 highGoalsView.setText(display);
                 display = " ";
-
-
-
-
-
             }
         });
 
@@ -432,7 +427,6 @@ public class Teleop extends Fragment {
                     i = instance1.get(instance1.size() - 1);
                     addNum1.remove(addNum1.size() - 1);
                     addNum1.add(String.valueOf(i));
-
 
                     for (String s : addNum1) {
                         if (s.length() == 1)
@@ -598,11 +592,6 @@ public class Teleop extends Fragment {
 
                 lowGoalView.setText(display2);
                 display2 = " ";
-
-
-
-
-
             }
         });
 
@@ -925,6 +914,25 @@ public class Teleop extends Fragment {
                 }
             }
         });
+
+        if (none.isChecked()) {
+            String str = "None";
+            myRobo.setDefense(str);
+        }
+        else if (weak.isChecked()) {
+            String str = "Weak";
+            myRobo.setDefense(str);
+        }
+        else if (pro.isChecked()) {
+            String str = "Proficient";
+            myRobo.setDefense(str);
+        }
+
+        else if (excel.isChecked()) {
+            String str = "Excellent";
+            myRobo.setDefense(str);
+        }
+
         return in;
 
     }
@@ -945,25 +953,6 @@ public class Teleop extends Fragment {
 
                 if (buttonView != excel) {
                     excel.setChecked(false);
-                }
-
-
-                if (buttonView == none) {
-                    String str = "None";
-                    myRobo.setDefense(str);
-                }
-                else if (buttonView == weak) {
-                    String str = "Weak";
-                    myRobo.setDefense(str);
-                }
-                else if (buttonView == pro) {
-                    String str = "Proficient";
-                    myRobo.setDefense(str);
-                }
-
-                else if (buttonView == excel) {
-                    String str = "Excellent";
-                    myRobo.setDefense(str);
                 }
             }
         }

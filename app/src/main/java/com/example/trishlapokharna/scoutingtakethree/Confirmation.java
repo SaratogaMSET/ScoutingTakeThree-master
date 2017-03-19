@@ -192,7 +192,7 @@ public class Confirmation extends AppCompatActivity {
             if (!root.exists()) {
                 root.mkdirs(); // this will create folder.
             }
-            String text = "r2.txt";
+            String text = "b2.txt";
             File filepath = new File(root, text);  // file path to save
             FileWriter writer = new FileWriter(filepath, true);
 

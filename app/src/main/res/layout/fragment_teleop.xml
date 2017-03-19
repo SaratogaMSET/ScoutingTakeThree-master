@@ -60,7 +60,8 @@
                 android:textOff="None"
                 android:textOn="None"
                 android:text="New ToggleButton"
-                android:id="@+id/noneToggle" />
+                android:id="@+id/noneToggle"
+                android:checked="true"/>
 
 
             <ToggleButton

@@ -129,8 +129,41 @@ public class PostMatch extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+            if (Autonomous.noShow.isChecked()){
+                if (Autonomous.matchText.getText().toString().length() == 0) {
+                    Toast.makeText(getActivity(), "Add Match Number! :/", Toast.LENGTH_SHORT).show();
+                } else if (Autonomous.teamText.getText().toString().length() ==0){
+                    Toast.makeText(getActivity(), "Add Team Number! :(", Toast.LENGTH_SHORT).show();
+                } else if (teamMatch == false) {
+                    Toast.makeText(getActivity(), "Team Is Not In This Tournament! ¯\\_(ツ)_/¯", Toast.LENGTH_SHORT).show();
+                } else if ( Autonomous.scouterText.getText().toString().length() == 0) {
+                    Toast.makeText(getActivity(), "Add Scouter Name! :o", Toast.LENGTH_SHORT).show();
+                } else if(Autonomous.noShow.isChecked() == false && Autonomous.far.isChecked() == false && Autonomous.mid.isChecked() == false && Autonomous.boil.isChecked() == false){
+                    Toast.makeText(getActivity(), "Select No Show, Far Side, Middle Side, or Boiler Side! >.<", Toast.LENGTH_SHORT).show();
+                } else if (Autonomous.baselineButton.isChecked() || Autonomous.gearView.getText().length() > 0 || Autonomous.gearPos.getText().equals("None") == false || Autonomous.highGoalView.getText().equals("0") == false || Autonomous.lowGoalView.getText().equals("0") == false) {
+                    Toast.makeText(getActivity(), "You indicated action (in Autonomous) from a no show robot!? ಠ_ಠ", Toast.LENGTH_SHORT).show();
+                } else if (Teleop.none.isChecked() == false || Teleop.gearsView.getText().length() > 0 || Teleop.gearPos2.getText().length() > 0) {
+                    Toast.makeText(getActivity(), "You indicated action (in Teleop: defense or gears) from a no show robot!? (ಥ﹏ಥ)", Toast.LENGTH_SHORT).show();
+                } else if ((Teleop.highGoalsView.getText().length() > 0 && Teleop.highGoalsView.getText().equals(" ") == false)|| Teleop.intervalViewH.getText().length() > 0 || (Teleop.lowGoalView.getText().length() > 0 && Teleop.lowGoalView.getText().equals(" ") == false)|| Teleop.intervalViewL.getText().length() > 0) {
+                    Toast.makeText(getActivity(), "You indicated action (in Teleop: goals) from a no show robot!? (>ლ)", Toast.LENGTH_SHORT).show();
+                } else if (PostMatch.no.isChecked() == false) {
+                    Toast.makeText(getActivity(), "You indicated action (takeoff) from a no show robot!? (ง'̀-'́)ง", Toast.LENGTH_SHORT).show();
+                } else if (PostMatch.numPressure.getText().toString().length() == 0){
+                    Toast.makeText(getActivity(), "Add kPa! ^^", Toast.LENGTH_SHORT).show();
+                } else if (PostMatch.rotors.getText().toString().length() == 0) {
+                    Toast.makeText(getActivity(), "Add Rotor #! :|", Toast.LENGTH_SHORT).show();
+                } else if(PostMatch.win.isChecked() == false && PostMatch.lose.isChecked() == false && PostMatch.tie.isChecked() == false){
+                    Toast.makeText(getActivity(), "Select win, lose, or tie! >:D", Toast.LENGTH_SHORT).show();
+                } else if (PostMatch.totalPoints.getText().toString().length() == 0) {
+                    Toast.makeText(getActivity(), "Add Total Points! D:", Toast.LENGTH_SHORT).show();
+                } else if (PostMatch.rankingPoints.getText().toString().length() == 0){
+                    Toast.makeText(getActivity(), "Add Ranking Points! B-)", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent toConfirmation = new Intent(getActivity(), Confirmation.class);
+                    startActivity(toConfirmation);
+                }
+            }
+            else{
                 if (Autonomous.teamText.getText().toString().length() ==0){
                     Toast.makeText(getActivity(), "Add Team Number! :(", Toast.LENGTH_SHORT).show();
                 } else if (Autonomous.matchText.getText().toString().length() == 0) {
@@ -139,36 +172,31 @@ public class PostMatch extends Fragment {
                     Toast.makeText(getActivity(), "Team Is Not In This Tournament! ¯\\_(ツ)_/¯", Toast.LENGTH_SHORT).show();
                 } else if ( Autonomous.scouterText.getText().toString().length() == 0) {
                     Toast.makeText(getActivity(), "Add Scouter Name! :o", Toast.LENGTH_SHORT).show();
-                } else if(Autonomous.far.isChecked() == false && Autonomous.mid.isChecked() == false && Autonomous.boil.isChecked() == false){
-                    Toast.makeText(getActivity(), "Select Far Side, Middle Side, or Boiler Side! >.<", Toast.LENGTH_SHORT).show();
+                } else if(Autonomous.noShow.isChecked() == false && Autonomous.far.isChecked() == false && Autonomous.mid.isChecked() == false && Autonomous.boil.isChecked() == false){
+                    Toast.makeText(getActivity(), "Select No Show, Far Side, Middle Side, or Boiler Side! >.<", Toast.LENGTH_SHORT).show();
                 } else if (numSpaces(pos) != numSpaces(Autonomous.gearView.getText().toString())) {
                     Toast.makeText(getActivity(), "Auto Gear Position and Number of Gears Do Not Match! :)", Toast.LENGTH_SHORT).show();
-                }
-                else if (Teleop.none.isChecked() == false && Teleop.weak.isChecked() == false && Teleop.pro.isChecked() == false && Teleop.excel.isChecked() == false){
-                    Toast.makeText(getActivity(), "Enter a defense -__-!", Toast.LENGTH_SHORT).show();
-                }
-                else if ( (numSpaces(Teleop.gearsView.getText().toString()) != numSpaces(Teleop.gearPos2.getText().toString()) ) ){
+                } else if ((numSpaces(Teleop.gearsView.getText().toString()) != numSpaces(Teleop.gearPos2.getText().toString()))) {
                     Toast.makeText(getActivity(), "Teleop Gear Position and Number of Gears Do Not Match! :)", Toast.LENGTH_SHORT).show();
-                } else if (numSpaces(Teleop.highGoalsView.getText().toString()) != numSpaces(Teleop.intervalViewH.getText().toString())  ){
+                } else if (numSpaces(Teleop.highGoalsView.getText().toString()) != numSpaces(Teleop.intervalViewH.getText().toString())) {
                     Toast.makeText(getActivity(), "Cycle Time and Number of High Goals Do Not Match! :)", Toast.LENGTH_SHORT).show();
-                } else if (numSpaces(Teleop.lowGoalView.getText().toString()) != numSpaces(Teleop.intervalViewL.getText().toString())  ){
+                } else if (numSpaces(Teleop.lowGoalView.getText().toString()) != numSpaces(Teleop.intervalViewL.getText().toString())) {
                     Toast.makeText(getActivity(), "Cycle Time and Number of Low Goals Do Not Match! :P", Toast.LENGTH_SHORT).show();
                 } else if (PostMatch.numPressure.getText().toString().length() == 0){
                     Toast.makeText(getActivity(), "Add kPa! ^^", Toast.LENGTH_SHORT).show();
+                } else if (PostMatch.rotors.getText().toString().length() == 0) {
+                    Toast.makeText(getActivity(), "Add Rotor #! :|", Toast.LENGTH_SHORT).show();
+                } else if(PostMatch.win.isChecked() == false && PostMatch.lose.isChecked() == false && PostMatch.tie.isChecked() == false){
+                    Toast.makeText(getActivity(), "Select win, lose, or tie! >:D", Toast.LENGTH_SHORT).show();
                 } else if (PostMatch.totalPoints.getText().toString().length() == 0) {
                     Toast.makeText(getActivity(), "Add Total Points! D:", Toast.LENGTH_SHORT).show();
                 } else if (PostMatch.rankingPoints.getText().toString().length() == 0){
                     Toast.makeText(getActivity(), "Add Ranking Points! B-)", Toast.LENGTH_SHORT).show();
-                } else if (PostMatch.rotors.getText().toString().length() == 0) {
-                    Toast.makeText(getActivity(), "Add Rotor #! :|", Toast.LENGTH_SHORT).show();
-                } else if(PostMatch.no.isChecked() == false && PostMatch.succeed.isChecked() == false && PostMatch.tie.isChecked() == false){
-                    Toast.makeText(getActivity(), "Select a takeoff option! $_$", Toast.LENGTH_SHORT).show();
-                } else if(PostMatch.win.isChecked() == false && PostMatch.lose.isChecked() == false && PostMatch.tie.isChecked() == false){
-                    Toast.makeText(getActivity(), "Select win, lose, or tie! >:D", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent toConfirmation = new Intent(getActivity(), Confirmation.class);
                     startActivity(toConfirmation);
                 }
+            }
             }
         });
 
@@ -188,6 +216,13 @@ public class PostMatch extends Fragment {
             }
         });
 
+        if (no.isChecked()) {
+            String str = "No Attempt";
+            myRobo.setTakeoff(str);
+        } else if (succeed.isChecked()) {
+            String str = "Success";
+            myRobo.setTakeoff(str);
+        }
         return in;
     }
 
@@ -223,12 +258,6 @@ public class PostMatch extends Fragment {
                     no.setChecked(false);
                 } if (buttonView != succeed) {
                     succeed.setChecked(false);
-                } if (buttonView == no) {
-                    String str = "No Attempt";
-                    myRobo.setTakeoff(str);
-                } else if (buttonView == succeed) {
-                    String str = "Success";
-                    myRobo.setTakeoff(str);
                 }
             }
         }
