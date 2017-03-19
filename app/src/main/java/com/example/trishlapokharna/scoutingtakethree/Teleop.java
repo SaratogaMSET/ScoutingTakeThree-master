@@ -36,6 +36,7 @@ public class Teleop extends Fragment {
     ImageButton gearPosHelp;
 
     ImageButton timerHelp;
+    ImageButton gearPick;
     ImageButton defenseHelp;
 
     Button one;
@@ -105,6 +106,8 @@ public class Teleop extends Fragment {
     Button timerStart;
     Button timerStop;
     Button timerRestart;
+
+    static ToggleButton pick;
 
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
@@ -182,12 +185,23 @@ public class Teleop extends Fragment {
         del2 = (Button) in.findViewById(R.id.DelButton);
         gearPos2 = (TextView) in.findViewById(R.id.gearCycleView);
 
+        gearPick = (ImageButton) in.findViewById(R.id.pickUpImageButton);
+        pick = (ToggleButton) in.findViewById(R.id.pickToggle);
+
+
         defenseHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Select the skill level of defense. Choose 'None' if the robot does not do defense," +
                         " choose 'Weak' if the robot does not defend well, choose 'Proficient' if the robot defends decently, and " +
                         "choose 'Excellent' if the robot defends extremely well.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        gearPick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Select yes if the robot can pick up gears from the ground.", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -299,12 +313,7 @@ public class Teleop extends Fragment {
                 }
 
                 highGoalsView.setText(display);
-                display = " ";
-
-
-
-
-
+                display = "";
             }
         });
 
@@ -331,7 +340,7 @@ public class Teleop extends Fragment {
                         display += s + "       ";
                 }
                 highGoalsView.setText(display);
-                display = " ";
+                display = "";
 
 
             }
@@ -360,7 +369,7 @@ public class Teleop extends Fragment {
                         display += s + "       ";
                 }
                 highGoalsView.setText(display);
-                display = " ";
+                display = "";
 
 
             }
@@ -386,7 +395,7 @@ public class Teleop extends Fragment {
                         display += s + "       ";
                 }
                 highGoalsView.setText(display);
-                display = " ";
+                display = "";
 
 
 
@@ -418,7 +427,7 @@ public class Teleop extends Fragment {
                 }
 
                 highGoalsView.setText(display);
-                display = " ";
+                display = "";
 
             }
 
@@ -433,7 +442,6 @@ public class Teleop extends Fragment {
                     addNum1.remove(addNum1.size() - 1);
                     addNum1.add(String.valueOf(i));
 
-
                     for (String s : addNum1) {
                         if (s.length() == 1)
                             display += s + "           ";
@@ -445,7 +453,7 @@ public class Teleop extends Fragment {
                             display += s + "       ";
                     }
                     highGoalsView.setText(display);
-                    display = " ";
+                    display = "";
 
                 }
 
@@ -472,7 +480,7 @@ public class Teleop extends Fragment {
                     }
 
                     highGoalsView.setText(display);
-                    display = " ";
+                    display = "";
 
                 }
 
@@ -494,7 +502,7 @@ public class Teleop extends Fragment {
                 }
 
                 highGoalsView.setText(display);
-                display = " ";
+                display = "";
 
             }
         });
@@ -597,12 +605,7 @@ public class Teleop extends Fragment {
                 }
 
                 lowGoalView.setText(display2);
-                display2 = " ";
-
-
-
-
-
+                display2 = "";
             }
         });
 
@@ -628,7 +631,7 @@ public class Teleop extends Fragment {
                         display2 += s + "       ";
                 }
                 lowGoalView.setText(display2);
-                display2 = " ";
+                display2 = "";
 
 
             }
@@ -658,7 +661,7 @@ public class Teleop extends Fragment {
                         display2 += s + "       ";
                 }
                 lowGoalView.setText(display2);
-                display2 = " ";
+                display2 = "";
 
 
             }
@@ -684,7 +687,7 @@ public class Teleop extends Fragment {
                         display2 += s + "       ";
                 }
                 lowGoalView.setText(display2);
-                display2 = " ";
+                display2 = "";
 
 
 
@@ -716,7 +719,7 @@ public class Teleop extends Fragment {
                 }
 
                 lowGoalView.setText(display2);
-                display2 = " ";
+                display2 = "";
 
             }
 
@@ -743,7 +746,7 @@ public class Teleop extends Fragment {
                             display2 += s + "       ";
                     }
                     lowGoalView.setText(display2);
-                    display2 = " ";
+                    display2 = "";
 
                 }
 
@@ -769,7 +772,7 @@ public class Teleop extends Fragment {
                     }
 
                     lowGoalView.setText(display2);
-                    display2 = " ";
+                    display2 = "";
 
                 }
 
@@ -791,7 +794,7 @@ public class Teleop extends Fragment {
                 }
 
                 lowGoalView.setText(display2);
-                display2 = " ";
+                display2 = "";
 
             }
         });
@@ -925,6 +928,25 @@ public class Teleop extends Fragment {
                 }
             }
         });
+
+        if (none.isChecked()) {
+            String str = "None";
+            myRobo.setDefense(str);
+        }
+        else if (weak.isChecked()) {
+            String str = "Weak";
+            myRobo.setDefense(str);
+        }
+        else if (pro.isChecked()) {
+            String str = "Proficient";
+            myRobo.setDefense(str);
+        }
+
+        else if (excel.isChecked()) {
+            String str = "Excellent";
+            myRobo.setDefense(str);
+        }
+
         return in;
 
     }
@@ -945,25 +967,6 @@ public class Teleop extends Fragment {
 
                 if (buttonView != excel) {
                     excel.setChecked(false);
-                }
-
-
-                if (buttonView == none) {
-                    String str = "None";
-                    myRobo.setDefense(str);
-                }
-                else if (buttonView == weak) {
-                    String str = "Weak";
-                    myRobo.setDefense(str);
-                }
-                else if (buttonView == pro) {
-                    String str = "Proficient";
-                    myRobo.setDefense(str);
-                }
-
-                else if (buttonView == excel) {
-                    String str = "Excellent";
-                    myRobo.setDefense(str);
                 }
             }
         }

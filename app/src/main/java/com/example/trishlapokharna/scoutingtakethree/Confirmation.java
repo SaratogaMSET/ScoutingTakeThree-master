@@ -41,6 +41,8 @@ public class Confirmation extends AppCompatActivity {
 
     TextView defense;
     TextView defenseDisplay;
+    TextView pick;
+    TextView pickUpDisplay;
     TextView gears2;
     TextView gear2PosTele;
     TextView highGoals2;
@@ -91,6 +93,8 @@ public class Confirmation extends AppCompatActivity {
 
         defense = (TextView) findViewById(R.id.defense);
         defenseDisplay = (TextView) findViewById (R.id.defenseDisplay);
+        pick = (TextView) findViewById(R.id.pickUp);
+        pickUpDisplay = (TextView) findViewById(R.id.pickUpGear);
         gears2 = (TextView) findViewById(R.id.gearsDisplay2);
         gear2PosTele = (TextView) findViewById(R.id.positionViewGearTele);
         highGoals2 = (TextView) findViewById(R.id.highGoalDisplay1);
@@ -126,6 +130,7 @@ public class Confirmation extends AppCompatActivity {
         lowGoals.setText(Autonomous.lowGoalView.getText().toString());
 
         defenseDisplay.setText(myRobo.getDefense().toString());
+        pickUpDisplay.setText(Teleop.pick.getText().toString());
         gears2.setText(Teleop.gearsView.getText().toString());
         gear2PosTele.setText(Teleop.gearPos2.getText().toString());
         highGoals2.setText(Teleop.highGoalsView.getText().toString());
@@ -192,7 +197,7 @@ public class Confirmation extends AppCompatActivity {
             if (!root.exists()) {
                 root.mkdirs(); // this will create folder.
             }
-            String text = "r2.txt";
+            String text = "b1.txt";
             File filepath = new File(root, text);  // file path to save
             FileWriter writer = new FileWriter(filepath, true);
 
@@ -205,7 +210,7 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Scouter Name, " + Autonomous.scouterText.getText().toString() + "\n");
             writer.append("Cross Baseline, " + Autonomous.baselineButton.getText().toString() + "\n");
             writer.append("Starting Position, " + myRobo.getPosition().toString() + "\n");
-            writer.append("Auto Gears, " + Autonomous.gearView.getText().toString() + "\n");
+            writer.append("Auto Gears, " + delSpaces(Autonomous.gearView.getText().toString()) + "\n");
 
             if (Autonomous.gearPos.getText().toString().equals("None"))
                 writer.append("Auto Gears Positions, "  +  "\n");
@@ -215,7 +220,7 @@ public class Confirmation extends AppCompatActivity {
             if (Autonomous.highGoalView.getText().toString().equals("0"))
                 writer.append("Auto High Goal, " + "\n");
             else
-                writer.append("Auto High Goal, " + Autonomous.highGoalView.getText().toString() + "\n");
+                writer.append("Auto High Goal, " + (Autonomous.highGoalView.getText().toString()) + "\n");
 
             if (Autonomous.lowGoalView.getText().toString().equals("0"))
                 writer.append("Auto Low Goal, " + "\n");
@@ -227,6 +232,7 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Teleop High Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewH.getText().toString()) + "\n");
             writer.append("Teleop Low Goal Shots Per Cycle, " + delSpaces(Teleop.lowGoalView.getText().toString()) + "\n");
             writer.append("Teleop Low Goal Shots Cycle Time, " + delSpaces(Teleop.intervalViewL.getText().toString()) + "\n");
+            writer.append("Teleop Pickup Gear, "+ Teleop.pick.getText().toString() + "\n" );
             if (Teleop.gearsView.getText().toString().equals(0))
                 writer.append("Teleop Gears, " +  "\n" );
             else

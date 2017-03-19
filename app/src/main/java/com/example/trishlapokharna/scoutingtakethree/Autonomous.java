@@ -34,6 +34,7 @@ public class Autonomous extends Fragment{
     static EditText teamText;
     static EditText scouterText;
 
+    static ToggleButton noShow;
     static ToggleButton far;
     static ToggleButton mid;
     static ToggleButton boil;
@@ -84,12 +85,12 @@ public class Autonomous extends Fragment{
         teamText = (EditText)in.findViewById(R.id.teamText);
         scouterText = (EditText)in.findViewById(R.id.scouterText);
 
-
+        noShow = (ToggleButton) in.findViewById(R.id.noShowToggle);
         far = (ToggleButton) in.findViewById(R.id.farToggle);
         mid = (ToggleButton) in.findViewById(R.id.middleToggle);
         boil = (ToggleButton) in.findViewById(R.id.broilerToggle);
 
-
+        noShow.setOnCheckedChangeListener(changeChecker);
         far.setOnCheckedChangeListener(changeChecker);
         mid.setOnCheckedChangeListener(changeChecker);
         boil.setOnCheckedChangeListener(changeChecker);
@@ -388,6 +389,9 @@ public class Autonomous extends Fragment{
 
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             if (isChecked) {
+                if (buttonView != noShow) {
+                    noShow.setChecked(false);
+                }
                 if (buttonView != far) {
                     far.setChecked(false);
                 }
@@ -398,6 +402,10 @@ public class Autonomous extends Fragment{
                     boil.setChecked(false);
                 }
 
+                if (buttonView == noShow) {
+                    String str = "No Show";
+                    myRobo.setPosition(str);
+                }
                 if (buttonView == far) {
                     String str = "Close";
                     myRobo.setPosition(str);

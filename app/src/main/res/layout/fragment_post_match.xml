@@ -172,7 +172,8 @@
                 android:textOff="No Attempt"
                 android:textOn="No Attempt"
                 android:text="New ToggleButton"
-                android:id="@+id/noTakeToggle" />
+                android:id="@+id/noTakeToggle"
+                android:checked="true"/>
             <Space
                 android:layout_width="0dp"
                 android:layout_weight=".1"
