@@ -47,7 +47,7 @@ public class RankingContainer extends AppCompatActivity
             case 3:
                 try {
                     FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, AutoRanking.class.newInstance()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, TeleopOverallRanking.class.newInstance()).commit();
                 } catch (InstantiationException e) {
                     e.printStackTrace();
                 } catch (IllegalAccessException e) {
@@ -156,6 +156,14 @@ public class RankingContainer extends AppCompatActivity
         } else if (id == R.id.nav_rankingtlow) {
             Intent intent = new Intent(this, TeleopLowContainer.class);
             startActivity(intent);
+        } else if (id == R.id.nav_rankingteleop) {
+            try {
+                fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, TeleopOverallRanking.class.newInstance()).commit();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
         } else if (id == R.id.nav_rankingend) {
             Intent intent = new Intent(this, EndContainer.class);
             startActivity(intent);

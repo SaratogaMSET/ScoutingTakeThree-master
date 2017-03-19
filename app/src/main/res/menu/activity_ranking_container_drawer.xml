@@ -25,6 +25,11 @@
             android:title="Ranking: Teleop Low" />
 
         <item
+            android:id="@+id/nav_rankingteleop"
+            android:icon="@drawable/low"
+            android:title="Ranking: Teleop Overall" />
+
+        <item
             android:id="@+id/nav_rankingend"
             android:icon="@drawable/tomb"
             android:title="Ranking: End" />
