@@ -184,6 +184,9 @@ public class PostMatch extends Fragment {
                     Toast.makeText(getActivity(), "Cycle Time and Number of Low Goals Do Not Match! :P", Toast.LENGTH_SHORT).show();
                 } else if (PostMatch.numPressure.getText().toString().length() == 0){
                     Toast.makeText(getActivity(), "Add kPa! ^^", Toast.LENGTH_SHORT).show();
+                } else if ((Integer.parseInt(PostMatch.numPressure.getText().toString()) < 40 && reach.getText().toString().equals("Yes")) ||
+                        (Integer.parseInt(PostMatch.numPressure.getText().toString()) > 40 && reach.getText().toString().equals("No"))){
+                    Toast.makeText(getActivity(), "Either kPa or Reached 40kPa Have Not Been Entered Correctly! :|",  Toast.LENGTH_SHORT).show();
                 } else if (PostMatch.rotors.getText().toString().length() == 0) {
                     Toast.makeText(getActivity(), "Add Rotor #! :|", Toast.LENGTH_SHORT).show();
                 } else if(PostMatch.win.isChecked() == false && PostMatch.lose.isChecked() == false && PostMatch.tie.isChecked() == false){
