@@ -130,8 +130,8 @@ public class EndContainer extends AppCompatActivity
             intent = new Intent(this,RankingContainer.class);
             intent.putExtra("fragmentNumber", 2);
         } else if (id == R.id.nav_rankingauto) {
-            intent = new Intent(this,RankingContainer.class);
-            intent.putExtra("fragmentNumber", 3);
+            intent = new Intent(this,AutoContainer.class);
+            startActivity(intent);
         } else if (id == R.id.nav_rankingthigh) {
             intent = new Intent(this, TeleopHighContainer.class);
             startActivity(intent);

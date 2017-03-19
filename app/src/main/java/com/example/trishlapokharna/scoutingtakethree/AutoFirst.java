@@ -1,9 +1,9 @@
 package com.example.trishlapokharna.scoutingtakethree;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,39 +22,33 @@ import java.io.IOException;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class OverallRanking extends Fragment {
-
+public class AutoFirst extends Fragment {
     RoboInfo myRobo = RoboInfo.getInstance();
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View in = inflater.inflate(R.layout.fragment_overall_ranking, container, false);
+        View in = inflater.inflate(R.layout.fragment_auto_first, container, false);
 
         TableLayout tl1 = (TableLayout) in.findViewById(R.id.tl1);
         TableLayout tl2 = (TableLayout) in.findViewById(R.id.tl2);
         TableLayout tl3 = (TableLayout) in.findViewById(R.id.tl3);
-        TableLayout tl4 = (TableLayout) in.findViewById(R.id.tl4);
 
         try {
-            String path1 = "/sdcard/Rankings/Average Alliance Total Points Per Game.txt";
-            String path2 = "/sdcard/Rankings/Average Single Robot Total Points Per Game.txt";
-            String path3 = "/sdcard/Rankings/Average Ranking Points Per Game.txt";
-            String path4 = "/sdcard/Rankings/Winning Ratio.txt";
+
+            String path1 = "/sdcard/Rankings/Cross Baseline Ratio.txt";
+            String path2 = "/sdcard/Rankings/Auto Gears Ratio.txt";
+            String path3 = "/sdcard/Rankings/Auto Gears Made.txt";
 
             File f1 = new File(path1);
             File f2 = new File(path2);
             File f3 = new File(path3);
-            File f4 = new File(path4);
 
             if (!f1.exists()) {
                 Toast.makeText(getActivity(), "File does not exist!", Toast.LENGTH_SHORT).show();
             } else {
                 BufferedReader reader1 = new BufferedReader(new FileReader(f1));
                 String line;
-
                 int num = 1;
                 while ((line = reader1.readLine()) != null) {
 
@@ -76,16 +70,11 @@ public class OverallRanking extends Fragment {
                         public void onClick(View v) {
                             String s = string;
                             myRobo.setSingleTeam(s);
-                            Class fragmentClass = DisplaySingleTeam.class;
-                            Fragment fragment = null;
-                            try {
-                                fragment = (Fragment) fragmentClass.newInstance();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-
-                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                            fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
+                            Intent intent = new Intent(getActivity(), RankingContainer.class);
+                            intent.putExtra("fragmentNumber", 5);
+                            startActivity(intent);
+                            //    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                            //    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
                         }
                     });
 
@@ -122,16 +111,9 @@ public class OverallRanking extends Fragment {
                         public void onClick(View v) {
                             String s = string;
                             myRobo.setSingleTeam(s);
-                            Class fragmentClass = DisplaySingleTeam.class;
-                            Fragment fragment = null;
-                            try {
-                                fragment = (Fragment) fragmentClass.newInstance();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-
-                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                            fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
+                            Intent intent = new Intent(getActivity(), RankingContainer.class);
+                            intent.putExtra("fragmentNumber", 5);
+                            startActivity(intent);
                         }
                     });
 
@@ -168,67 +150,14 @@ public class OverallRanking extends Fragment {
                         public void onClick(View v) {
                             String s = string;
                             myRobo.setSingleTeam(s);
-                            Class fragmentClass = DisplaySingleTeam.class;
-                            Fragment fragment = null;
-                            try {
-                                fragment = (Fragment) fragmentClass.newInstance();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-
-                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                            fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
+                            Intent intent = new Intent(getActivity(), RankingContainer.class);
+                            intent.putExtra("fragmentNumber", 5);
+                            startActivity(intent);
                         }
                     });
 
                     tr.addView(tv1);
                     tl3.addView(tr, layoutParams);
-                    num++;
-                }
-            }
-
-            if (!f4.exists()) {
-                Toast.makeText(getActivity(), "File does not exist!", Toast.LENGTH_SHORT).show();
-            } else {
-                BufferedReader reader1 = new BufferedReader(new FileReader(f4));
-                String line;
-
-                int num = 1;
-                while ((line = reader1.readLine()) != null) {
-
-                    TableRow tr = new TableRow(this.getActivity());
-                    TableRow.LayoutParams layoutParams = new TableRow.LayoutParams
-                            (TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f);
-
-                    TextView tv1 = new TextView(this.getActivity());
-                    tv1.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
-                    tv1.setPadding(0, 5, 0, 5);
-                    tv1.setTextAppearance(getActivity(), android.R.style.TextAppearance_Medium);
-
-                    tv1.setText(num + ". " + line);
-                    String[] values = line.split(":");
-                    final String string = values[0];
-
-                    tv1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            String s = string;
-                            myRobo.setSingleTeam(s);
-                            Class fragmentClass = DisplaySingleTeam.class;
-                            Fragment fragment = null;
-                            try {
-                                fragment = (Fragment) fragmentClass.newInstance();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-
-                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                            fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
-                        }
-                    });
-
-                    tr.addView(tv1);
-                    tl4.addView(tr, layoutParams);
                     num++;
                 }
             }
@@ -239,5 +168,4 @@ public class OverallRanking extends Fragment {
 
         return in;
     }
-
 }

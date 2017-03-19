@@ -78,4 +78,6 @@
     <string name="title_activity_teleop_low_container">TeleopLowContainer</string>
     <string name="title_activity_end_container">EndContainer</string>
     <string name="title_activity_overall_container">OverallContainer</string>
+    <string name="title_activity_auto_container">AutoContainer</string>
+    <string name="title_activity_teleop_overall_container">TeleopOverallContainer</string>
 </resources>

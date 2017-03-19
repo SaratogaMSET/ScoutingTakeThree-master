@@ -148,13 +148,8 @@ public class RankingContainer extends AppCompatActivity
                 e.printStackTrace();
             }
         } else if (id == R.id.nav_rankingauto) {
-            try {
-                fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, AutoRanking.class.newInstance()).commit();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
+            Intent intent = new Intent(this, AutoContainer.class);
+            startActivity(intent);
         } else if (id == R.id.nav_rankingthigh) {
             Intent intent = new Intent(this, TeleopHighContainer.class);
             startActivity(intent);
