@@ -19,11 +19,11 @@ import com.astuetz.PagerSlidingTabStrip;
 //activity should be using "swipe view" with three tabs at top, one for each fragment
 @TargetApi(11)
 public class Input extends FragmentActivity {
-    private static final int NUM_PAGES = 3;
+    private static final int NUM_PAGES = 4;
 
     public ViewPager mPager;
     public ScreenSlidePagerAdapter mPagerAdapter;
-    public String tabTitles[] = new String[]{"Autonomous", "Teleop", "Post Match"};
+    public String tabTitles[] = new String[]{"Match List", "Autonomous", "Teleop", "Post Match"};
 
     RoboInfo myRobo = RoboInfo.getInstance();
     TextView title;
@@ -98,17 +98,23 @@ public class Input extends FragmentActivity {
         @Override
         public Fragment getItem(int position) {
             if (position == 0) {
-                return new Autonomous();
+                return new MatchList();
             }
             if (position == 1) {
+                return new Autonomous();
+            }
+
+            if (position == 2) {
                 return new Teleop();
             }
-            else {
+
+           else {
                 return new PostMatch();
             }
+
         }
 
-        //@Override
+            //@Override
         public CharSequence getPageTitle(int position) {
             return tabTitles[position];
         }
