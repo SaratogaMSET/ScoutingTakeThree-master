@@ -248,7 +248,7 @@ public class Teleop extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Estimate the time taken for each shooting cycle. Enter a value each time 'Add 0' is used. Feel free to" +
-                        " use timer below as reference.", Toast.LENGTH_LONG).show();
+                        " use timer above as reference.", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -256,7 +256,7 @@ public class Teleop extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Estimate the time taken for each shooting cycle. Enter a value each time 'Add 0' is used. Feel free to" +
-                        " use timer below as reference.", Toast.LENGTH_LONG).show();
+                        " use timer above as reference.", Toast.LENGTH_LONG).show();
             }
         });
 

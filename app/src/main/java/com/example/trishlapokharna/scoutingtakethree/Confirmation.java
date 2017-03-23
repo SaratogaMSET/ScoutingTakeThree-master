@@ -192,12 +192,12 @@ public class Confirmation extends AppCompatActivity {
     public void Export(View v) {
         try {
             verifyStoragePermissions(this);
-            File root = new File(Environment.getExternalStorageDirectory(), "Notes");
+            File root = new File(Environment.getExternalStorageDirectory(), "Notes-SAC");
             // if external memory exists and folder with name Notes
             if (!root.exists()) {
                 root.mkdirs(); // this will create folder.
             }
-            String text = "r1.txt";
+            String text = "r2.txt";
             File filepath = new File(root, text);  // file path to save
             FileWriter writer = new FileWriter(filepath, true);
 
