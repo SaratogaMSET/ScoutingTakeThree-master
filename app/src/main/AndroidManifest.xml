@@ -34,7 +34,11 @@
         <activity
             android:name=".EndContainer"
             android:label="@string/title_activity_end_container"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AutoContainer"
+            android:label="@string/title_activity_auto_container"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

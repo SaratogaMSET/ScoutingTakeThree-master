@@ -35,12 +35,52 @@ public class EndFirst extends Fragment {
         TableLayout tl3 = (TableLayout) in.findViewById(R.id.tl3);
 
         try {
-            String path2 = "/sdcard/Rankings/Takeoff Ratio.txt";
-            String path3 = "/sdcard/Rankings/Reached 40 kPa Ratio.txt";
+            String path1 = "/sdcard/Rankings/Takeoff Ratio.txt";
+            String path2 = "/sdcard/Rankings/Reached 40 kPa Ratio.txt";
+            String path3 = "/sdcard/Rankings/Average Estimated Single Team kPa Per Game.txt";
 
+            File f1 = new File(path1);
             File f2 = new File(path2);
             File f3 = new File(path3);
 
+            if (!f1.exists()) {
+                Toast.makeText(getActivity(), "File does not exist!", Toast.LENGTH_SHORT).show();
+            } else {
+                BufferedReader reader1 = new BufferedReader(new FileReader(f1));
+                String line;
+
+                int num = 1;
+                while ((line = reader1.readLine()) != null) {
+
+                    TableRow tr = new TableRow(this.getActivity());
+                    TableRow.LayoutParams layoutParams = new TableRow.LayoutParams
+                            (TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f);
+
+                    TextView tv1 = new TextView(this.getActivity());
+                    tv1.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
+                    tv1.setPadding(0, 5, 0, 5);
+                    tv1.setTextAppearance(getActivity(), android.R.style.TextAppearance_Medium);
+
+                    tv1.setText(num + ". " + line);
+                    String[] values = line.split(":");
+                    final String string = values[0];
+
+                    tv1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String s = string;
+                            myRobo.setSingleTeam(s);
+                            Intent intent = new Intent(getActivity(), RankingContainer.class);
+                            intent.putExtra("fragmentNumber", 5);
+                            startActivity(intent);
+                        }
+                    });
+
+                    tr.addView(tv1);
+                    tl2.addView(tr, layoutParams);
+                    num++;
+                }
+            }
             if (!f2.exists()) {
                 Toast.makeText(getActivity(), "File does not exist!", Toast.LENGTH_SHORT).show();
             } else {

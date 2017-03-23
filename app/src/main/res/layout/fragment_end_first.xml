@@ -23,7 +23,7 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight=".5"
+            android:layout_weight=".33"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Takeoff Ratio"
@@ -31,11 +31,19 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight=".5"
+            android:layout_weight=".33"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Reached 40 kPa Ratio"
             android:id="@+id/tvhightime" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".33"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Estimated Ind'l kPa Per Game"
+            android:id="@+id/tvhighcycle1s" />
 
     </TableRow>
 
@@ -50,16 +58,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_weight=".33"
+                android:id="@+id/tl1"
+                android:layout_height="match_parent"></TableLayout>
 
             <TableLayout
                 android:layout_width="0dp"
-                android:layout_weight=".5"
+                android:layout_weight=".33"
                 android:id="@+id/tl2"
                 android:layout_height="match_parent"></TableLayout>
 
             <TableLayout
                 android:layout_width="0dp"
-                android:layout_weight=".5"
+                android:layout_weight=".33"
                 android:id="@+id/tl3"
                 android:layout_height="match_parent"></TableLayout>
 
