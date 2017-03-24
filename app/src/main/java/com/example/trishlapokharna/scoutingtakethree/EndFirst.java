@@ -31,6 +31,7 @@ public class EndFirst extends Fragment {
                              Bundle savedInstanceState) {
         View in = inflater.inflate(R.layout.fragment_end_first, container, false);
 
+        TableLayout tl1 = (TableLayout) in.findViewById(R.id.tl1);
         TableLayout tl2 = (TableLayout) in.findViewById(R.id.tl2);
         TableLayout tl3 = (TableLayout) in.findViewById(R.id.tl3);
 
@@ -77,7 +78,7 @@ public class EndFirst extends Fragment {
                     });
 
                     tr.addView(tv1);
-                    tl2.addView(tr, layoutParams);
+                    tl1.addView(tr, layoutParams);
                     num++;
                 }
             }
