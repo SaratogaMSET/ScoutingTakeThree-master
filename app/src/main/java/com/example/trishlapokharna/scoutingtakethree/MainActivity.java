@@ -7,18 +7,25 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 //This is the launcher activity that house a homepage (Welcome!) and the navigation drawer at the left
 public class MainActivity extends AppCompatActivity
-
         {
+            TextView file;
 
-    @Override
+            RoboInfo myRobo;
+            @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+              //  file = (TextView)findViewById(R.id.textFileName);
+               // file.setText(Confirmation.fileN)
+         myRobo = new RoboInfo ();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
+        file = (TextView) findViewById(R.id.textFileName);
+        file.setText(myRobo.getFileName());
         setSupportActionBar(toolbar);
 
        // DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -55,6 +62,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
     }
 

@@ -16,7 +16,7 @@ public class RoboInfo {
     String result = "Lose";
     String position;
     String takeoff;
-
+    String file;
     static final RoboInfo me = new RoboInfo();
 
     public static RoboInfo getInstance() {
@@ -88,4 +88,7 @@ public class RoboInfo {
 
     public void setTakeoff(String str) {takeoff = str; }
     public String getTakeoff() {return takeoff;}
+
+    public void setFileName(String str) { file = str; }
+    public String getFileName() { return file; }
 }

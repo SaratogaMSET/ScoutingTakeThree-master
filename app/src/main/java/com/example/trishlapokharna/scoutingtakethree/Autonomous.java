@@ -207,7 +207,7 @@ public class Autonomous extends Fragment{
         gearBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (gearView.getText().length() >= 14) {
+                if (gearView.getText().length() > 14) {
                     gearView.setText(gearView.getText().subSequence(0, gearView.getText().length() - 14));
                 }
                 else

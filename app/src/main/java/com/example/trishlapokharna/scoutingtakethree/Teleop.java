@@ -276,7 +276,7 @@ public class Teleop extends Fragment {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (gearsView.getText().length() >= 14) {
+                if (gearsView.getText().length() > 14) {
                     gearsView.setText(gearsView.getText().subSequence(0, gearsView.getText().length() - 14));
                 } else
                     gearsView.setText("");

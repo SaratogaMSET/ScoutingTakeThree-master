@@ -158,7 +158,15 @@ public class PostMatch extends Fragment {
                     Toast.makeText(getActivity(), "Add Total Points! D:", Toast.LENGTH_SHORT).show();
                 } else if (PostMatch.rankingPoints.getText().toString().length() == 0){
                     Toast.makeText(getActivity(), "Add Ranking Points! B-)", Toast.LENGTH_SHORT).show();
-                } else {
+                } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 2  || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 3 ) && PostMatch.win.isChecked() == true) {
+                    Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
+                } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 1  || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 2 ) && PostMatch.tie.isChecked() == true) {
+                    Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
+                } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 0  || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 1 ) && PostMatch.lose.isChecked() == true) {
+                    Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
+                }
+
+                else {
                     Intent toConfirmation = new Intent(getActivity(), Confirmation.class);
                     startActivity(toConfirmation);
                 }
@@ -195,7 +203,15 @@ public class PostMatch extends Fragment {
                     Toast.makeText(getActivity(), "Add Total Points! D:", Toast.LENGTH_SHORT).show();
                 } else if (PostMatch.rankingPoints.getText().toString().length() == 0){
                     Toast.makeText(getActivity(), "Add Ranking Points! B-)", Toast.LENGTH_SHORT).show();
-                } else {
+                } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 2  || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 3 ) && PostMatch.win.isChecked() == true) {
+                    Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
+                } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 1  || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 2 ) && PostMatch.tie.isChecked() == true) {
+                    Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
+                } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 0  || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 1 ) && PostMatch.lose.isChecked() == true) {
+                    Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
                     Intent toConfirmation = new Intent(getActivity(), Confirmation.class);
                     startActivity(toConfirmation);
                 }
@@ -219,14 +235,9 @@ public class PostMatch extends Fragment {
             }
         });
 
-        if (no.isChecked()) {
-            String str = "No Attempt";
-            myRobo.setTakeoff(str);
-        } else if (succeed.isChecked()) {
-            String str = "Success";
-            myRobo.setTakeoff(str);
-        }
         return in;
+
+
     }
 
     CompoundButton.OnCheckedChangeListener changeChecker = new CompoundButton.OnCheckedChangeListener() {
@@ -261,6 +272,15 @@ public class PostMatch extends Fragment {
                     no.setChecked(false);
                 } if (buttonView != succeed) {
                     succeed.setChecked(false);
+                }
+                if (buttonView==no){
+                    String str = "No";
+                    myRobo.setTakeoff(str);
+
+                }
+                if (buttonView==succeed){
+                    String str = "Yes";
+                    myRobo.setTakeoff(str);
                 }
             }
         }

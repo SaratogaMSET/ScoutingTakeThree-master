@@ -63,6 +63,8 @@ public class Confirmation extends AppCompatActivity {
     TextView rankingPoints;
 
 
+    static String fileN;
+
 
     RoboInfo myRobo = RoboInfo.getInstance();
     String matchT;
@@ -197,8 +199,9 @@ public class Confirmation extends AppCompatActivity {
             if (!root.exists()) {
                 root.mkdirs(); // this will create folder.
             }
-            String text = "r2.txt";
-            File filepath = new File(root, text);  // file path to save
+            fileN = "r3.txt";
+            myRobo.setFileName(fileN);
+            File filepath = new File(root, fileN);  // file path to save
             FileWriter writer = new FileWriter(filepath, true);
 
             if(filepath.length() != 0) {
@@ -241,14 +244,14 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Reached 40 kPa, " + (PostMatch.reach.getText().toString()) + "\n");
             writer.append("Total Pressure, " + (PostMatch.numPressure.getText().toString()) + "\n");
             writer.append("Rotors Turning, " + PostMatch.rotors.getText().toString() + "\n");
-            writer.append("Takeoff, " + getTakeoff(myRobo.getTakeoff().toString()) + "\n");
+            writer.append("Takeoff, " + (myRobo.getTakeoff().toString()) + "\n");
             writer.append("Total Points, " + PostMatch.totalPoints.getText().toString() + "\n");
             writer.append("Ranking Points, "+ PostMatch.rankingPoints.getText().toString() + "\n");
             writer.append("Result, " + myRobo.getResult().toString() + "\n");
             writer.append("Notes, " + PostMatch.notesText.getText().toString()+ "\n" );
-            if (text.equals("r3.txt")||text.equals("r1.txt")|| text.equals("r2.txt"))
+            if (fileN.equals("r3.txt")||fileN.equals("r1.txt")|| fileN.equals("r2.txt"))
                 writer.append("Alliance, Red");
-            if (text.equals("b1.txt")||text.equals("b2.txt")|| text.equals("b3.txt"))
+            if (fileN.equals("b1.txt")||fileN.equals("b2.txt")|| fileN.equals("b3.txt"))
                 writer.append("Alliance, Blue");
 
 
@@ -283,7 +286,7 @@ public class Confirmation extends AppCompatActivity {
 
     }
 
-    public String getTakeoff(String str) {
+  /*  public String getTakeoff(String str) {
         switch (str) {
             case "No Attempt":
                 return "No";
@@ -293,7 +296,7 @@ public class Confirmation extends AppCompatActivity {
                 return " ";
         }
 
-    }
+    }*/
 
 
     public static String delSpaces(String str){    //custom method to remove multiple space
