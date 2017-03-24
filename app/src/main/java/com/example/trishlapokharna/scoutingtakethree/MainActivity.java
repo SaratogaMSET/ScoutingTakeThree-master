@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,11 +23,11 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
               //  file = (TextView)findViewById(R.id.textFileName);
                // file.setText(Confirmation.fileN)
-         myRobo = new RoboInfo ();
-         myRobo.setFileName("r3.txt");
+                myRobo =  RoboInfo.getInstance();
+        myRobo.setFileName("r1.txt");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         file = (TextView) findViewById(R.id.textFileName);
-        file.setText(myRobo.getFileName());
+                file.setText(myRobo.getFileName());
         setSupportActionBar(toolbar);
 
        // DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

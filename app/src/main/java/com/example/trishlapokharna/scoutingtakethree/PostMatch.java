@@ -199,11 +199,16 @@ public class PostMatch extends Fragment {
                     Toast.makeText(getActivity(), "Add Rotor #! :|", Toast.LENGTH_SHORT).show();
                 } else if(PostMatch.win.isChecked() == false && PostMatch.lose.isChecked() == false && PostMatch.tie.isChecked() == false){
                     Toast.makeText(getActivity(), "Select win, lose, or tie! >:D", Toast.LENGTH_SHORT).show();
-                } else if (PostMatch.totalPoints.getText().toString().length() == 0) {
+                }else if (PostMatch.no.isChecked() == false && PostMatch.succeed.isChecked() == false) {
+                    Toast.makeText(getActivity(), "Add Takeoff! D:", Toast.LENGTH_SHORT).show();
+                }
+                else if (PostMatch.totalPoints.getText().toString().length() == 0) {
                     Toast.makeText(getActivity(), "Add Total Points! D:", Toast.LENGTH_SHORT).show();
-                } else if (PostMatch.rankingPoints.getText().toString().length() == 0){
+                }
+                else if (PostMatch.rankingPoints.getText().toString().length() == 0){
                     Toast.makeText(getActivity(), "Add Ranking Points! B-)", Toast.LENGTH_SHORT).show();
-                } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 2  || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 3 ) && PostMatch.win.isChecked() == true) {
+                }
+                else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 2  || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 3 ) && PostMatch.win.isChecked() == true) {
                     Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
                 } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 1  || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 2 ) && PostMatch.tie.isChecked() == true) {
                     Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
@@ -278,7 +283,7 @@ public class PostMatch extends Fragment {
                     myRobo.setTakeoff(str);
 
                 }
-                if (buttonView==succeed){
+                if (buttonView == succeed){
                     String str = "Yes";
                     myRobo.setTakeoff(str);
                 }

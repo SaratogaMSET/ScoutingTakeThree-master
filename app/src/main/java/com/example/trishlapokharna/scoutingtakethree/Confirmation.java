@@ -63,7 +63,7 @@ public class Confirmation extends AppCompatActivity {
     TextView rankingPoints;
 
 
-    static String fileN;
+    String fileN;
 
 
     RoboInfo myRobo = RoboInfo.getInstance();
@@ -124,14 +124,14 @@ public class Confirmation extends AppCompatActivity {
         matchD.setText(Autonomous.matchText.getText().toString());
         teamD.setText(Autonomous.teamText.getText().toString());
         scouterD.setText(Autonomous.scouterText.getText().toString());
-        positionView.setText(myRobo.getPosition().toString());
+        positionView.setText(myRobo.getPosition());
         gearPosAuto.setText(Autonomous.gearPos.getText().toString());
         baseline.setText(Autonomous.baselineButton.getText().toString());
         gears.setText(Autonomous.gearView.getText().toString());
         highGoals.setText(Autonomous.highGoalView.getText().toString());
         lowGoals.setText(Autonomous.lowGoalView.getText().toString());
 
-        defenseDisplay.setText(myRobo.getDefense().toString());
+        defenseDisplay.setText(myRobo.getDefense());
         pickUpDisplay.setText(Teleop.pick.getText().toString());
         gears2.setText(Teleop.gearsView.getText().toString());
         gear2PosTele.setText(Teleop.gearPos2.getText().toString());
@@ -145,10 +145,10 @@ public class Confirmation extends AppCompatActivity {
         reachedPressure.setText(PostMatch.reach.getText().toString());
         numPressure.setText(PostMatch.numPressure.getText().toString());
         rotor.setText(PostMatch.rotors.getText().toString());
-        takeOff.setText(myRobo.getTakeoff().toString());
+        takeOff.setText(myRobo.getTakeoff());
         totalPoints.setText(PostMatch.totalPoints.getText().toString());
         rankingPoints.setText(PostMatch.rankingPoints.getText().toString());
-        result.setText(myRobo.getResult().toString());
+        result.setText(myRobo.getResult());
 
 
 
@@ -199,6 +199,7 @@ public class Confirmation extends AppCompatActivity {
             if (!root.exists()) {
                 root.mkdirs(); // this will create folder.
             }
+            Log.d("TAG12", myRobo.getFileName());
             fileN = myRobo.getFileName();
             File filepath = new File(root, fileN);  // file path to save
             FileWriter writer = new FileWriter(filepath, true);
@@ -246,12 +247,12 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Takeoff, " + (myRobo.getTakeoff().toString()) + "\n");
             writer.append("Total Points, " + PostMatch.totalPoints.getText().toString() + "\n");
             writer.append("Ranking Points, "+ PostMatch.rankingPoints.getText().toString() + "\n");
-            writer.append("Result, " + myRobo.getResult().toString() + "\n");
+            writer.append("Result, " + myRobo.getResult() + "\n");
             writer.append("Notes, " + PostMatch.notesText.getText().toString()+ "\n" );
             if (fileN.equals("r3.txt")||fileN.equals("r1.txt")|| fileN.equals("r2.txt"))
                 writer.append("Alliance, Red");
-            if (fileN.equals("b1.txt")||fileN.equals("b2.txt")|| fileN.equals("b3.txt"))
-                writer.append("Alliance, Blue");
+           if (fileN.equals("b1.txt")||fileN.equals("b2.txt")|| fileN.equals("b3.txt"))
+               writer.append("Alliance, Blue");
 
 
             writer.flush();
