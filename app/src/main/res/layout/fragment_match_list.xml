@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.trishlapokharna.scoutingtakethree.PostMatch">
+    tools:context="com.example.trishlapokharna.scoutingtakethree.MatchList">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,13 +19,12 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/robopicture"
+            android:id="@+id/match"
             android:adjustViewBounds="true"
             android:cropToPadding="false"
             android:scaleType="fitXY"
-            android:layout_marginBottom="20dp"
-           />
+            android:src="@mipmap/merge2"
+            />
 
     </RelativeLayout>
 </ScrollView>
-
