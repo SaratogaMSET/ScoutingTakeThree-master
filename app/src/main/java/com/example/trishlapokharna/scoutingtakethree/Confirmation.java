@@ -199,8 +199,7 @@ public class Confirmation extends AppCompatActivity {
             if (!root.exists()) {
                 root.mkdirs(); // this will create folder.
             }
-            fileN = "r3.txt";
-            myRobo.setFileName(fileN);
+            fileN = myRobo.getFileName();
             File filepath = new File(root, fileN);  // file path to save
             FileWriter writer = new FileWriter(filepath, true);
 

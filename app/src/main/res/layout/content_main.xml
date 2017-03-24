@@ -19,13 +19,14 @@
         android:id="@+id/text">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_marginLeft="250dp"
-            android:text=""
+            android:text=" "
             android:id="@+id/textFileName"
-            android:layout_column="0" />
+            android:layout_column="0"
+             />
     </TableRow>
 
     <TableRow

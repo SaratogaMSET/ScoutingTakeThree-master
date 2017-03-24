@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity
               //  file = (TextView)findViewById(R.id.textFileName);
                // file.setText(Confirmation.fileN)
          myRobo = new RoboInfo ();
+         myRobo.setFileName("r3.txt");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         file = (TextView) findViewById(R.id.textFileName);
         file.setText(myRobo.getFileName());
