@@ -968,6 +968,22 @@ public class Teleop extends Fragment {
                 if (buttonView != excel) {
                     excel.setChecked(false);
                 }
+                if (buttonView == none){
+                    String str = "None";
+                    myRobo.setDefense(str);
+                }
+                if (buttonView == weak){
+                    String str = "Weak";
+                    myRobo.setDefense(str);
+                }
+                if (buttonView == pro){
+                    String str = "Proficient";
+                    myRobo.setDefense(str);
+                }
+                if (buttonView == excel){
+                    String str = "Excellent";
+                    myRobo.setDefense(str);
+                }
             }
         }
     };
