@@ -41,6 +41,7 @@ public class Teleop extends Fragment {
 
     Button one;
     Button zero;
+    Button miss;
     Button back;
 
     ImageButton highGoalHelp;
@@ -132,6 +133,7 @@ public class Teleop extends Fragment {
 
         one = (Button) in.findViewById(R.id.gearHitButton);
         zero = (Button) in.findViewById(R.id.gearMissButton);
+        miss = (Button) in.findViewById(R.id.pilotMiss);
         back = (Button) in.findViewById(R.id.gearBackButton);
 
         highGoalHelp = (ImageButton) in.findViewById(R.id.highImageButton);
@@ -270,6 +272,13 @@ public class Teleop extends Fragment {
             @Override
             public void onClick(View v) {
                 gearsView.append("0             ");
+            }
+        });
+
+        miss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gearsView.append("X             ");
             }
         });
 

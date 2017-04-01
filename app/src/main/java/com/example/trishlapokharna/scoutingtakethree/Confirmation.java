@@ -54,6 +54,9 @@ public class Confirmation extends AppCompatActivity {
 
 
     TextView notes;
+    TextView pilotNotes;
+    TextView penalty;
+    TextView yellowCards;
     TextView reachedPressure;
     TextView numPressure;
     TextView takeOff;
@@ -107,6 +110,9 @@ public class Confirmation extends AppCompatActivity {
 
 
         notes = (TextView) findViewById(R.id.notesDisplay);
+        pilotNotes  = (TextView) findViewById(R.id.notesPDisplay);
+        penalty = (TextView) findViewById(R.id.penaltyPDisplay);
+        yellowCards = (TextView) findViewById(R.id.ycDisplay);
         reachedPressure = (TextView) findViewById (R.id.pressureDisplay);
         numPressure = (TextView)  findViewById (R.id.kpaDisplay);
         takeOff = (TextView) findViewById(R.id.takeoffDisplay);
@@ -143,6 +149,9 @@ public class Confirmation extends AppCompatActivity {
 
         notes.setText(PostMatch.notesText.getText().toString());
         reachedPressure.setText(PostMatch.reach.getText().toString());
+        pilotNotes.setText(PostMatch.pilotText.getText().toString());
+        penalty.setText(PostMatch.penalty.getText().toString());
+        yellowCards.setText(myRobo.getYellow().toString());
         numPressure.setText(PostMatch.numPressure.getText().toString());
         rotor.setText(PostMatch.rotors.getText().toString());
         takeOff.setText(myRobo.getTakeoff());
@@ -241,6 +250,9 @@ public class Confirmation extends AppCompatActivity {
             else
                 writer.append("Teleop Gears, " + delSpaces(Teleop.gearsView.getText().toString()) + "\n" );
             writer.append("Teleop Gears Positions, " + delSpaces(Teleop.gearPos2.getText().toString()) + "\n");
+            writer.append("Teleop Gears Positions, " + (PostMatch.pilotText.getText().toString()) + "\n");
+            writer.append("Teleop Gears Positions, " + (PostMatch.penalty.getText().toString()) + "\n");
+            writer.append("Teleop Gears Positions, " + (myRobo.getYellow().toString()) + "\n");
             writer.append("Reached 40 kPa, " + (PostMatch.reach.getText().toString()) + "\n");
             writer.append("Total Pressure, " + (PostMatch.numPressure.getText().toString()) + "\n");
             writer.append("Rotors Turning, " + PostMatch.rotors.getText().toString() + "\n");

@@ -52,6 +52,7 @@ public class Autonomous extends Fragment{
     Button gearHitButton;
     Button gearMissButton;
     Button gearBackButton;
+    Button gearPilotButton;
 
     static TextView highGoalView;
     Button highGoalOneButton;
@@ -107,6 +108,7 @@ public class Autonomous extends Fragment{
         gearHitButton = (Button) in.findViewById(R.id.gearHitButton);
         gearMissButton = (Button) in.findViewById(R.id.gearMissButton);
         gearBackButton = (Button) in.findViewById(R.id.gearBackButton);
+        gearPilotButton = (Button) in.findViewById(R.id.pilotM);
 
         highGoalView = (TextView) in.findViewById (R.id.highGoalView);
         highGoalOneButton = (Button) in.findViewById(R.id.highGoalOneButton);
@@ -203,6 +205,13 @@ public class Autonomous extends Fragment{
                 gearView.append("0             ");
             }
         });
+        gearPilotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gearView.append("X             ");
+            }
+        });
+
 
         gearBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
