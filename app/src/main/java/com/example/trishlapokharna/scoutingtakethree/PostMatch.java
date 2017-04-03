@@ -115,6 +115,10 @@ public class PostMatch extends Fragment {
 
         yellowCardY.setOnCheckedChangeListener(changeChecker3);
         yellowCardN.setOnCheckedChangeListener(changeChecker3);
+        red.setOnCheckedChangeListener(changeChecker3);
+
+
+
 
 
         notesHelp.setOnClickListener(new View.OnClickListener() {
@@ -228,7 +232,8 @@ public class PostMatch extends Fragment {
                         Toast.makeText(getActivity(), "Cycle Time and Number of Low Goals Do Not Match! :P", Toast.LENGTH_SHORT).show();
                     } else if (myRobo.getYellow().toString().length() == 0) {
                         Toast.makeText(getActivity(), "Add Yellow Cards! :(", Toast.LENGTH_SHORT).show();
-                    } else if (PostMatch.penalty.getText().toString().length() == 0) {
+
+                    }    else if (PostMatch.penalty.getText().toString().length() == 0) {
                         Toast.makeText(getActivity(), "Add Points Taken off For Penalty! :/", Toast.LENGTH_SHORT).show();
                     } else if (PostMatch.numPressure.getText().toString().length() == 0) {
                         Toast.makeText(getActivity(), "Add kPa! ^^", Toast.LENGTH_SHORT).show();
@@ -334,8 +339,7 @@ public class PostMatch extends Fragment {
     CompoundButton.OnCheckedChangeListener changeChecker3 = new CompoundButton.OnCheckedChangeListener() {
 
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            if (isChecked) {
-                if (isChecked) {
+            if (isChecked){
                     if (buttonView != yellowCardY) {
                         yellowCardY.setChecked(false);
                     }
@@ -347,17 +351,17 @@ public class PostMatch extends Fragment {
                     }
                     if (buttonView == yellowCardN) {
                         String str = "None";
-                        myRobo.setResult(str);
+                        myRobo.setYellow(str);
                     } else if (buttonView == yellowCardY) {
-                        String str = "Yellow Card";
-                        myRobo.setResult(str);
+                        String str = "Yellow";
+                        myRobo.setYellow(str);
                     } else if (buttonView == red) {
-                        String str = "Red Card";
-                        myRobo.setResult(str);
+                        String str = "Red";
+                        myRobo.setYellow(str);
                     }
                 }
             }
-        }
+
     };
 
 

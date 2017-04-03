@@ -521,7 +521,7 @@
                     android:layout_weight=".5"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Yellow Cards"
+                    android:text="Yellow or Red Card"
                     android:id="@+id/yellow" />
 
                 <TextView

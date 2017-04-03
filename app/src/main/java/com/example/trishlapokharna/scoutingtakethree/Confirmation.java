@@ -203,7 +203,7 @@ public class Confirmation extends AppCompatActivity {
     public void Export(View v) {
         try {
             verifyStoragePermissions(this);
-            File root = new File(Environment.getExternalStorageDirectory(), "Notes-SAC");
+            File root = new File(Environment.getExternalStorageDirectory(), "Notes");
             // if external memory exists and folder with name Notes
             if (!root.exists()) {
                 root.mkdirs(); // this will create folder.
@@ -257,10 +257,13 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Total Pressure, " + (PostMatch.numPressure.getText().toString()) + "\n");
             writer.append("Rotors Turning, " + PostMatch.rotors.getText().toString() + "\n");
             writer.append("Takeoff, " + (myRobo.getTakeoff().toString()) + "\n");
+            writer.append("Penalty, " + (PostMatch.penalty.getText().toString()) + "\n");
+            writer.append("Yellow or Red Card, " + (myRobo.getYellow().toString()) + "\n");
             writer.append("Total Points, " + PostMatch.totalPoints.getText().toString() + "\n");
             writer.append("Ranking Points, "+ PostMatch.rankingPoints.getText().toString() + "\n");
             writer.append("Result, " + myRobo.getResult() + "\n");
             writer.append("Notes, " + PostMatch.notesText.getText().toString()+ "\n" );
+            writer.append("Pilot Notes, " + PostMatch.pilotText.getText().toString()+ "\n");
             if (fileN.equals("r3.txt")||fileN.equals("r1.txt")|| fileN.equals("r2.txt"))
                 writer.append("Alliance, Red");
            if (fileN.equals("b1.txt")||fileN.equals("b2.txt")|| fileN.equals("b3.txt"))
