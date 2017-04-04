@@ -44,7 +44,7 @@ public class DisplaySingleMatch extends Fragment {
 
             String yourFilePath = "/sdcard/TeamsMatches/" + myRobo.getSingleTeam() + "_"
                     + myRobo.getMatchNumber() + ".txt";
-            name.setText(myRobo.getSingleTeam() + "- Match " + myRobo.getMatchNumber());
+            name.setText(myRobo.getSingleTeam() + " - Match " + myRobo.getMatchNumber());
 
             File yourFile = new File(yourFilePath);
             if (!yourFile.exists()) {

@@ -19,64 +19,53 @@
     </string-array>
 
     <string-array name="RobotNumbers">
-        <item>1</item>
-        <item>100</item>
-        <item>199</item>
-        <item>295</item>
-        <item>585</item>
-        <item>649</item>
-        <item>692</item>
-        <item>701</item>
-        <item>973</item>
-        <item>1056</item>
-        <item>1072</item>
-        <item>1323</item>
-        <item>1351</item>
-        <item>1388</item>
-        <item>1458</item>
-        <item>1662</item>
-        <item>1671</item>
-        <item>1678</item>
-        <item>1700</item>
-        <item>2073</item>
-        <item>2085</item>
-        <item>2102</item>
-        <item>2141</item>
-        <item>2204</item>
-        <item>2473</item>
-        <item>2543</item>
-        <item>2551</item>
-        <item>3013</item>
-        <item>3128</item>
-        <item>3189</item>
-        <item>3250</item>
-        <item>3257</item>
-        <item>3501</item>
-        <item>3598</item>
-        <item>3615</item>
-        <item>3669</item>
-        <item>3859</item>
-        <item>4135</item>
-        <item>4171</item>
-        <item>4543</item>
-        <item>4643</item>
-        <item>4669</item>
-        <item>4698</item>
-        <item>5012</item>
-        <item>5274</item>
-        <item>5458</item>
-        <item>5480</item>
-        <item>5496</item>
-        <item>5507</item>
-        <item>5875</item>
-        <item>5905</item>
-        <item>5924</item>
-        <item>6174</item>
-        <item>6305</item>
-        <item>6474</item>
-        <item>6612</item>
-        <item>6644</item>
-        <item>6665</item>
+        <item>60 - Bionic Bulldogs</item>
+        <item>118 - Robonauts</item>
+        <item>148 - Robowranglers</item>
+        <item>295 - Grizzly Robotics Team</item>
+        <item>585 - Cyber Penguins</item>
+        <item>649 - M-SET Fish</item>
+        <item>691 - Project 691</item>
+        <item>842 - Falcon Robotics</item>
+        <item>981 - Snobotics</item>
+        <item>987 - HIGHROLLERS</item>
+        <item>988 - Steel Phoenix</item>
+        <item>1138 - Eagle Engineering</item>
+        <item>1266 - The Devil Duckies</item>
+        <item>1538 - The Holy Cows</item>
+        <item>1678 - Citrus Circuits</item>
+        <item>1828 - BoxerBots</item>
+        <item>2144 - Gators</item>
+        <item>2429 - La Canada Engineering Cub</item>
+        <item>2485 - WARLords</item>
+        <item>2637 - Phantom Catz</item>
+        <item>3009 - High Scalers</item>
+        <item>3011 - RoboWarriors</item>
+        <item>3045 - The Gear Gremlins</item>
+        <item>3495 - MindCraft</item>
+        <item>3647 - Millennium Falcons</item>
+        <item>3965 - Sultans</item>
+        <item>4160 - The Robucs</item>
+        <item>4201 - Vitruvian Bots</item>
+        <item>4470 - TiGears</item>
+        <item>4499 - The Highlanders</item>
+        <item>4501 - Humans</item>
+        <item>4792 - Desert Storm</item>
+        <item>5012 - Gryffingear</item>
+        <item>5025 - ENIGMA</item>
+        <item>5049 - Techtonics</item>
+        <item>5089 - Robo Nerds</item>
+        <item>5199 - Robot Dolphins From Outer Space</item>
+        <item>5429 - Black Knights</item>
+        <item>5453 - RED COMET</item>
+        <item>5458 - Digital Minds</item>
+        <item>5677 - The Subatomic Smarticles</item>
+        <item>5823 - ACE</item>
+        <item>5851 - Striking Vikings</item>
+        <item>6060 - Circuit Serpents</item>
+        <item>6405 - EntreBots</item>
+        <item>6436 - PARS ROBOTICS TEAM</item>
+        <item>6519 - The Vegas Vortechs</item>
     </string-array>
     <string name="title_activity_ranking_container">RankingContainer</string>
     <string name="title_activity_teleop_high_container">TeleopHighContainer</string>

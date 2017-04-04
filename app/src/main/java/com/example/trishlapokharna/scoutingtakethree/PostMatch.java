@@ -157,7 +157,8 @@ public class PostMatch extends Fragment {
 
         String[] teamArray = getResources().getStringArray(R.array.RobotNumbers);
         for (int i = 0; i < teamArray.length; i++) {
-            if (Autonomous.teamText.getText().toString().equals(teamArray[i])) {
+            String[] str = teamArray[i].split("-");
+            if (Autonomous.teamText.getText().toString().equals(str[0].replaceAll("\\s+",""))) {
                 teamMatch = true;
             }
         }

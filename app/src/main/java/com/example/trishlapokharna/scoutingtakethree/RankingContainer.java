@@ -22,17 +22,6 @@ public class RankingContainer extends AppCompatActivity
         setContentView(R.layout.activity_ranking_container);
 
         switch (getIntent().getIntExtra("fragmentNumber",0)) {
-            case 1:
-                try {
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, AllTeams.class.newInstance()).commit();
-                } catch (InstantiationException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-                break;
-
             case 2:
                 try {
                     FragmentManager fragmentManager = getSupportFragmentManager();
