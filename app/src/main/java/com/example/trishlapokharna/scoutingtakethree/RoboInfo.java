@@ -10,6 +10,7 @@ public class RoboInfo {
     String scouterT;
     String notesT;
     String singleTeam;
+    String teamName;
     String matchNumber;
     String defense;
     String endGameT = "N";
@@ -98,6 +99,14 @@ public class RoboInfo {
     }
     public String getYellow(){
         return yellow;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String str) {
+        teamName = str;
     }
 
 }

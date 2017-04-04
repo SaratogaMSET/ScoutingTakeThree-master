@@ -60,6 +60,7 @@ public class AllTeamsNew extends AppCompatActivity
                 String entry = (String) parent.getAdapter().getItem(position);
                 String[] finalEntry = entry.split("-");
                 myRobo.setSingleTeam(finalEntry[0].replaceAll("\\s+",""));
+                myRobo.setTeamName(finalEntry[1]);
                 intent.putExtra("fragmentNumber", 5);
                 startActivity(intent);
             }

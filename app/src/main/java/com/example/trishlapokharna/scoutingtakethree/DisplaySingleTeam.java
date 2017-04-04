@@ -63,7 +63,7 @@ public class DisplaySingleTeam extends Fragment {
         try {
             verifyStoragePermissions(this.getActivity());
             String yourFilePath = "/sdcard/TeamsMatches/" + myRobo.getSingleTeam() + ".txt";
-            name.setText(myRobo.getSingleTeam());
+            name.setText(myRobo.getSingleTeam() + " - " + myRobo.getTeamName());
 
             File yourFile = new File(yourFilePath);
 
