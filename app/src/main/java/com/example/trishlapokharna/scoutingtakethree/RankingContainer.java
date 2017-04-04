@@ -132,13 +132,8 @@ public class RankingContainer extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         if (id == R.id.nav_allteams) {
-            try {
-                fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, AllTeams.class.newInstance()).commit();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
+            Intent intent = new Intent(this, AllTeamsNew.class);
+            startActivity(intent);
         } else if (id == R.id.nav_matches) {
             try {
                 fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, DisplayMatchList.class.newInstance()).commit();

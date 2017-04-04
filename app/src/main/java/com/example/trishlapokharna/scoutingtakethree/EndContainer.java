@@ -124,8 +124,8 @@ public class EndContainer extends AppCompatActivity
 
         Intent intent = null;
         if (id == R.id.nav_allteams) {
-            intent = new Intent(this,RankingContainer.class);
-            intent.putExtra("fragmentNumber", 1);
+            intent = new Intent(this, AllTeamsNew.class);
+            startActivity(intent);
         } else if (id == R.id.nav_matches) {
             intent = new Intent(this,RankingContainer.class);
             intent.putExtra("fragmentNumber", 2);

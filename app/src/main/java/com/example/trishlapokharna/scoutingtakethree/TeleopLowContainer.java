@@ -124,8 +124,8 @@ public class TeleopLowContainer extends AppCompatActivity
 
         Intent intent = null;
         if (id == R.id.nav_allteams) {
-            intent = new Intent(this,RankingContainer.class);
-            intent.putExtra("fragmentNumber", 1);
+            intent = new Intent(this, AllTeamsNew.class);
+            startActivity(intent);
         } else if (id == R.id.nav_matches) {
             intent = new Intent(this,RankingContainer.class);
             intent.putExtra("fragmentNumber", 2);
@@ -142,7 +142,7 @@ public class TeleopLowContainer extends AppCompatActivity
             intent = new Intent(this,RankingContainer.class);
             intent.putExtra("fragmentNumber", 3);
         } else if (id == R.id.nav_rankingend) {
-            intent = new Intent(this, EndContainer.class);
+            intent = new Intent(this,EndContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingoverall) {
             intent = new Intent(this,RankingContainer.class);

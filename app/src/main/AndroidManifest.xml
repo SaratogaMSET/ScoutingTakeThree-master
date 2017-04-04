@@ -39,6 +39,10 @@
             android:name=".AutoContainer"
             android:label="@string/title_activity_auto_container"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AllTeamsNew"
+            android:label="@string/title_activity_all_teams_new"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
