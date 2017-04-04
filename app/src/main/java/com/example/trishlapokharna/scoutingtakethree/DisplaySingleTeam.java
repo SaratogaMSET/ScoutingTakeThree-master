@@ -3,6 +3,7 @@ package com.example.trishlapokharna.scoutingtakethree;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -110,6 +111,7 @@ public class DisplaySingleTeam extends Fragment {
                         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
                         spin.setAdapter(spinnerArrayAdapter);
 
+                        final Intent intent = new Intent(this.getActivity(), DisplaySingleMatchNew.class);
                         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                             @Override
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -118,17 +120,7 @@ public class DisplaySingleTeam extends Fragment {
                                 if (!num.equals("") && !num.equals(" ")) {
 
                                     myRobo.setMatchNumber(num);
-
-                                    Class fragmentClass = DisplaySingleMatch.class;
-                                    Fragment fragment = null;
-                                    try {
-                                        fragment = (Fragment) fragmentClass.newInstance();
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }
-
-                                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
+                                    startActivity(intent);
                                 }
                             }
 

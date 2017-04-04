@@ -42,6 +42,10 @@
         <activity
             android:name=".AllTeamsNew"
             android:label="@string/title_activity_all_teams_new"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".DisplaySingleMatchNew"
+            android:label="@string/title_activity_display_single_match_new"
             android:theme="@style/AppTheme"></activity>
     </application>
 

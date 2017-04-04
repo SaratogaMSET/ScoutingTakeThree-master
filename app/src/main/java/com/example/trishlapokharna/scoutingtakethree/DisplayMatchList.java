@@ -3,6 +3,7 @@ package com.example.trishlapokharna.scoutingtakethree;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -87,6 +88,7 @@ public class DisplayMatchList extends Fragment {
         );
 
         lv.setAdapter(arrayAdapter);
+        final Intent intent = new Intent(this.getActivity(), DisplaySingleMatchNew.class);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -99,16 +101,7 @@ public class DisplayMatchList extends Fragment {
                 myRobo.setMatchNumber(string[0].substring(6));
                 myRobo.setSingleTeam(string[1].substring(1));
 
-                Class fragmentClass = DisplaySingleMatch.class;
-                Fragment fragment = null;
-                try {
-                    fragment = (Fragment) fragmentClass.newInstance();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, fragment).commit();
+                startActivity(intent);
 
             }
         });
