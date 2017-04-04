@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/pilotEdit"
                 android:scrollHorizontally="true"
-                android:hint="If your correspoinding team has a pilot, enter that pilot's strengths and weaknesses"
+                android:hint="If your corresponding team has a pilot, enter that pilot's strengths and weaknesses"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:scrollbars="none"
                 />
