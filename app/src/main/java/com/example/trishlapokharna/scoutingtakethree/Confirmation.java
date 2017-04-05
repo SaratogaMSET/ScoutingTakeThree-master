@@ -250,9 +250,6 @@ public class Confirmation extends AppCompatActivity {
             else
                 writer.append("Teleop Gears, " + delSpaces(Teleop.gearsView.getText().toString()) + "\n" );
             writer.append("Teleop Gears Positions, " + delSpaces(Teleop.gearPos2.getText().toString()) + "\n");
-            writer.append("Teleop Gears Positions, " + (PostMatch.pilotText.getText().toString()) + "\n");
-            writer.append("Teleop Gears Positions, " + (PostMatch.penalty.getText().toString()) + "\n");
-            writer.append("Teleop Gears Positions, " + (myRobo.getYellow().toString()) + "\n");
             writer.append("Reached 40 kPa, " + (PostMatch.reach.getText().toString()) + "\n");
             writer.append("Total Pressure, " + (PostMatch.numPressure.getText().toString()) + "\n");
             writer.append("Rotors Turning, " + PostMatch.rotors.getText().toString() + "\n");
