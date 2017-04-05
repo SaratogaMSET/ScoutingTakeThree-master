@@ -46,6 +46,10 @@
         <activity
             android:name=".DisplaySingleMatchNew"
             android:label="@string/title_activity_display_single_match_new"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".TeleopOverallContainer"
+            android:label="@string/title_activity_teleop_overall_container"
             android:theme="@style/AppTheme"></activity>
     </application>
 

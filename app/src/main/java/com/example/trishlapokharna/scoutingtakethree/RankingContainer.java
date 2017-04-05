@@ -33,10 +33,10 @@ public class RankingContainer extends AppCompatActivity
                 }
                 break;
 
-            case 3:
+            case 5:
                 try {
                     FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, TeleopOverallRanking.class.newInstance()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, DisplaySingleTeam.class.newInstance()).commit();
                 } catch (InstantiationException e) {
                     e.printStackTrace();
                 } catch (IllegalAccessException e) {
@@ -48,17 +48,6 @@ public class RankingContainer extends AppCompatActivity
                 try {
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, OverallRanking.class.newInstance()).commit();
-                } catch (InstantiationException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-                break;
-
-            case 5:
-                try {
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, DisplaySingleTeam.class.newInstance()).commit();
                 } catch (InstantiationException e) {
                     e.printStackTrace();
                 } catch (IllegalAccessException e) {
@@ -141,24 +130,14 @@ public class RankingContainer extends AppCompatActivity
             Intent intent = new Intent(this, TeleopLowContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingteleop) {
-            try {
-                fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, TeleopOverallRanking.class.newInstance()).commit();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
+            Intent intent = new Intent(this,TeleopOverallContainer.class);
+            startActivity(intent);
         } else if (id == R.id.nav_rankingend) {
             Intent intent = new Intent(this, EndContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingoverall) {
-            try {
-                fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, OverallRanking.class.newInstance()).commit();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
+            Intent intent = new Intent(this,TeleopOverallContainer.class);
+            startActivity(intent);
         } else if (id == R.id.nav_gohome) {
             Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);

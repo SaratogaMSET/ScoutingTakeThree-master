@@ -155,14 +155,14 @@ public class DisplaySingleMatchNew extends AppCompatActivity
             intent = new Intent(this, TeleopLowContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingteleop) {
-            intent = new Intent(this,RankingContainer.class);
-            intent.putExtra("fragmentNumber", 3);
+            intent = new Intent(this,TeleopOverallContainer.class);
+            startActivity(intent);
         } else if (id == R.id.nav_rankingend) {
             intent = new Intent(this,EndContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingoverall) {
-            intent = new Intent(this,RankingContainer.class);
-            intent.putExtra("fragmentNumber", 4);
+            intent = new Intent(this,TeleopOverallContainer.class);
+            startActivity(intent);
         } else if (id == R.id.nav_gohome) {
             intent = new Intent(this,MainActivity.class);
             startActivity(intent);

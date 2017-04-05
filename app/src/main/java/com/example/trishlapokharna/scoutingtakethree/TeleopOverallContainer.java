@@ -22,18 +22,18 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.astuetz.PagerSlidingTabStrip;
 
-public class TeleopLowContainer extends AppCompatActivity
+public class TeleopOverallContainer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int NUM_PAGES = 2;
     public ViewPager mPager;
     public ScreenSlidePagerAdapter mPagerAdapter;
-    public String tabTitles[] = new String[]{"Teleop Low Cycles", "Teleop Low Shots"};
+    public String tabTitles[] = new String[]{"Miscellaneous", "Teleop Gears"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teleop_low_container);
+        setContentView(R.layout.activity_teleop_overall_container);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -50,7 +50,6 @@ public class TeleopLowContainer extends AppCompatActivity
         mPager = (ViewPager) findViewById(R.id.pagerteleoplow);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
-
 
         final PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabsStrip.setViewPager(mPager);
@@ -179,9 +178,9 @@ public class TeleopLowContainer extends AppCompatActivity
         @Override
         public Fragment getItem(int position) {
             if (position == 0) {
-                return new TeleopLowFirst();
+                return new TeleopOverallFirst();
             } else {
-                return new TeleopLowSecond();
+                return new TeleopOverallSecond();
             }
         }
 
