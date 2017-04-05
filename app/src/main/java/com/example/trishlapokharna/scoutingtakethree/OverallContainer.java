@@ -22,18 +22,18 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.astuetz.PagerSlidingTabStrip;
 
-public class TeleopOverallContainer extends AppCompatActivity
+public class OverallContainer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int NUM_PAGES = 2;
     public ViewPager mPager;
     public ScreenSlidePagerAdapter mPagerAdapter;
-    public String tabTitles[] = new String[]{"Miscellaneous", "Teleop Gears"};
+    public String tabTitles[] = new String[]{"Total Points", "Miscellaneous"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teleop_overall_container);
+        setContentView(R.layout.activity_overall_container);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,7 +47,7 @@ public class TeleopOverallContainer extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Instantiate a ViewPager and a PagerAdapter.
-        mPager = (ViewPager) findViewById(R.id.pagerteleoplow);
+        mPager = (ViewPager) findViewById(R.id.pagerteleophigh);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
 
@@ -82,7 +82,6 @@ public class TeleopOverallContainer extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-
         if (mPager.getCurrentItem() == 0) {
             // If the user is currently looking at the first step, allow the system to handle the
             // Back button. This calls finish() on this activity and pops the back stack.
@@ -111,7 +110,6 @@ public class TeleopOverallContainer extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -178,9 +176,9 @@ public class TeleopOverallContainer extends AppCompatActivity
         @Override
         public Fragment getItem(int position) {
             if (position == 0) {
-                return new TeleopOverallFirst();
+                return new OverallFirst();
             } else {
-                return new TeleopOverallSecond();
+                return new OverallSecond();
             }
         }
 

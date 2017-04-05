@@ -50,6 +50,10 @@
         <activity
             android:name=".TeleopOverallContainer"
             android:label="@string/title_activity_teleop_overall_container"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".OverallContainer"
+            android:label="@string/title_activity_overall_container"
             android:theme="@style/AppTheme"></activity>
     </application>
 

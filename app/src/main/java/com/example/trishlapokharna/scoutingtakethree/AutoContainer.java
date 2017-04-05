@@ -25,7 +25,6 @@ import com.astuetz.PagerSlidingTabStrip;
 public class AutoContainer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
     private static final int NUM_PAGES = 2;
     public ViewPager mPager;
     public ScreenSlidePagerAdapter mPagerAdapter;
@@ -146,7 +145,7 @@ public class AutoContainer extends AppCompatActivity
             intent = new Intent(this,EndContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingoverall) {
-            intent = new Intent(this,TeleopOverallContainer.class);
+            intent = new Intent(this,OverallContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_gohome) {
             intent = new Intent(this,MainActivity.class);

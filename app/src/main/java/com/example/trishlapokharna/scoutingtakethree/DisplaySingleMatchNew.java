@@ -161,7 +161,7 @@ public class DisplaySingleMatchNew extends AppCompatActivity
             intent = new Intent(this,EndContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingoverall) {
-            intent = new Intent(this,TeleopOverallContainer.class);
+            intent = new Intent(this,OverallContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_gohome) {
             intent = new Intent(this,MainActivity.class);

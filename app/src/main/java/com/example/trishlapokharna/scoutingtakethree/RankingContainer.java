@@ -136,7 +136,7 @@ public class RankingContainer extends AppCompatActivity
             Intent intent = new Intent(this, EndContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_rankingoverall) {
-            Intent intent = new Intent(this,TeleopOverallContainer.class);
+            Intent intent = new Intent(this,OverallContainer.class);
             startActivity(intent);
         } else if (id == R.id.nav_gohome) {
             Intent intent = new Intent(this,MainActivity.class);
