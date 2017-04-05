@@ -64,6 +64,15 @@ public class DisplaySingleTeam extends Fragment {
         try {
             verifyStoragePermissions(this.getActivity());
             String yourFilePath = "/sdcard/TeamsMatches/" + myRobo.getSingleTeam() + ".txt";
+            String[] names = getResources().getStringArray(R.array.RobotNumbers);
+            for (int i = 0; i < names.length; i++) {
+                String[] str = names[i].split(" -");
+                Log.d("TAG55", str[0]);
+                if (str[0].replaceAll("\\s","").equals(myRobo.getSingleTeam())) {
+                    Log.d("TAG55", str[1]);
+                    myRobo.setTeamName(str[1]);
+                }
+            }
             name.setText(myRobo.getSingleTeam() + " - " + myRobo.getTeamName());
 
             File yourFile = new File(yourFilePath);
