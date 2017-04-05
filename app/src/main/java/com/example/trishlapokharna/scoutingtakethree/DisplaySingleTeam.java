@@ -80,7 +80,7 @@ public class DisplaySingleTeam extends Fragment {
                     TableRow.LayoutParams layoutParams = new TableRow.LayoutParams
                             (TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f);
 
-                    if (!values[0].equals("Matches")) {
+                    if (!values[0].equals("Matches") && !values[0].equals("Pilot Notes") && !values[0].equals("Notes")) {
                         TextView tv1 = new TextView(this.getActivity());
                         tv1.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 0.65f));
                         tv1.setPadding(0, 5, 20, 5);
@@ -89,12 +89,67 @@ public class DisplaySingleTeam extends Fragment {
                         TextView tv2 = new TextView(this.getActivity());
                         tv2.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 0.35f));
                         tv2.setPadding(30, 5, 5, 5);
+                        Log.d("TAG13",values[0]);
                         tv2.setText(values[1]);
 
                         tr.addView(tv1);
                         tr.addView(tv2);
                         tl.addView(tr, layoutParams);
-                    } else {
+                    } else if (values[0].equals("Pilot Notes")){
+                        TextView tv1 = new TextView(this.getActivity());
+                        tv1.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 0.5f));
+                        tv1.setPadding(0, 20, 20, 5);
+                        tv1.setText(values[0]);
+                        tr.addView(tv1);
+
+                        TextView tv2 = new TextView(this.getActivity());
+                        tv2.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 0.35f));
+                        tv2.setPadding(30, 5, 5, 5);
+
+                        String str = values[1];
+                        boolean reachedNotes = false;
+                        while(!reachedNotes){
+                            line = reader.readLine();
+                            String[] values1 = line.split(",");
+                            if (values1[0].equals("Notes")){
+                                Log.d("TAG14", line);
+                                reachedNotes = true;
+                            } else {
+                                str = str + "\n" + line;
+                            }
+                        }
+                        Log.d("TAG14", line);
+                        tv2.setText(str);
+                        tr.addView(tv2);
+                        tl.addView(tr, layoutParams);
+
+                        //Notes row
+                        TableRow tr2 = new TableRow(this.getActivity());
+                        TableRow.LayoutParams layoutParams2 = new TableRow.LayoutParams
+                                (TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f);
+
+                        String[] values2 = line.split(",");
+                        TextView tv3 = new TextView(this.getActivity());
+                        tv3.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 0.5f));
+                        tv3.setPadding(0, 20, 20, 5);
+                        tv3.setText(values2[0]);
+                        tr2.addView(tv3);
+
+                        TextView tv4 = new TextView(this.getActivity());
+                        tv4.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 0.35f));
+                        tv4.setPadding(30, 5, 5, 5);
+
+                        String str2 = values2[1];
+
+                        while((line = reader.readLine()) != null) {
+                            str2 = str2 + "\n" + line;
+                        }
+
+                        tv4.setText(str2);
+                        tr2.addView(tv4);
+                        tl.addView(tr2, layoutParams2);
+
+                    }else {
                         TextView tv1 = new TextView(this.getActivity());
                         tv1.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 0.5f));
                         tv1.setPadding(0, 20, 20, 5);
