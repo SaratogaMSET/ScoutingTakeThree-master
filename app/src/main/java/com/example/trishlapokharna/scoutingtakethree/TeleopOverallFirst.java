@@ -36,9 +36,9 @@ public class TeleopOverallFirst extends Fragment {
 
         try {
 
-            String path1 = "/sdcard/Rankings/Average Defense Rating Per Game.txt";
-            String path2 = "/sdcard/Rankings/Teleop Pickup Gear Ratio.txt";
-            String path3 = "/sdcard/Rankings/Average Pilot Gear Drops Per Game.txt";
+            String path1 = "/sdcard/Rankings-LVR/Average Defense Rating Per Game.txt";
+            String path2 = "/sdcard/Rankings-LVR/Teleop Pickup Gear Ratio.txt";
+            String path3 = "/sdcard/Rankings-LVR/Average Pilot Gear Drops Per Game.txt";
 
             File f1 = new File(path1);
             File f2 = new File(path2);

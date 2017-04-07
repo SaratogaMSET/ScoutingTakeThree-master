@@ -36,8 +36,8 @@ public class EndSecond extends Fragment {
 
         try {
 
-            String path1 = "/sdcard/Rankings/Average Total Pressure Per Game.txt";
-            String path2 = "/sdcard/Rankings/Average Rotors Turning Per Game.txt";
+            String path1 = "/sdcard/Rankings-LVR/Average Total Pressure Per Game.txt";
+            String path2 = "/sdcard/Rankings-LVR/Average Rotors Turning Per Game.txt";
 
             File f1 = new File(path1);
             File f2 = new File(path2);

@@ -36,9 +36,9 @@ public class OverallSecond extends Fragment {
 
         try {
 
-            String path1 = "/sdcard/Rankings/Average Ranking Points Per Game.txt";
-            String path2 = "/sdcard/Rankings/Winning Ratio.txt";
-            String path3 = "/sdcard/Rankings/Average Penalties Per Game.txt";
+            String path1 = "/sdcard/Rankings-LVR/Average Ranking Points Per Game.txt";
+            String path2 = "/sdcard/Rankings-LVR/Winning Ratio.txt";
+            String path3 = "/sdcard/Rankings-LVR/Average Penalties Per Game.txt";
 
             File f1 = new File(path1);
             File f2 = new File(path2);

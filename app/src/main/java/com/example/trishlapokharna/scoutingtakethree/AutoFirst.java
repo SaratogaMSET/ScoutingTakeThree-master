@@ -36,9 +36,9 @@ public class AutoFirst extends Fragment {
 
         try {
 
-            String path1 = "/sdcard/Rankings/Cross Baseline Ratio.txt";
-            String path2 = "/sdcard/Rankings/Auto Gears Ratio.txt";
-            String path3 = "/sdcard/Rankings/Auto Gears Made.txt";
+            String path1 = "/sdcard/Rankings-LVR/Cross Baseline Ratio.txt";
+            String path2 = "/sdcard/Rankings-LVR/Auto Gears Ratio.txt";
+            String path3 = "/sdcard/Rankings-LVR/Auto Gears Made.txt";
 
             File f1 = new File(path1);
             File f2 = new File(path2);

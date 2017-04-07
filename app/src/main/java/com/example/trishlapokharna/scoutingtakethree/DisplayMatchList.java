@@ -45,7 +45,7 @@ public class DisplayMatchList extends Fragment {
 
         verifyStoragePermissions(this.getActivity());
 
-        File file = new File("/sdcard/TeamsMatches/");
+        File file = new File("/sdcard/TeamsMatches-LVR/");
         File[] list = file.listFiles();
         int maxMatchNum = 0;
         if (list != null) {

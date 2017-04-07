@@ -61,7 +61,7 @@ public class DisplaySingleMatchNew extends AppCompatActivity
         try {
             verifyStoragePermissions(this);
 
-            String yourFilePath = "/sdcard/TeamsMatches/" + myRobo.getSingleTeam() + "_"
+            String yourFilePath = "/sdcard/TeamsMatches-LVR/" + myRobo.getSingleTeam() + "_"
                     + myRobo.getMatchNumber() + ".txt";
             name.setText(myRobo.getSingleTeam() + " - Match " + myRobo.getMatchNumber());
 

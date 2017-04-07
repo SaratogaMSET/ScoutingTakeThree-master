@@ -49,11 +49,11 @@ public class DisplaySingleTeam extends Fragment {
 
         ImageView robopic = (ImageView) in.findViewById(R.id.robopicture);
 
-        String pictureFile = "/sdcard/RobotPictures/" + myRobo.getSingleTeam() + ".jpg";
+        String pictureFile = "/sdcard/RoboPics-LV/" + myRobo.getSingleTeam() + ".jpg";
         File file = new File(pictureFile);
         if (!file.exists()) {
             Toast.makeText(getActivity(), "Someone forgot to take a picture!", Toast.LENGTH_SHORT).show();
-            robopic.setImageBitmap(BitmapFactory.decodeFile("sdcard/RobotPictures/default.jpg"));
+            robopic.setImageBitmap(BitmapFactory.decodeFile("sdcard/RoboPics-LV/default.jpg"));
         } else {
             robopic.setImageBitmap(BitmapFactory.decodeFile(pictureFile));
         }
@@ -63,7 +63,7 @@ public class DisplaySingleTeam extends Fragment {
 
         try {
             verifyStoragePermissions(this.getActivity());
-            String yourFilePath = "/sdcard/TeamsMatches/" + myRobo.getSingleTeam() + ".txt";
+            String yourFilePath = "/sdcard/TeamsMatches-LVR/" + myRobo.getSingleTeam() + ".txt";
             String[] names = getResources().getStringArray(R.array.RobotNumbers);
             for (int i = 0; i < names.length; i++) {
                 String[] str = names[i].split(" -");

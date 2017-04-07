@@ -27,8 +27,9 @@
         <item>649 - MSET Fish</item>
         <item>691 - Project 691</item>
         <item>842 - Falcon Robotics</item>
+        <item>968 - Robotics Alliance of West Covina</item>
         <item>981 - Snobotics</item>
-        <item>987 - HIGHROLLERS</item>
+        <item>987 - Highrollers</item>
         <item>988 - Steel Phoenix</item>
         <item>1138 - Eagle Engineering</item>
         <item>1266 - The Devil Duckies</item>
@@ -66,6 +67,7 @@
         <item>6405 - EntreBots</item>
         <item>6436 - PARS ROBOTICS TEAM</item>
         <item>6519 - The Vegas Vortechs</item>
+        <item></item>
     </string-array>
     <string name="title_activity_ranking_container">RankingContainer</string>
     <string name="title_activity_teleop_high_container">TeleopHighContainer</string>

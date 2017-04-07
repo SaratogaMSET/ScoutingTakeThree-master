@@ -43,17 +43,6 @@ public class RankingContainer extends AppCompatActivity
                     e.printStackTrace();
                 }
                 break;
-
-            case 4:
-                try {
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.wheretheshitgoes, OverallRanking.class.newInstance()).commit();
-                } catch (InstantiationException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-                break;
         }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

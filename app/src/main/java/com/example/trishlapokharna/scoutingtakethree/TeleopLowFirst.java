@@ -38,9 +38,9 @@ public class TeleopLowFirst extends Fragment {
 
         try {
 
-            String path1 = "/sdcard/Rankings/Teleop Low Goal Total Cycles.txt";
-            String path2 = "/sdcard/Rankings/Teleop Low Goal Average Cycles Per Game.txt";
-            String path3 = "/sdcard/Rankings/Teleop Low Goal Average Cycle Time.txt";
+            String path1 = "/sdcard/Rankings-LVR/Teleop Low Goal Total Cycles.txt";
+            String path2 = "/sdcard/Rankings-LVR/Teleop Low Goal Average Cycles Per Game.txt";
+            String path3 = "/sdcard/Rankings-LVR/Teleop Low Goal Average Cycle Time.txt";
 
             File f1 = new File(path1);
             File f2 = new File(path2);

@@ -36,9 +36,9 @@ public class EndFirst extends Fragment {
         TableLayout tl3 = (TableLayout) in.findViewById(R.id.tl3);
 
         try {
-            String path1 = "/sdcard/Rankings/Takeoff Ratio.txt";
-            String path2 = "/sdcard/Rankings/Reached 40 kPa Ratio.txt";
-            String path3 = "/sdcard/Rankings/Average Estimated Single Team kPa Per Game.txt";
+            String path1 = "/sdcard/Rankings-LVR/Takeoff Ratio.txt";
+            String path2 = "/sdcard/Rankings-LVR/Reached 40 kPa Ratio.txt";
+            String path3 = "/sdcard/Rankings-LVR/Average Estimated Single Team kPa Per Game.txt";
 
             File f1 = new File(path1);
             File f2 = new File(path2);

@@ -35,8 +35,8 @@ public class AutoSecond extends Fragment {
 
 
         try {
-            String path1 = "/sdcard/Rankings/Auto High Goal Total.txt";
-            String path2 = "/sdcard/Rankings/Auto Low Goal Total.txt";
+            String path1 = "/sdcard/Rankings-LVR/Auto High Goal Total.txt";
+            String path2 = "/sdcard/Rankings-LVR/Auto Low Goal Total.txt";
 
             File f1 = new File(path1);
             File f2 = new File(path2);

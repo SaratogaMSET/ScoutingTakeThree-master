@@ -35,8 +35,8 @@ public class OverallFirst extends Fragment {
         TableLayout tl2 = (TableLayout) in.findViewById(R.id.tl2);
 
         try {
-            String path1 = "/sdcard/Rankings/Average Alliance Total Points Per Game.txt";
-            String path2 = "/sdcard/Rankings/Average Single Robot Total Points Per Game.txt";
+            String path1 = "/sdcard/Rankings-LVR/Average Alliance Total Points Per Game.txt";
+            String path2 = "/sdcard/Rankings-LVR/Average Single Robot Total Points Per Game.txt";
 
             File f1 = new File(path1);
             File f2 = new File(path2);

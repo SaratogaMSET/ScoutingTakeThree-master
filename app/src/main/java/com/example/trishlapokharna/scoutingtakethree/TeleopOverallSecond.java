@@ -36,8 +36,8 @@ public class TeleopOverallSecond extends Fragment {
 
         try {
 
-            String path1 = "/sdcard/Rankings/Teleop Gears Ratio.txt";
-            String path2 = "/sdcard/Rankings/Teleop Gears Made.txt";
+            String path1 = "/sdcard/Rankings-LVR/Teleop Gears Ratio.txt";
+            String path2 = "/sdcard/Rankings-LVR/Teleop Gears Made.txt";
 
             File f1 = new File(path1);
             File f2 = new File(path2);

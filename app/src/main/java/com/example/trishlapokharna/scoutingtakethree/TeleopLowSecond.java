@@ -36,8 +36,8 @@ public class TeleopLowSecond extends Fragment {
 
         try {
 
-            String path1 = "/sdcard/Rankings/Teleop Low Goal Total Shots.txt";
-            String path2 = "/sdcard/Rankings/Teleop Low Goal Average Shots Per Cycle.txt";
+            String path1 = "/sdcard/Rankings-LVR/Teleop Low Goal Total Shots.txt";
+            String path2 = "/sdcard/Rankings-LVR/Teleop Low Goal Average Shots Per Cycle.txt";
 
             File f1 = new File(path1);
             File f2 = new File(path2);
