@@ -203,7 +203,7 @@ public class Confirmation extends AppCompatActivity {
     public void Export(View v) {
         try {
             verifyStoragePermissions(this);
-            File root = new File(Environment.getExternalStorageDirectory(), "Notes");
+            File root = new File(Environment.getExternalStorageDirectory(), "Notes-LVR");
             // if external memory exists and folder with name Notes
             if (!root.exists()) {
                 root.mkdirs(); // this will create folder.
