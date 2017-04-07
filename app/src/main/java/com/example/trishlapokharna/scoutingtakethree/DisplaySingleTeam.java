@@ -106,7 +106,7 @@ public class DisplaySingleTeam extends Fragment {
                         tl.addView(tr, layoutParams);
                     } else if (values[0].equals("Pilot Notes")){
                         TextView tv1 = new TextView(this.getActivity());
-                        tv1.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 0.5f));
+                        tv1.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 0.65f));
                         tv1.setPadding(0, 20, 20, 5);
                         tv1.setText(values[0]);
                         tr.addView(tv1);
@@ -139,7 +139,7 @@ public class DisplaySingleTeam extends Fragment {
 
                         String[] values2 = line.split(",");
                         TextView tv3 = new TextView(this.getActivity());
-                        tv3.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 0.5f));
+                        tv3.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 0.65f));
                         tv3.setPadding(0, 20, 20, 5);
                         tv3.setText(values2[0]);
                         tr2.addView(tv3);
