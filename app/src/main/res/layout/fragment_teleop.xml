@@ -182,7 +182,8 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/gearView"/>
+                android:id="@+id/gearView"
+                android:freezesText="true"/>
 
             <Space
                 android:layout_width="0dp"
@@ -267,9 +268,9 @@
                 android:layout_width="0dp"
                 android:layout_weight=".8"
                 android:layout_height="wrap_content"
-                android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/gearCycleView"/>
+                android:id="@+id/gearCycleView"
+                android:freezesText="true"/>
 
         </TableRow>
 
@@ -415,8 +416,9 @@
                 android:layout_weight=".35"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text=""
-                android:id="@+id/highGoalView"/>
+                android:id="@+id/highGoalView"
+                android:freezesText="true"
+                />
 
         </TableRow>
 
@@ -519,10 +521,10 @@
                 android:layout_width="0dp"
                 android:layout_weight=".5"
                 android:layout_height="wrap_content"
-                android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_marginLeft="20dp"
-                android:id="@+id/highCycleView"/>
+                android:id="@+id/highCycleView"
+                android:freezesText="true"/>
 
         </TableRow>
 
@@ -617,9 +619,9 @@
                 android:layout_width="0dp"
                 android:layout_weight=".35"
                 android:layout_height="wrap_content"
-                android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/lowGoalView"/>
+                android:id="@+id/lowGoalView"
+                android:freezesText="true"/>
 
         </TableRow>
 
@@ -724,9 +726,9 @@
                 android:layout_width="0dp"
                 android:layout_weight=".5"
                 android:layout_height="wrap_content"
-                android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/lowCycleView"/>
+                android:id="@+id/lowCycleView"
+                android:freezesText="true"/>
 
         </TableRow>
 

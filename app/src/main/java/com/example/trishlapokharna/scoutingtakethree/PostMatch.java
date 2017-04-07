@@ -62,7 +62,6 @@ public class PostMatch extends Fragment {
     static EditText notesText;
     static EditText pilotText;
     static EditText penalty;
-    static EditText pointsYellow;
     static ToggleButton reach;
     static EditText numPressure;
     static EditText totalPoints;
@@ -188,26 +187,26 @@ public class PostMatch extends Fragment {
                         Toast.makeText(getActivity(), "You indicated action (in Teleop: defense or gears) from a no show robot!? (ಥ﹏ಥ)", Toast.LENGTH_SHORT).show();
                     } else if ((Teleop.highGoalsView.getText().length() > 0 && Teleop.highGoalsView.getText().equals(" ") == false) || Teleop.intervalViewH.getText().length() > 0 || (Teleop.lowGoalView.getText().length() > 0 && Teleop.lowGoalView.getText().equals(" ") == false) || Teleop.intervalViewL.getText().length() > 0) {
                         Toast.makeText(getActivity(), "You indicated action (in Teleop: goals) from a no show robot!? (>ლ)", Toast.LENGTH_SHORT).show();
-                    } else if (PostMatch.no.isChecked() == false) {
+                    } else if (PostMatch.no.isChecked() == true || PostMatch.succeed.isChecked() == true ) {
                         Toast.makeText(getActivity(), "You indicated action (takeoff) from a no show robot!? (ง'̀-'́)ง", Toast.LENGTH_SHORT).show();
-                    } else if (PostMatch.pointsYellow.getText().toString().length() == 0) {
-                        Toast.makeText(getActivity(), "Add Points Lost For Yellow Card or 0!", Toast.LENGTH_SHORT).show();
-                    } else if (PostMatch.numPressure.getText().toString().length() == 0) {
+                    } else if (PostMatch.yellowCardN.isChecked() == true || PostMatch.yellowCardY.isChecked() == true || PostMatch.red.isChecked() == true) {
+                        Toast.makeText(getActivity(), "You indicated action (in Postmatch) from a no show robot!? (ಥ﹏ಥ)", Toast.LENGTH_SHORT).show();
+                    } else if (PostMatch.penalty.getText().toString().length() == 0) {
+                        Toast.makeText(getActivity(), "Add Points Taken off For Penalty! :/", Toast.LENGTH_SHORT).show();
+                    }else if (PostMatch.numPressure.getText().toString().length() == 0) {
                         Toast.makeText(getActivity(), "Add kPa! ^^", Toast.LENGTH_SHORT).show();
                     } else if (PostMatch.rotors.getText().toString().length() == 0) {
                         Toast.makeText(getActivity(), "Add Rotor #! :|", Toast.LENGTH_SHORT).show();
-                    } else if (PostMatch.win.isChecked() == false && PostMatch.lose.isChecked() == false && PostMatch.tie.isChecked() == false) {
+                    } else if ((Integer.parseInt(PostMatch.numPressure.getText().toString()) < 40 && reach.getText().toString().equals("Yes")) ||
+                            (Integer.parseInt(PostMatch.numPressure.getText().toString()) > 40 && reach.getText().toString().equals("No"))) {
+                        Toast.makeText(getActivity(), "Either kPa or Reached 40kPa Have Not Been Entered Correctly! :|", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (PostMatch.win.isChecked() == false && PostMatch.lose.isChecked() == false && PostMatch.tie.isChecked() == false) {
                         Toast.makeText(getActivity(), "Select win, lose, or tie! >:D", Toast.LENGTH_SHORT).show();
                     } else if (PostMatch.totalPoints.getText().toString().length() == 0) {
                         Toast.makeText(getActivity(), "Add Total Points! D:", Toast.LENGTH_SHORT).show();
                     } else if (PostMatch.rankingPoints.getText().toString().length() == 0) {
                         Toast.makeText(getActivity(), "Add Ranking Points! B-)", Toast.LENGTH_SHORT).show();
-                    } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 2 || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 3) && PostMatch.win.isChecked() == true) {
-                        Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
-                    } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 1 || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 2) && PostMatch.tie.isChecked() == true) {
-                        Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
-                    } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 0 || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 1) && PostMatch.lose.isChecked() == true) {
-                        Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
                     } else {
                         Intent toConfirmation = new Intent(getActivity(), Confirmation.class);
                         startActivity(toConfirmation);
@@ -250,15 +249,7 @@ public class PostMatch extends Fragment {
                         Toast.makeText(getActivity(), "Add Total Points! D:", Toast.LENGTH_SHORT).show();
                     } else if (PostMatch.rankingPoints.getText().toString().length() == 0) {
                         Toast.makeText(getActivity(), "Add Ranking Points! B-)", Toast.LENGTH_SHORT).show();
-                    } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 2 || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 5) && PostMatch.win.isChecked() == true) {
-                        Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
-                    } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 1 || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 2) && PostMatch.tie.isChecked() == true) {
-                        Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
-                    } else if ((Integer.parseInt(PostMatch.rankingPoints.getText().toString()) < 0 || Integer.parseInt(PostMatch.rankingPoints.getText().toString()) > 1) && PostMatch.lose.isChecked() == true) {
-                        Toast.makeText(getActivity(), "Ranking Points entry is WRONG!", Toast.LENGTH_SHORT).show();
-                    } else if ((Integer.parseInt(PostMatch.rotors.getText().toString()) > 4 || Integer.parseInt(PostMatch.rotors.getText().toString()) < 0) ) {
-                        Toast.makeText(getActivity(), "Rotors Turning Entry is WRONG!", Toast.LENGTH_SHORT).show();
-                    }else {
+                    } else {
                         Intent toConfirmation = new Intent(getActivity(), Confirmation.class);
                         startActivity(toConfirmation);
                     }
@@ -361,6 +352,12 @@ public class PostMatch extends Fragment {
                         String str = "Red";
                         myRobo.setYellow(str);
                     }
+                      else
+                    {
+                        String str = "Red";
+                        myRobo.setYellow(str);
+                    }
+
                 }
             }
 

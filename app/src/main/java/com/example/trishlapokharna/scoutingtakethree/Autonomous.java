@@ -68,8 +68,8 @@ public class Autonomous extends Fragment{
     Button lowGoalTwentyButton;
     Button lowGoalDelButton;
 
-    int i;
-    int j;
+    int i = 0;
+    int j = 0;
     static List<Integer> instanceHigh = new ArrayList<Integer>();
     static List<Integer> instanceLow = new ArrayList<Integer>();
 
@@ -227,6 +227,7 @@ public class Autonomous extends Fragment{
         });
 
         //high goal buttons
+        highGoalView.setText(String.valueOf(i));
         highGoalOneButton.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v){
                 i = Integer.parseInt(highGoalView.getText().toString()) + 1;
@@ -271,9 +272,6 @@ public class Autonomous extends Fragment{
                         i = instanceHigh.get(instanceHigh.size() - 1);
                     highGoalView.setText(String.valueOf(i));
                 }
-
-
-
                 if (instanceHigh.size() == 0 ){
                     instanceHigh.clear();
                     i = 0;
@@ -284,7 +282,7 @@ public class Autonomous extends Fragment{
             }
         });
 
-        //low goal buttons
+        lowGoalView.setText(String.valueOf(j));
         lowGoalOneButton.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v){
                 j = Integer.parseInt(lowGoalView.getText().toString()) + 1;
@@ -327,9 +325,7 @@ public class Autonomous extends Fragment{
                         j = 0;
                     else
                         j = instanceLow.get(instanceLow.size() - 1);
-
                     lowGoalView.setText(String.valueOf(j));
-
                 }
                 if (instanceLow.size() == 0){
                     instanceLow.clear();
@@ -373,9 +369,6 @@ public class Autonomous extends Fragment{
                 time.add("Boiler ");
             }
         });
-
-
-
 
 
         del2.setOnClickListener(new View.OnClickListener() {

@@ -151,7 +151,10 @@ public class Confirmation extends AppCompatActivity {
         reachedPressure.setText(PostMatch.reach.getText().toString());
         pilotNotes.setText(PostMatch.pilotText.getText().toString());
         penalty.setText(PostMatch.penalty.getText().toString());
-        yellowCards.setText(myRobo.getYellow().toString());
+        if (Autonomous.noShow.isChecked() == true)
+            yellowCards.setText("");
+        else
+            yellowCards.setText(myRobo.getYellow().toString());
         numPressure.setText(PostMatch.numPressure.getText().toString());
         rotor.setText(PostMatch.rotors.getText().toString());
         takeOff.setText(myRobo.getTakeoff());
@@ -255,7 +258,10 @@ public class Confirmation extends AppCompatActivity {
             writer.append("Rotors Turning, " + PostMatch.rotors.getText().toString() + "\n");
             writer.append("Takeoff, " + (myRobo.getTakeoff().toString()) + "\n");
             writer.append("Penalty, " + (PostMatch.penalty.getText().toString()) + "\n");
-            writer.append("Yellow or Red Card, " + (myRobo.getYellow().toString()) + "\n");
+            if (Autonomous.noShow.isChecked() == true)
+                writer.append("Yellow or Red Card, "  + "\n");
+            else
+                writer.append("Yellow or Red Card, " + (myRobo.getYellow().toString()) + "\n");
             writer.append("Total Points, " + PostMatch.totalPoints.getText().toString() + "\n");
             writer.append("Ranking Points, "+ PostMatch.rankingPoints.getText().toString() + "\n");
             writer.append("Result, " + myRobo.getResult() + "\n");
